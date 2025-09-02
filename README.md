@@ -18,7 +18,7 @@ The app allows users to **browse books, borrow, reserve them, and manage their p
 
 ## 🏗️ Project Structure (Clean Architecture)
 
-
+```
 lib/
 ├── assets/                  
 │   ├── images/              # App images
@@ -50,6 +50,7 @@ lib/
 │   │       ├── pages/       # UI pages
 │   │       └── widgets/     # Custom widgets
 └── main.dart                # App entry point
+```
 
 ## 🛠️ Technology Stack
 
