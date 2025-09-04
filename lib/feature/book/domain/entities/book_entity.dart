@@ -1,4 +1,6 @@
-class BookCard {
+import 'package:library_app/feature/book/presentation/view%20models/home_view_info.dart';
+
+class BookEntity {
   final String id;
   final String title;
   final String author;
@@ -12,7 +14,7 @@ class BookCard {
   final double? rating;
   final int? readersCount;
   final DateTime? searchDate;
-  BookCard({
+  BookEntity({
     required this.id,
     required this.title,
     required this.author,
@@ -27,4 +29,18 @@ class BookCard {
     this.readersCount,
     this.searchDate,
   });
+  CoverInfo get coverInfo => CoverInfo(coverImage: imageUrl, isNew: isNew);
+  HomeViewInfo get homeViewInfo {
+    return HomeViewInfo(
+      coverInfo: coverInfo,
+      title: title,
+      author: author,
+    );
+  }
+}
+
+class CoverInfo {
+  final String coverImage;
+  final bool isNew;
+  CoverInfo({required this.coverImage, required this.isNew});
 }
