@@ -1,11 +1,9 @@
-import 'package:library_app/feature/book/presentation/view%20models/home_view_info.dart';
-
 class BookEntity {
-  final int id;
-  final String title;
-  final String author;
-  final String imageUrl;
-  final bool isNew;
+  final int? id;
+  final String? title;
+  final String? author;
+  final String? imageUrl;
+  final bool? isNew;
   final DateTime? publishDate;
   final int? pagesCount;
   final String? isbn;
@@ -16,11 +14,11 @@ class BookEntity {
   final int? readersCount;
   final DateTime? searchDate;
   BookEntity({
-    required this.id,
-    required this.title,
-    required this.author,
-    required this.imageUrl,
-    this.isNew = false,
+    this.id,
+    this.title,
+    this.author,
+    this.imageUrl,
+    this.isNew,
     this.isbn,
     this.publishDate,
     this.pagesCount,
@@ -31,14 +29,13 @@ class BookEntity {
     this.readersCount,
     this.searchDate,
   });
-  CoverInfo get coverInfo => CoverInfo(coverImage: imageUrl, isNew: isNew);
-  HomeViewInfo get homeViewInfo {
-    return HomeViewInfo(
-      coverInfo: coverInfo,
-      title: title,
-      author: author,
-    );
-  }
+
+  //   return HomeViewInfo(
+  //     coverInfo: coverInfo,
+  //     title: title,
+  //     author: author,
+  //   );
+  // }
 }
 
 class CoverInfo {
