@@ -1,4 +1,5 @@
 import 'package:library_app/feature/book/domain/entities/book_entity.dart';
+import 'package:library_app/feature/book/domain/entities/cover_info.dart';
 import 'package:library_app/feature/book/presentation/view%20models/detail_view_info.dart';
 import 'package:library_app/feature/book/presentation/view%20models/home_view_info.dart';
 

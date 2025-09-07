@@ -1,4 +1,4 @@
-import '/feature/book/domain/entities/book_entity.dart';
+import 'package:library_app/feature/book/domain/entities/cover_info.dart';
 
 class HomeViewInfo {
   final String title;

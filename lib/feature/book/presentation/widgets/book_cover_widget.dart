@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:library_app/feature/book/domain/entities/book_entity.dart';
+import 'package:library_app/feature/book/domain/entities/cover_info.dart';
 import 'package:library_app/feature/book/presentation/widgets/book_image_widget.dart';
 import 'package:library_app/feature/book/presentation/widgets/new_banner_widget.dart';
 
