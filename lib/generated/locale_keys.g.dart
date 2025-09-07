@@ -4,5 +4,7 @@
 
 abstract class  LocaleKeys {
   static const banner_new = 'banner_new';
+  static const Pages = 'Pages';
+  static const Readers = 'Readers';
 
 }

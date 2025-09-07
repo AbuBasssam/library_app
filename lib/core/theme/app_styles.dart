@@ -23,4 +23,20 @@ class AppStyles {
     color: Colors.white,
     fontWeight: FontWeightHelper.regular,
   );
+  static TextStyle font14BlueMedium = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 14,
+    fontWeight: FontWeightHelper.medium,
+    color: Colors.blue.shade500,
+  );
+  static TextStyle font14GreyRegular = TextStyle(
+    fontSize: 14,
+    color: Colors.grey,
+  );
+  static TextStyle font24Black87Bold = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 24.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: Colors.black87,
+  );
 }

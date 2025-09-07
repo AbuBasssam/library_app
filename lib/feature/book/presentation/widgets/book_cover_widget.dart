@@ -1,20 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:library_app/feature/book/domain/entities/book_entity.dart';
-import 'package:library_app/feature/book/presentation/widgets/home_view_book_image_widget.dart';
+import 'package:library_app/feature/book/presentation/widgets/book_image_widget.dart';
 import 'package:library_app/feature/book/presentation/widgets/new_banner_widget.dart';
 
 class BookCoverWidget extends StatelessWidget {
   final CoverInfo coverInfo;
-  const BookCoverWidget({super.key, required this.coverInfo});
+  final int imageWidth;
+  final int imageHeight;
+  final int imageRadius;
+  const BookCoverWidget({
+    super.key,
+    required this.coverInfo,
+    this.imageHeight = 200,
+    this.imageWidth = 152,
+    this.imageRadius = 16,
+  });
 
   @override
   Widget build(BuildContext context) {
     if (!coverInfo.isNew) {
-      return HomeViewBookImageWidget(coverImage: coverInfo.coverImage);
+      return BookImageWidget(
+        coverImage: coverInfo.coverImage,
+        imageHeight: imageHeight,
+        imageWidth: imageWidth,
+      );
     }
     return Stack(
       children: [
-        HomeViewBookImageWidget(coverImage: coverInfo.coverImage),
+        BookImageWidget(
+          coverImage: coverInfo.coverImage,
+          imageHeight: imageHeight,
+          imageWidth: imageWidth,
+        ),
         const NewBannerWidget(),
       ],
     );
