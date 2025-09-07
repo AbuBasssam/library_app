@@ -1,17 +1,15 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../../core/theme/app_colors.dart';
 
 class HomeViewBookImageWidget extends StatelessWidget {
   final String coverImage;
   final int frameWidth;
   final int frameHeight;
+  final int framePadding;
   final int frameRadius;
   final int imageWidth;
   final int imageHeight;
-  final int framePadding;
+  final int imagePadding;
   final int imageRadius;
   const HomeViewBookImageWidget({
     super.key,
@@ -22,6 +20,7 @@ class HomeViewBookImageWidget extends StatelessWidget {
     this.frameRadius = 12,
     this.imageHeight = 200,
     this.imageWidth = 152,
+    this.imagePadding = 4,
     this.imageRadius = 8,
   });
 
@@ -34,26 +33,33 @@ class HomeViewBookImageWidget extends StatelessWidget {
         vertical: framePadding.h,
         horizontal: framePadding.w,
       ),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(frameRadius.r),
-        color: AppColors.white,
-        border: Border.all(color: AppColors.lightGray, width: 1.w),
-      ),
-      child: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: 4.w,
-          vertical: 4.h,
+      //frame border color and radius
+      // decoration: BoxDecoration(
+      //   borderRadius: BorderRadius.circular(frameRadius.r),
+      //   color: AppColors.white,
+      //   border: Border.all(color: AppColors.lightGray, width: 2.w),
+      //),
+      // child: Padding(
+      //   padding: EdgeInsets.symmetric(
+      //     horizontal: imagePadding.w,
+      //     vertical: imagePadding.h,
+      //   ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(imageRadius.r),
+        child: Image.network(
+          coverImage,
+          fit: BoxFit.cover,
+          width: imageWidth.w,
+          height: imageHeight.h,
         ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(imageRadius.r),
-          child: CachedNetworkImage(
-            imageUrl: coverImage,
-            fit: BoxFit.cover,
-            width: imageWidth.w,
-            height: imageHeight.h,
-          ),
-        ),
+        // CachedNetworkImage(
+        //   imageUrl: coverImage,
+        //   fit: BoxFit.cover,
+        //   width: imageWidth.w,
+        //   height: imageHeight.h,
+        // ),
       ),
+      // ),
     );
   }
 }

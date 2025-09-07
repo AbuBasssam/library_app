@@ -19,8 +19,8 @@ class NewBannerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      top: 9.h,
-      right: 9.w,
+      top: 0,
+      right: 0,
       child: Container(
         padding: EdgeInsets.symmetric(
           horizontal: horizontalPadding.w,
