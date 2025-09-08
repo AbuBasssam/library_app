@@ -29,11 +29,4 @@ class BookEntity {
     this.readersCount,
     this.searchDate,
   });
-
-  //   return HomeViewInfo(
-  //     coverInfo: coverInfo,
-  //     title: title,
-  //     author: author,
-  //   );
-  // }
 }

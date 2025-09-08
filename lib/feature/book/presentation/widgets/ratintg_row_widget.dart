@@ -18,10 +18,6 @@ class RatintgRowWidget extends StatelessWidget {
         Text(
           diplayRating.toStringAsFixed(1),
           style: AppStyles.font14RichBlackBold,
-          //style: const TextStyle(
-          //   fontSize: 16,
-          //   fontWeight: FontWeight.bold,
-          // ),
         ),
         horizontalSpace(4),
         const Icon(Icons.star, color: Colors.amber, size: 20),
