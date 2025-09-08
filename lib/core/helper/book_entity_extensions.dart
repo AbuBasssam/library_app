@@ -2,8 +2,8 @@ import 'package:library_app/feature/book/domain/entities/book_entity.dart';
 import 'package:library_app/feature/book/domain/entities/cover_info.dart';
 import 'package:library_app/feature/book/presentation/view%20models/detail_view_info.dart';
 import 'package:library_app/feature/book/presentation/view%20models/home_view_info.dart';
-
-import '../../feature/book/presentation/view models/author_books_view_info.dart';
+import 'package:library_app/feature/book/presentation/view%20models/similar_books_view_info.dart';
+import '../../feature/book/presentation/view models/author_book_view_info.dart';
 
 extension BookEntityExtensions on BookEntity {
   bool get canMapToCoverInfo => !(imageUrl == null || isNew == null);
@@ -25,6 +25,9 @@ extension BookEntityExtensions on BookEntity {
   bool get canMapToAuthorView =>
       canMapToCoverInfo &&
       !(title == null || publishDate == null || rating == null);
+
+  bool get canMapToSimilarView =>
+      canMapToCoverInfo && !(title == null || author == null || rating == null);
 
   CoverInfo? get coverInfo {
     if (!canMapToCoverInfo) {
@@ -62,16 +65,29 @@ extension BookEntityExtensions on BookEntity {
     );
   }
 
-  AuthorBooksViewInfo? toAuthorBooksViewInfo() {
+  AuthorBookViewInfo? toAuthorBooksViewInfo() {
     if (!canMapToAuthorView) {
       return null;
     }
 
-    return AuthorBooksViewInfo(
+    return AuthorBookViewInfo(
       title: title!,
       publishYear: publishDate!.year,
       rating: rating!,
       coverInfo: coverInfo!,
+    );
+  }
+
+  SimilarBooksViewInfo? toSimilarBookViewInfo() {
+    if (!canMapToSimilarView) {
+      return null;
+    }
+
+    return SimilarBooksViewInfo(
+      coverInfo: coverInfo!,
+      author: author!,
+      title: title!,
+      rating: rating!,
     );
   }
 }

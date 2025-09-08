@@ -32,7 +32,7 @@ class TestScreen extends StatelessWidget {
                 rating: 4.85,
                 readersCount: 1247,
               ),
-              type: enBookCardType.authorBooks,
+              type: enBookCardType.similarBooks,
             ),
           ),
         ),

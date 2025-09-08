@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:library_app/core/helper/spacing.dart';
-import 'package:library_app/feature/book/presentation/view%20models/author_books_view_info.dart';
+import 'package:library_app/feature/book/presentation/view%20models/author_book_view_info.dart';
 import 'package:library_app/feature/book/presentation/widgets/book_cover_widget.dart';
 import '../../../../core/theme/app_styles.dart';
 import 'ratintg_row_widget.dart';
 
-class AuthorBooksViewBookCard extends StatelessWidget {
-  final AuthorBooksViewInfo info;
+class AuthorBookViewBookCard extends StatelessWidget {
+  final AuthorBookViewInfo info;
 
-  const AuthorBooksViewBookCard({
+  const AuthorBookViewBookCard({
     super.key,
     required this.info,
   });

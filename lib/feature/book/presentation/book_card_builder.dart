@@ -1,4 +1,5 @@
 import 'package:library_app/feature/book/presentation/strategies/details_card_strategy.dart';
+import 'package:library_app/feature/book/presentation/strategies/similar_book_card_strategy.dart';
 import 'en_book_card_type.dart';
 import 'strategies/author_books_card_strategy.dart';
 import 'strategies/book_card_strategy.dart';
@@ -15,7 +16,7 @@ class BookCardBuilder {
       case enBookCardType.authorBooks:
         return AuthorBookCardStrategy();
       case enBookCardType.similarBooks:
-      // return SimilarBooksCardStrategy();
+        return SimilarBookCardStrategy();
       case enBookCardType.recentSearch:
       // return RecentSearchCardStrategy();
       case enBookCardType.mostSearched:

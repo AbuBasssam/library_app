@@ -1,15 +1,15 @@
 import '../../domain/entities/cover_info.dart';
 
-class AuthorBooksViewInfo {
+class AuthorBookViewInfo {
+  final CoverInfo coverInfo;
   final String title;
   final int publishYear;
   final double rating;
-  final CoverInfo coverInfo;
 
-  AuthorBooksViewInfo({
+  AuthorBookViewInfo({
+    required this.coverInfo,
     required this.title,
     required this.publishYear,
     required this.rating,
-    required this.coverInfo,
   });
 }
