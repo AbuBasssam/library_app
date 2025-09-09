@@ -1,5 +1,23 @@
 {
   "banner_new": "جديد",
   "Pages":"صفحات",
-  "Readers":"قارئ"
+  "Readers":"قارئ",
+   "time_ago": {
+      "now": "الآن",
+      
+      "days_ago_single": "منذ يوم",
+      "days_ago_dual": "منذ يومين",
+      "days_ago_plural": "منذ {count} أيام",
+      "days_ago_many": "منذ {count} يوماً",
+      
+      "hours_ago_single": "منذ ساعة",
+      "hours_ago_dual": "منذ ساعتين",
+      "hours_ago_plural": "منذ {count} ساعات",
+      "hours_ago_many": "منذ {count} ساعة",
+
+      "minutes_ago_single": "منذ دقيقة",
+      "minutes_ago_dual": "منذ دقيقتين",
+      "minutes_ago_plural": "منذ {count} دقائق",
+      "minutes_ago_many": "منذ {count} دقيقة"
+    }
 }

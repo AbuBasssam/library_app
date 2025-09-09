@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:library_app/core/helper/spacing.dart';
+import 'package:library_app/feature/book/domain/entities/book_cover_style.dart';
 import 'package:library_app/feature/book/presentation/widgets/book_cover_widget.dart';
 import 'package:library_app/feature/book/presentation/widgets/book_info_widget.dart';
 import '../../domain/entities/book_info.dart';
@@ -24,8 +25,10 @@ class DetailsViewBookCard extends StatelessWidget {
           // Book Cover
           BookCoverWidget(
             coverInfo: info.homeViewInfo.coverInfo,
-            imageWidth: 120,
-            imageHeight: 160,
+            coverStyle: BookCoverStyle(
+              imageWidth: 120,
+              imageHeight: 160,
+            ),
           ),
           horizontalSpace(20),
           // Book Info

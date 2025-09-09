@@ -11,32 +11,49 @@ class TestScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: SizedBox(
-          height: 300.h,
-          child: ListView.separated(
-            itemCount: 10,
-            scrollDirection: Axis.horizontal,
-            separatorBuilder: (context, index) => SizedBox(width: 25.w),
-            itemBuilder: (context, index) => BookCard(
-              model: BookEntity(
-                imageUrl: 'https://picsum.photos/152/200',
-                isNew: false,
-                title: 'Atomic Habits',
-                author: 'James Clear',
-                publisher: 'Avery',
-                publishDate: DateTime(2018, 10, 16),
-                pagesCount: 320,
-                isbn: '978-0735211292',
-                language: 'English',
-                category: 'Self-Help',
-                rating: 4.85,
-                readersCount: 1247,
-              ),
-              type: enBookCardType.similarBooks,
-            ),
+        child: BookCard(
+          model: BookEntity(
+            imageUrl: 'https://picsum.photos/152/200',
+            isNew: true,
+            title: 'Atomic Habits',
+            author: 'James Clear',
+            publisher: 'Avery',
+            publishDate: DateTime(2018, 10, 16),
+            pagesCount: 320,
+            isbn: '978-0735211292',
+            language: 'English',
+            category: 'Self-Help',
+            rating: 4.85,
+            readersCount: 1247,
           ),
+          type: enBookCardType.recentSearch,
         ),
       ),
+      /*SizedBox(
+        height: 300.h,
+        child: ListView.separated(
+          itemCount: 10,
+          scrollDirection: Axis.vertical,
+          separatorBuilder: (context, index) => SizedBox(width: 25.w),
+          itemBuilder: (context, index) => BookCard(
+            model: BookEntity(
+              imageUrl: 'https://picsum.photos/152/200',
+              isNew: true,
+              title: 'Atomic Habits',
+              author: 'James Clear',
+              publisher: 'Avery',
+              publishDate: DateTime(2018, 10, 16),
+              pagesCount: 320,
+              isbn: '978-0735211292',
+              language: 'English',
+              category: 'Self-Help',
+              rating: 4.85,
+              readersCount: 1247,
+            ),
+            type: enBookCardType.recentSearch,
+          ),
+        ),
+      ),*/
     );
 
     //             model: BookEntity(

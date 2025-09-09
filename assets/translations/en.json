@@ -1,5 +1,23 @@
 {
   "banner_new": "New",
   "pages":"Pages",
-  "Readers":"Readers"
+  "Readers":"Readers",
+  "time_ago": {
+      "now": "Now",
+      
+      "days_ago_single": "1 day ago",
+      "days_ago_dual": "2 days ago",
+      "days_ago_plural": "{count} days ago",
+      "days_ago_many": "{count} days ago",
+      
+      "hours_ago_single": "1 hour ago",
+      "hours_ago_dual": "2 hours ago", 
+      "hours_ago_plural": "{count} hours ago",
+      "hours_ago_many": "{count} hours ago",
+      
+      "minutes_ago_single": "1 minute ago",
+      "minutes_ago_dual": "2 minutes ago",
+      "minutes_ago_plural": "{count} minutes ago",
+      "minutes_ago_many": "{count} minutes ago"
+    }
 }

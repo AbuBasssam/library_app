@@ -1,19 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:library_app/feature/book/domain/entities/book_cover_style.dart';
 import 'package:library_app/feature/book/domain/entities/cover_info.dart';
 import 'package:library_app/feature/book/presentation/widgets/book_image_widget.dart';
 import 'package:library_app/feature/book/presentation/widgets/new_banner_widget.dart';
 
 class BookCoverWidget extends StatelessWidget {
   final CoverInfo coverInfo;
-  final int imageWidth;
-  final int imageHeight;
-  final int imageRadius;
+  final BookCoverStyle coverStyle;
   const BookCoverWidget({
     super.key,
     required this.coverInfo,
-    this.imageHeight = 200,
-    this.imageWidth = 152,
-    this.imageRadius = 16,
+    this.coverStyle = const BookCoverStyle(),
   });
 
   @override
@@ -21,18 +18,24 @@ class BookCoverWidget extends StatelessWidget {
     if (!coverInfo.isNew) {
       return BookImageWidget(
         coverImage: coverInfo.coverImage,
-        imageHeight: imageHeight,
-        imageWidth: imageWidth,
+        imageHeight: coverStyle.imageHeight,
+        imageWidth: coverStyle.imageWidth,
+        imageRadius: coverStyle.imageRadius,
       );
     }
     return Stack(
       children: [
         BookImageWidget(
           coverImage: coverInfo.coverImage,
-          imageHeight: imageHeight,
-          imageWidth: imageWidth,
+          imageHeight: coverStyle.imageHeight,
+          imageWidth: coverStyle.imageWidth,
+          imageRadius: coverStyle.imageRadius,
         ),
-        const NewBannerWidget(),
+        NewBannerWidget(
+          horizontalPadding: coverStyle.bannerHorizontalPadding,
+          verticalPadding: coverStyle.bannerVerticalPadding,
+          borderRadius: coverStyle.bannerBorderRadius,
+        ),
       ],
     );
   }
