@@ -10,7 +10,7 @@ class TestScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: /*Center(
         child: BookCard(
           model: BookEntity(
             imageUrl: 'https://picsum.photos/152/200',
@@ -26,34 +26,36 @@ class TestScreen extends StatelessWidget {
             rating: 4.85,
             readersCount: 1247,
           ),
-          type: enBookCardType.recentSearch,
-        ),
-      ),
-      /*SizedBox(
-        height: 300.h,
-        child: ListView.separated(
-          itemCount: 10,
-          scrollDirection: Axis.vertical,
-          separatorBuilder: (context, index) => SizedBox(width: 25.w),
-          itemBuilder: (context, index) => BookCard(
-            model: BookEntity(
-              imageUrl: 'https://picsum.photos/152/200',
-              isNew: true,
-              title: 'Atomic Habits',
-              author: 'James Clear',
-              publisher: 'Avery',
-              publishDate: DateTime(2018, 10, 16),
-              pagesCount: 320,
-              isbn: '978-0735211292',
-              language: 'English',
-              category: 'Self-Help',
-              rating: 4.85,
-              readersCount: 1247,
-            ),
-            type: enBookCardType.recentSearch,
-          ),
+          type: enBookCardType.mostSearched,
         ),
       ),*/
+          Center(
+        child: SizedBox(
+          height: 300.h,
+          child: ListView.separated(
+            itemCount: 10,
+            scrollDirection: Axis.horizontal,
+            separatorBuilder: (context, index) => SizedBox(width: 25.w),
+            itemBuilder: (context, index) => BookCard(
+              model: BookEntity(
+                imageUrl: 'https://picsum.photos/152/200',
+                isNew: true,
+                title: 'Atomic Habits',
+                author: 'James Clear',
+                publisher: 'Avery',
+                publishDate: DateTime(2018, 10, 16),
+                pagesCount: 320,
+                isbn: '978-0735211292',
+                language: 'English',
+                category: 'Self-Help',
+                rating: 4.85,
+                readersCount: 1247,
+              ),
+              type: enBookCardType.mostSearched,
+            ),
+          ),
+        ),
+      ),
     );
 
     //             model: BookEntity(

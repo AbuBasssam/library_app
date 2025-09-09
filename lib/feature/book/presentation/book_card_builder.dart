@@ -4,6 +4,7 @@ import 'en_book_card_type.dart';
 import 'strategies/author_books_card_strategy.dart';
 import 'strategies/book_card_strategy.dart';
 import 'strategies/home_card_strategy.dart';
+import 'strategies/most_searched_card_strategy.dart';
 import 'strategies/recent_search_card_strategy.dart';
 
 class BookCardBuilder {
@@ -21,8 +22,7 @@ class BookCardBuilder {
       case enBookCardType.recentSearch:
         return RecentSearchCardStrategy();
       case enBookCardType.mostSearched:
-      // return  MostSearchCardStrategy();
+        return MostSearchedCardStrategy();
     }
-    throw Exception('Book card type not found');
   }
 }
