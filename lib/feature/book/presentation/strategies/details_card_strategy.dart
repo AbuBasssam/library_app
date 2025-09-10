@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:library_app/core/helper/book_entity_extensions.dart';
+import 'package:library_app/core/helper/extension.dart';
 import 'package:library_app/feature/book/domain/entities/book_entity.dart';
 import 'package:library_app/feature/book/presentation/strategies/book_card_strategy.dart';
 import 'package:library_app/feature/book/presentation/widgets/details_view_book_card.dart';
