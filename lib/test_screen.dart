@@ -26,7 +26,7 @@ class TestScreen extends StatelessWidget {
             rating: 4.85,
             readersCount: 1247,
           ),
-          type: enBookCardType.mostSearched,
+          type: enBookCardType.detail,
         ),
       ),*/
           Center(
@@ -51,7 +51,7 @@ class TestScreen extends StatelessWidget {
                 rating: 4.85,
                 readersCount: 1247,
               ),
-              type: enBookCardType.mostSearched,
+              type: enBookCardType.similarBooks,
             ),
           ),
         ),

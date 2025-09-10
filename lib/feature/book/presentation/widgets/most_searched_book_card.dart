@@ -3,20 +3,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:library_app/core/helper/spacing.dart';
 import 'package:library_app/core/theme/font_weight_helper.dart';
 import 'package:library_app/feature/book/domain/entities/book_cover_style.dart';
-import 'package:library_app/feature/book/domain/entities/cover_info.dart';
+import 'package:library_app/feature/book/presentation/view%20models/most_search_view_info.dart';
 import 'package:library_app/feature/book/presentation/widgets/book_cover_widget.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_styles.dart';
 
 class MostSearchedBookCard extends StatelessWidget {
-  final CoverInfo info;
-  final String title;
+  final MostSearchViewInfo info;
 
-  const MostSearchedBookCard({
-    super.key,
-    required this.info,
-    required this.title,
-  });
+  const MostSearchedBookCard({super.key, required this.info});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +20,7 @@ class MostSearchedBookCard extends StatelessWidget {
       children: [
         // Book Cover
         BookCoverWidget(
-          coverInfo: info,
+          coverInfo: info.coverInfo,
           coverStyle: BookCoverStyle(
             imageWidth: 120,
             imageHeight: imageWidth,
@@ -38,7 +33,7 @@ class MostSearchedBookCard extends StatelessWidget {
         ConstrainedBox(
           constraints: BoxConstraints(maxWidth: imageWidth.w),
           child: Text(
-            title,
+            info.title,
             style: AppStyles.font12CoolGrayMedium.copyWith(
               color: AppColors.richBlack,
               fontWeight: FontWeightHelper.semiBold,

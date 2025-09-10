@@ -2,6 +2,7 @@ import 'package:library_app/feature/book/domain/entities/book_entity.dart';
 import 'package:library_app/feature/book/domain/entities/cover_info.dart';
 import 'package:library_app/feature/book/presentation/view%20models/detail_view_info.dart';
 import 'package:library_app/feature/book/presentation/view%20models/home_view_info.dart';
+import 'package:library_app/feature/book/presentation/view%20models/most_search_view_info.dart';
 import 'package:library_app/feature/book/presentation/view%20models/similar_books_view_info.dart';
 import '../../feature/book/presentation/view models/author_book_view_info.dart';
 
@@ -88,6 +89,16 @@ extension BookEntityExtensions on BookEntity {
       author: author!,
       title: title!,
       rating: rating!,
+    );
+  }
+
+  MostSearchViewInfo? get mostSearchViewInfo {
+    if (!canMapToCoverInfo || title.isNullOrEmpty()) {
+      return null;
+    }
+    return MostSearchViewInfo(
+      coverInfo: CoverInfo(coverImage: imageUrl!, isNew: isNew!),
+      title: title!,
     );
   }
 }
