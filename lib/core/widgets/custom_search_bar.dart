@@ -5,6 +5,7 @@ import 'package:library_app/core/helper/spacing.dart';
 import 'package:library_app/core/theme/app_colors.dart';
 import 'package:library_app/core/theme/font_weight_helper.dart';
 import 'package:library_app/generated/locale_keys.g.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomSearchBar extends StatefulWidget {
   final String? hintTextKey;
@@ -78,67 +79,57 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
           borderRadius: BorderRadius.circular(99.r),
           border: Border.all(color: const Color(0xFFE4E7EC), width: 1.w),
         ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(99.r),
-          child: Row(
-            children: [
-              // Search Icon
-              Icon(
-                Icons.search,
-                size: 20.w,
-                color: AppColors.richBlack,
-              ),
-
-              horizontalSpace(4),
-
-              // Text Field
-              Expanded(
-                child: TextField(
-                  controller: _controller,
-                  focusNode: _focusNode,
-                  enabled: widget.enabled,
-                  onChanged: (value) {
-                    widget.onChanged?.call(value);
-                  },
-                  onSubmitted: widget.onSearch,
-                  style: TextStyle(
+        child: Row(
+          children: [
+            // Search Icon
+            Icon(
+              FontAwesomeIcons.magnifyingGlass,
+              size: 20.w,
+              color: AppColors.richBlack,
+            ),
+            horizontalSpace(4),
+            // Text Field
+            Expanded(
+              child: TextField(
+                controller: _controller,
+                focusNode: _focusNode,
+                enabled: widget.enabled,
+                onChanged: (value) => widget.onChanged?.call(value),
+                onSubmitted: widget.onSearch,
+                style: TextStyle(
+                  fontFamily: 'Inter',
+                  fontSize: 14.sp,
+                  color: AppColors.richBlack,
+                  fontWeight: FontWeightHelper.regular,
+                  height: (20 / 12).h,
+                ),
+                decoration: InputDecoration(
+                  hintText:
+                      widget.hintTextKey ?? LocaleKeys.search_any_books.tr(),
+                  hintStyle: TextStyle(
                     fontFamily: 'Inter',
                     fontSize: 14.sp,
-                    color: AppColors.richBlack,
+                    color: AppColors.coolGray,
                     fontWeight: FontWeightHelper.regular,
-                    height: 1.2,
+                    height: 1.2.h,
                   ),
-                  decoration: InputDecoration(
-                    hintText:
-                        widget.hintTextKey ?? LocaleKeys.search_any_books.tr(),
-                    hintStyle: TextStyle(
-                      fontFamily: 'Inter',
-                      fontSize: 14.sp,
-                      color: AppColors.coolGray,
-                      fontWeight: FontWeightHelper.regular,
-                      height: 1.2,
-                    ),
-                    border: InputBorder.none,
-                    // enabledBorder: InputBorder.none,
-                    // focusedBorder: InputBorder.none,
-                    // contentPadding: EdgeInsets.zero,
-                    isDense: true,
-                  ),
+                  border: InputBorder.none,
+                  isDense: true,
                 ),
               ),
+            ),
 
-              // Clear Button
-              if (_showClearButton)
-                GestureDetector(
-                  onTap: _clearText,
-                  child: Icon(
-                    Icons.close,
-                    size: 18.w,
-                    color: AppColors.coolGray,
-                  ),
+            // Clear Button
+            if (_showClearButton)
+              GestureDetector(
+                onTap: _clearText,
+                child: Icon(
+                  Icons.close,
+                  size: 18.w,
+                  color: AppColors.coolGray,
                 ),
-            ],
-          ),
+              ),
+          ],
         ),
       ),
     );
