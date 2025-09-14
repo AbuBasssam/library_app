@@ -19,6 +19,7 @@ class CodegenLoader extends AssetLoader{
   "Pages": "صفحات",
   "Readers": "قارئ",
   "explore_by_categories": "استكشف بالفئات",
+  "search_any_books": "ابحث عن أي كتاب",
   "time_ago": {
     "now": "الآن",
     "days_ago_single": "منذ يوم",
@@ -40,6 +41,7 @@ static const Map<String,dynamic> _en = {
   "pages": "Pages",
   "Readers": "Readers",
   "explore_by_categories": "Explore by Categories",
+  "search_any_books": "Search any book",
   "time_ago": {
     "now": "Now",
     "days_ago_single": "1 day ago",

@@ -7,6 +7,7 @@ abstract class  LocaleKeys {
   static const Pages = 'Pages';
   static const Readers = 'Readers';
   static const explore_by_categories = 'explore_by_categories';
+  static const search_any_books = 'search_any_books';
   static const time_ago_now = 'time_ago.now';
   static const time_ago_days_ago_single = 'time_ago.days_ago_single';
   static const time_ago_days_ago_dual = 'time_ago.days_ago_dual';
