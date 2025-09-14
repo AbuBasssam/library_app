@@ -18,6 +18,7 @@ class CodegenLoader extends AssetLoader{
   "banner_new": "جديد",
   "Pages": "صفحات",
   "Readers": "قارئ",
+  "explore_by_categories": "استكشف بالفئات",
   "time_ago": {
     "now": "الآن",
     "days_ago_single": "منذ يوم",
@@ -38,6 +39,7 @@ static const Map<String,dynamic> _en = {
   "banner_new": "New",
   "pages": "Pages",
   "Readers": "Readers",
+  "explore_by_categories": "Explore by Categories",
   "time_ago": {
     "now": "Now",
     "days_ago_single": "1 day ago",
