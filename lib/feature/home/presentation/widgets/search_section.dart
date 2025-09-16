@@ -20,14 +20,8 @@ class _SearchSectionState extends State<SearchSection> {
         children: [
           CustomSearchBar(
             controller: _searchController,
-            onSearch: (query) {
-              print('Search query: $query');
-              // Implement search functionality
-            },
-            onChanged: (query) {
-              print('Text changed: $query');
-              // Implement real-time search or suggestions
-            },
+            onSearch: (query) {},
+            onChanged: (query) {},
           ),
         ],
       ),

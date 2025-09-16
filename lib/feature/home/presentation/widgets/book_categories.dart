@@ -18,12 +18,12 @@ class BookCategories extends StatelessWidget {
         separatorBuilder: (context, index) => horizontalSpace(10),
         itemBuilder: (context, index) {
           return BookCategoryCard(
-              category: BookCategory(
-                id: categories[index].id,
-                name: categories[index].name,
-              ),
-              onTap: () =>
-                  print('${categories[index].id} is Selected category'));
+            category: BookCategory(
+              id: categories[index].id,
+              name: categories[index].name,
+            ),
+            onTap: () {},
+          );
         },
       ),
     );
