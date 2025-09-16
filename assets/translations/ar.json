@@ -4,6 +4,12 @@
   "Readers":"قارئ",
   "explore_by_categories": "استكشف بالفئات",
   "search_any_books": "ابحث عن أي كتاب",
+  "Recommended": "الموصى بها",
+  "popular_books": "الأكثر شعبية",
+  "Newest": "أحدث الكتب في المكتبة",
+  "Home": "الصفحة الرئيسية",
+  "library": "المكتبة",
+  "profile": "الملف الشخصي",
   "time_ago":
   {
     "now": "الآن",
