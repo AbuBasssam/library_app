@@ -2,6 +2,14 @@
   "banner_new": "New",
   "pages":"Pages",
   "Readers":"Readers",
+  "explore_by_categories": "Explore by Categories",
+  "search_any_books": "Search any book",
+  "Recommended": "Recommended for you",
+  "popular_books": "Most popular books",
+  "Newest": "New Books in Library",
+  "Home": "Home",
+  "library": "Library",
+  "profile": "Profile",
   "time_ago": {
       "now": "Now",
       

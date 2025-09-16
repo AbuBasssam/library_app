@@ -3,7 +3,7 @@ class BookEntity {
   final String? title;
   final String? author;
   final String? imageUrl;
-  final bool? isNew;
+  final bool isNew;
   final DateTime? publishDate;
   final int? pagesCount;
   final String? isbn;
@@ -18,7 +18,7 @@ class BookEntity {
     this.title,
     this.author,
     this.imageUrl,
-    this.isNew,
+    this.isNew = false,
     this.isbn,
     this.publishDate,
     this.pagesCount,

@@ -39,4 +39,9 @@ class AppStyles {
     fontWeight: FontWeightHelper.bold,
     color: Colors.black87,
   );
+  static TextStyle font12WhiteBlod = TextStyle(
+    color: Colors.white,
+    fontWeight: FontWeightHelper.bold,
+    fontSize: 12.sp,
+  );
 }

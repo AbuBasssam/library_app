@@ -18,6 +18,7 @@ class LibraryApp extends StatelessWidget {
           supportedLocales: context.supportedLocales,
           locale: context.locale,
           title: 'Library App',
+          theme: ThemeData(scaffoldBackgroundColor: Colors.white),
           routerConfig: AppRouter.router,
         );
       },
