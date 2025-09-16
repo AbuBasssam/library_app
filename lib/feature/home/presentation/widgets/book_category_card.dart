@@ -18,12 +18,12 @@ class BookCategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: onTap,
       child: Container(
-        width: 100.w,
-        height: 120.h,
-        padding: EdgeInsets.all(14.w),
+        width: 120.w,
+        height: 140.h,
+        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 14.h),
         decoration: cardDecoration(),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -35,6 +35,7 @@ class BookCategoryCard extends StatelessWidget {
               style: AppStyles.font14RichBlackBold,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.start,
             ),
             verticalSpace(8),
             CategoryCardIcon(categoryId: category.id),
