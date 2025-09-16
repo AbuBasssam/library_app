@@ -7,7 +7,7 @@ import 'package:library_app/feature/book/presentation/view%20models/similar_book
 import '../../feature/book/presentation/view models/author_book_view_info.dart';
 
 extension BookEntityExtensions on BookEntity {
-  bool get canMapToCoverInfo => !(imageUrl == null || isNew == null);
+  bool get canMapToCoverInfo => !(imageUrl == null); // || isNew == null);
 
   bool get canMapToHomeView =>
       canMapToCoverInfo && !(title == null || author == null);
@@ -34,7 +34,7 @@ extension BookEntityExtensions on BookEntity {
     if (!canMapToCoverInfo) {
       return null;
     }
-    return CoverInfo(coverImage: imageUrl!, isNew: isNew!);
+    return CoverInfo(coverImage: imageUrl!, isNew: isNew);
   }
 
   HomeViewInfo? toHomeViewInfo() {
@@ -97,7 +97,7 @@ extension BookEntityExtensions on BookEntity {
       return null;
     }
     return MostSearchViewInfo(
-      coverInfo: CoverInfo(coverImage: imageUrl!, isNew: isNew!),
+      coverInfo: CoverInfo(coverImage: imageUrl!, isNew: isNew),
       title: title!,
     );
   }
