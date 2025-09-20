@@ -1,6 +1,7 @@
 import 'package:library_app/core/helpers/api/api_constants.dart';
 import 'package:library_app/core/helpers/api/api_response.dart';
 import 'package:library_app/core/helpers/pagination_request.dart';
+import 'package:library_app/core/helpers/pagination_response.dart';
 import 'package:library_app/features/home/data/models/home_book.dart';
 import 'package:dio/dio.dart';
 import 'package:library_app/features/home/data/models/home_data.dart';
@@ -16,13 +17,13 @@ abstract class HomeService {
   Future<ApiResponse<HomeData>> getHomeData();
 
   @GET(ApiConstants.booksByCategoryEndpoint)
-  Future<ApiResponse<List<HomeBook>>> getBooksByCategory(
+  Future<ApiResponse<PaginationResult<List<HomeBook>>>> getBooksByCategory(
     @Path("id") int categoryId,
     @Queries() PaginationRequest request,
   );
 
   @GET(ApiConstants.newestBooksEndpoint)
-  Future<ApiResponse<List<HomeBook>>> getNewestBooks(
+  Future<ApiResponse<PaginationResult<List<HomeBook>>>> getNewestBooks(
     @Queries() PaginationRequest request,
   );
 }
