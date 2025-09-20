@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:library_app/feature/home/domain/entities/book_category.dart';
-import 'package:library_app/feature/home/presentation/widgets/book_category_card.dart';
-import 'package:library_app/feature/home/presentation/widgets/home_screen.dart';
+
+import 'features/home/domain/entities/book_category.dart';
+import 'features/home/presentation/widgets/book_category_card.dart';
+import 'features/home/presentation/widgets/home_screen.dart';
 
 class TestScreen extends StatelessWidget {
   const TestScreen({super.key});
