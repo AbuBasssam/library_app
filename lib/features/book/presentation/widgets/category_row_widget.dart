@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:library_app/core/helper/spacing.dart';
+import 'package:library_app/core/helpers/spacing.dart';
 import 'package:library_app/core/theme/app_styles.dart';
 
 class CategoryRowWidget extends StatelessWidget {

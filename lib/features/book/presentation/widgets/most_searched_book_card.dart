@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:library_app/core/helper/spacing.dart';
+import 'package:library_app/core/helpers/spacing.dart';
 import 'package:library_app/core/theme/font_weight_helper.dart';
 import 'package:library_app/features/book/domain/entities/book_cover_style.dart';
 import 'package:library_app/features/book/presentation/view%20models/most_search_view_info.dart';

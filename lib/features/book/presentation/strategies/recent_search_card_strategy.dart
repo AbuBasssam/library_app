@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../domain/entities/book_entity.dart';
 import '../view models/home_view_info.dart';
 import '../widgets/recent_search_book_card.dart';
-import '/core/helper/extension.dart';
+import '/core/helpers/extension.dart';
 import 'book_card_strategy.dart';
 
 class RecentSearchCardStrategy extends BookCardStrategy<HomeViewInfo> {

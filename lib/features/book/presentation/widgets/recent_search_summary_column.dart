@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../core/helper/spacing.dart';
-import '../../../../core/helper/time_ago_helper.dart';
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/helpers/time_ago_helper.dart';
 import '../../../../core/theme/app_styles.dart';
 import '../../domain/entities/recent_search_info.dart';
 

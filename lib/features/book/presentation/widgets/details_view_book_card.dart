@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../domain/entities/book_info.dart';
 import '../view models/detail_view_info.dart';
-import '/core/helper/spacing.dart';
+import '../../../../core/helpers/spacing.dart';
 import '/features/book/domain/entities/book_cover_style.dart';
 import '/features/book/presentation/widgets/book_cover_widget.dart';
 import '/features/book/presentation/widgets/book_info_widget.dart';

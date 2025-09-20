@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../domain/entities/book_category.dart';
-import '/core/helper/spacing.dart';
+import '../../../../core/helpers/spacing.dart';
 import '/features/book/domain/entities/book_entity.dart';
 import 'app_bottom_navigation_bar.dart';
 import 'categories_section.dart';

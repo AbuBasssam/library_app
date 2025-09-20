@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../domain/entities/book_cover_style.dart';
 import '../view models/author_book_view_info.dart';
-import '/core/helper/spacing.dart';
+import '/core/helpers/spacing.dart';
 import '/core/theme/app_styles.dart';
 import 'book_cover_widget.dart';
 import 'ratintg_row_widget.dart';

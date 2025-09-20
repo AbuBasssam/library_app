@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../core/helper/spacing.dart';
+import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/app_styles.dart';
 import '../../../../generated/locale_keys.g.dart';
 import '../../domain/entities/book_info.dart';

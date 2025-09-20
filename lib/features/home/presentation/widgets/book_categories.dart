@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:library_app/core/helper/spacing.dart';
+import '/core/helpers/spacing.dart';
 import '../../domain/entities/book_category.dart';
 import 'book_category_card.dart';
 

@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:library_app/features/book/presentation/widgets/book_cover_widget.dart';
 import 'package:library_app/features/book/presentation/widgets/home_details_widget.dart';
 import '../view models/home_view_info.dart';
-import '/core/helper/spacing.dart';
+import '../../../../core/helpers/spacing.dart';
 
 class HomeViewBookCard extends StatelessWidget {
   final HomeViewInfo info;
