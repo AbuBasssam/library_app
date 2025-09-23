@@ -1,4 +1,9 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:library_app/core/di/dependency_injection.dart';
+import 'package:library_app/features/home/domain/use_cases/get_home_data_use_case.dart';
+import 'package:library_app/features/home/presentation/blocs/home_data_cubit/home_data_cubit.dart';
+import 'package:library_app/features/home/presentation/widgets/home_screen.dart';
 import 'package:library_app/test_screen.dart';
 
 class AppRouter {
@@ -14,24 +19,23 @@ class AppRouter {
 
   // region Main app pages
   static const String kStartPage = '/StartUpPage';
-  static const String kHomePage = '/HomePage';
 
   // endregion
 
   static final router = GoRouter(
     routes: [
       // Test page
-      /* GoRoute(
+      GoRoute(
         path: '/',
         builder: (context, state) {
           return BlocProvider(
             create: (context) {
-              return TestCubit(getIt<IAuthRepositoy>());
+              return HomeDataCubit(getIt<GetHomeDataUseCase>());
             },
-            child: const TestScreen(),
+            child: const HomeScreen(),
           );
         },
-      ),*/
+      ),
       //test Start up page
       /*
       GoRoute(
