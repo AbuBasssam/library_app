@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'books_by_category_state.dart';
+part of 'category_books_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$BooksByCategoryState {
+mixin _$CategoryBooksState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -69,24 +69,23 @@ mixin _$BooksByCategoryState {
 }
 
 /// @nodoc
-abstract class $BooksByCategoryStateCopyWith<$Res> {
-  factory $BooksByCategoryStateCopyWith(BooksByCategoryState value,
-          $Res Function(BooksByCategoryState) then) =
-      _$BooksByCategoryStateCopyWithImpl<$Res, BooksByCategoryState>;
+abstract class $CategoryBooksStateCopyWith<$Res> {
+  factory $CategoryBooksStateCopyWith(
+          CategoryBooksState value, $Res Function(CategoryBooksState) then) =
+      _$CategoryBooksStateCopyWithImpl<$Res, CategoryBooksState>;
 }
 
 /// @nodoc
-class _$BooksByCategoryStateCopyWithImpl<$Res,
-        $Val extends BooksByCategoryState>
-    implements $BooksByCategoryStateCopyWith<$Res> {
-  _$BooksByCategoryStateCopyWithImpl(this._value, this._then);
+class _$CategoryBooksStateCopyWithImpl<$Res, $Val extends CategoryBooksState>
+    implements $CategoryBooksStateCopyWith<$Res> {
+  _$CategoryBooksStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of BooksByCategoryState
+  /// Create a copy of CategoryBooksState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -99,13 +98,13 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$BooksByCategoryStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$CategoryBooksStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of BooksByCategoryState
+  /// Create a copy of CategoryBooksState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -116,7 +115,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'BooksByCategoryState.initial()';
+    return 'CategoryBooksState.initial()';
   }
 
   @override
@@ -203,7 +202,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements BooksByCategoryState {
+abstract class _Initial implements CategoryBooksState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -216,13 +215,13 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$BooksByCategoryStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$CategoryBooksStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of BooksByCategoryState
+  /// Create a copy of CategoryBooksState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -233,7 +232,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'BooksByCategoryState.loading()';
+    return 'CategoryBooksState.loading()';
   }
 
   @override
@@ -320,7 +319,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements BooksByCategoryState {
+abstract class _Loading implements CategoryBooksState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -335,13 +334,13 @@ abstract class _$$SuccessImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$BooksByCategoryStateCopyWithImpl<$Res, _$SuccessImpl>
+    extends _$CategoryBooksStateCopyWithImpl<$Res, _$SuccessImpl>
     implements _$$SuccessImplCopyWith<$Res> {
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of BooksByCategoryState
+  /// Create a copy of CategoryBooksState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -372,7 +371,7 @@ class _$SuccessImpl implements _Success {
 
   @override
   String toString() {
-    return 'BooksByCategoryState.success(books: $books)';
+    return 'CategoryBooksState.success(books: $books)';
   }
 
   @override
@@ -387,7 +386,7 @@ class _$SuccessImpl implements _Success {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_books));
 
-  /// Create a copy of BooksByCategoryState
+  /// Create a copy of CategoryBooksState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -470,12 +469,12 @@ class _$SuccessImpl implements _Success {
   }
 }
 
-abstract class _Success implements BooksByCategoryState {
+abstract class _Success implements CategoryBooksState {
   const factory _Success({required final List<dynamic> books}) = _$SuccessImpl;
 
   List<dynamic> get books;
 
-  /// Create a copy of BooksByCategoryState
+  /// Create a copy of CategoryBooksState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
@@ -493,13 +492,13 @@ abstract class _$$FailureImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$FailureImplCopyWithImpl<$Res>
-    extends _$BooksByCategoryStateCopyWithImpl<$Res, _$FailureImpl>
+    extends _$CategoryBooksStateCopyWithImpl<$Res, _$FailureImpl>
     implements _$$FailureImplCopyWith<$Res> {
   __$$FailureImplCopyWithImpl(
       _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of BooksByCategoryState
+  /// Create a copy of CategoryBooksState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -525,7 +524,7 @@ class _$FailureImpl implements _Failure {
 
   @override
   String toString() {
-    return 'BooksByCategoryState.failure(message: $message)';
+    return 'CategoryBooksState.failure(message: $message)';
   }
 
   @override
@@ -539,7 +538,7 @@ class _$FailureImpl implements _Failure {
   @override
   int get hashCode => Object.hash(runtimeType, message);
 
-  /// Create a copy of BooksByCategoryState
+  /// Create a copy of CategoryBooksState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -622,12 +621,12 @@ class _$FailureImpl implements _Failure {
   }
 }
 
-abstract class _Failure implements BooksByCategoryState {
+abstract class _Failure implements CategoryBooksState {
   const factory _Failure({required final String message}) = _$FailureImpl;
 
   String get message;
 
-  /// Create a copy of BooksByCategoryState
+  /// Create a copy of CategoryBooksState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
