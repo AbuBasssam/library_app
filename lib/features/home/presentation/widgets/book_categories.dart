@@ -22,7 +22,6 @@ class BookCategories extends StatelessWidget {
               id: categories[index].id,
               name: categories[index].name,
             ),
-            onTap: () {},
           );
         },
       ),
