@@ -8,12 +8,12 @@ part of 'book_category_model.dart';
 
 BookCategoryModel _$BookCategoryModelFromJson(Map<String, dynamic> json) =>
     BookCategoryModel(
-      id: (json['id'] as num).toInt(),
+      categoryId: (json['categoryId'] as num).toInt(),
       name: json['name'] as String,
     );
 
 Map<String, dynamic> _$BookCategoryModelToJson(BookCategoryModel instance) =>
     <String, dynamic>{
-      'id': instance.id,
+      'categoryId': instance.categoryId,
       'name': instance.name,
     };
