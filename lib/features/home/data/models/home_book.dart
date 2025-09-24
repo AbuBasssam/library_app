@@ -1,4 +1,4 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:library_app/features/home/data/models/base_book_data.dart';
 
 part 'home_book.g.dart';
@@ -14,7 +14,9 @@ class HomeBook {
     required this.isFirstCategory,
     required this.isMostPopular,
   });
-  factory HomeBook.fromJson(Map<String, dynamic> json) =>
-      _$HomeBookFromJson(json);
-  Map<String, dynamic> toJson() => _$HomeBookToJson(this);
+  factory HomeBook.fromJson(Map<String, dynamic> json) => HomeBook(
+        baseData: BaseBookData.fromJson(json),
+        isFirstCategory: json['isFirstCategory'],
+        isMostPopular: json['isMostPopular'],
+      );
 }
