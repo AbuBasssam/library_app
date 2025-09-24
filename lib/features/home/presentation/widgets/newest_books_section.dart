@@ -13,38 +13,6 @@ class NewestBooksSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<BookEntity> books = <BookEntity>[
-      BookEntity(
-        imageUrl: 'https://picsum.photos/160/202',
-        isNew: true,
-        title: 'Atomic Habits',
-        author: 'James Clear',
-      ),
-      BookEntity(
-        imageUrl: 'https://picsum.photos/160/202',
-        isNew: false,
-        title: 'The Subtle Art of Not Giving a F*ck',
-        author: 'Mark Manson',
-      ),
-      BookEntity(
-        imageUrl: 'https://picsum.photos/160/202',
-        isNew: true,
-        title: 'Deep Work',
-        author: 'Cal Newport',
-      ),
-      BookEntity(
-        imageUrl: 'https://picsum.photos/160/202',
-        isNew: false,
-        title: 'Thinking, Fast and Slow',
-        author: 'Daniel Kahneman',
-      ),
-      BookEntity(
-        imageUrl: 'https://picsum.photos/160/202',
-        isNew: true,
-        title: 'Grit',
-        author: 'Angela Duckworth',
-      ),
-    ];
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: Column(
