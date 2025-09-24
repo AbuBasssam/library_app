@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:library_app/core/di/dependency_injection.dart';
 import 'package:library_app/features/home/domain/use_cases/get_home_data_use_case.dart';
 import 'package:library_app/features/home/presentation/blocs/home_data_cubit/home_data_cubit.dart';
-import 'package:library_app/features/home/presentation/widgets/home_screen.dart';
+import 'package:library_app/features/home/presentation/pages/home_screen.dart';
 import 'package:library_app/test_screen.dart';
 
 class AppRouter {
