@@ -4,7 +4,7 @@ part 'api_response.g.dart';
 @JsonSerializable(genericArgumentFactories: true)
 class ApiResponse<Type> {
   final int statusCode;
-  final String? meta;
+  final Object? meta;
   final bool succeeded;
   final String message;
   final List<String>? errors;

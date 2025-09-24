@@ -12,7 +12,7 @@ ApiResponse<Type> _$ApiResponseFromJson<Type>(
 ) =>
     ApiResponse<Type>(
       statusCode: (json['statusCode'] as num).toInt(),
-      meta: json['meta'] as String?,
+      meta: json['meta'],
       succeeded: json['succeeded'] as bool,
       message: json['message'] as String,
       errors:
