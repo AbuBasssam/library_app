@@ -4,9 +4,8 @@ import '/core/theme/app_colors.dart';
 import '/features/home/presentation/widgets/top_navigation_bar.dart';
 
 class HomeScreenAppBar extends StatelessWidget {
-  const HomeScreenAppBar({
-    super.key,
-  });
+  final int notificationCount;
+  const HomeScreenAppBar({required this.notificationCount, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +19,7 @@ class HomeScreenAppBar extends StatelessWidget {
         background: Container(
           color: AppColors.white,
           child: TopNavigationBar(
-            notificationCount: 3,
+            notificationCount: notificationCount,
             onNotificationTap: () {},
           ),
         ),
