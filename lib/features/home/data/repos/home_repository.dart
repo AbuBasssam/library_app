@@ -1,6 +1,6 @@
 import 'package:library_app/core/helpers/api/api_helper.dart';
 import 'package:library_app/core/helpers/api/api_result.dart';
-import 'package:library_app/core/helpers/pagination_request.dart';
+import 'package:library_app/core/helpers/pagination/pagination_request.dart';
 import 'package:library_app/features/home/data/services/home_service.dart';
 import 'package:library_app/features/home/domain/abstracts/ihome_repository.dart';
 
@@ -19,7 +19,7 @@ class HomeRepository implements IHomeRepository {
 
   @override
   Future<ApiResult> getHomeData() async {
-    return await ApiHelper.executeApiCall(() => _service.getHomeData());
+    return await ApiHelper.executeApiCall(_service.getHomeData);
   }
 
   @override

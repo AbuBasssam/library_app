@@ -1,5 +1,5 @@
 import 'package:library_app/core/helpers/api/api_result.dart';
-import 'package:library_app/core/helpers/pagination_request.dart';
+import 'package:library_app/core/helpers/pagination/pagination_request.dart';
 
 abstract class IHomeRepository {
   Future<ApiResult> getHomeData();

@@ -14,7 +14,7 @@ class _HomeService implements HomeService {
     this.baseUrl,
     this.errorLogger,
   }) {
-    baseUrl ??= 'https://10.0.2.2:7178/api/v1';
+    baseUrl ??= 'https://10.0.2.2:7164/api/v1';
   }
 
   final Dio _dio;
@@ -60,7 +60,7 @@ class _HomeService implements HomeService {
   }
 
   @override
-  Future<ApiResponse<PaginationResult<List<HomeBook>>>> getBooksByCategory(
+  Future<ApiResponse<PaginationResult<BaseBookData>>> getBooksByCategory(
     int categoryId,
     PaginationRequest request,
   ) async {
@@ -70,7 +70,7 @@ class _HomeService implements HomeService {
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options =
-        _setStreamType<ApiResponse<PaginationResult<List<HomeBook>>>>(Options(
+        _setStreamType<ApiResponse<PaginationResult<BaseBookData>>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -87,18 +87,13 @@ class _HomeService implements HomeService {
               baseUrl,
             )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ApiResponse<PaginationResult<List<HomeBook>>> _value;
+    late ApiResponse<PaginationResult<BaseBookData>> _value;
     try {
-      _value = ApiResponse<PaginationResult<List<HomeBook>>>.fromJson(
+      _value = ApiResponse<PaginationResult<BaseBookData>>.fromJson(
         _result.data!,
-        (json) => PaginationResult<List<HomeBook>>.fromJson(
+        (json) => PaginationResult<BaseBookData>.fromJson(
           json as Map<String, dynamic>,
-          (json) => json is List<dynamic>
-              ? json
-                  .map<HomeBook>(
-                      (i) => HomeBook.fromJson(i as Map<String, dynamic>))
-                  .toList()
-              : List.empty(),
+          (json) => BaseBookData.fromJson(json as Map<String, dynamic>),
         ),
       );
     } on Object catch (e, s) {
@@ -109,7 +104,7 @@ class _HomeService implements HomeService {
   }
 
   @override
-  Future<ApiResponse<PaginationResult<List<HomeBook>>>> getNewestBooks(
+  Future<ApiResponse<PaginationResult<BaseBookData>>> getNewestBooks(
       PaginationRequest request) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -117,7 +112,7 @@ class _HomeService implements HomeService {
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options =
-        _setStreamType<ApiResponse<PaginationResult<List<HomeBook>>>>(Options(
+        _setStreamType<ApiResponse<PaginationResult<BaseBookData>>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -134,18 +129,13 @@ class _HomeService implements HomeService {
               baseUrl,
             )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ApiResponse<PaginationResult<List<HomeBook>>> _value;
+    late ApiResponse<PaginationResult<BaseBookData>> _value;
     try {
-      _value = ApiResponse<PaginationResult<List<HomeBook>>>.fromJson(
+      _value = ApiResponse<PaginationResult<BaseBookData>>.fromJson(
         _result.data!,
-        (json) => PaginationResult<List<HomeBook>>.fromJson(
+        (json) => PaginationResult<BaseBookData>.fromJson(
           json as Map<String, dynamic>,
-          (json) => json is List<dynamic>
-              ? json
-                  .map<HomeBook>(
-                      (i) => HomeBook.fromJson(i as Map<String, dynamic>))
-                  .toList()
-              : List.empty(),
+          (json) => BaseBookData.fromJson(json as Map<String, dynamic>),
         ),
       );
     } on Object catch (e, s) {
