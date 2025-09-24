@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -18,18 +19,25 @@ class BookImageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(imageRadius.r),
-      child: Image.network(
-        coverImage,
-        fit: BoxFit.cover,
-        width: imageWidth.w,
-        height: imageHeight.h,
-      ),
-      // CachedNetworkImage(
-      //   imageUrl: coverImage,
-      //   fit: BoxFit.cover,
-      //   width: imageWidth.w,
-      //   height: imageHeight.h,
-      // ),
+      child: _networkVersion(),
+    );
+  }
+
+  /* Widget _cacheVersion() {
+    return CachedNetworkImage(
+      imageUrl: coverImage,
+      fit: BoxFit.cover,
+      width: imageWidth.w,
+      height: imageHeight.h,
+    );
+  }*/
+
+  Widget _networkVersion() {
+    return Image.network(
+      coverImage,
+      fit: BoxFit.cover,
+      width: imageWidth.w,
+      height: imageHeight.h,
     );
   }
 }
