@@ -1,9 +1,5 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:library_app/core/di/dependency_injection.dart';
-import 'package:library_app/features/home/domain/use_cases/get_home_data_use_case.dart';
-import 'package:library_app/features/home/presentation/blocs/home_data_cubit/home_data_cubit.dart';
-import 'package:library_app/features/home/presentation/pages/home_screen.dart';
+import 'package:library_app/main_screen.dart';
 import 'package:library_app/test_screen.dart';
 
 class AppRouter {
@@ -28,12 +24,13 @@ class AppRouter {
       GoRoute(
         path: '/',
         builder: (context, state) {
-          return BlocProvider(
+          return const MainScreen();
+          /*return BlocProvider(
             create: (context) {
               return HomeDataCubit(getIt<GetHomeDataUseCase>());
             },
-            child: const HomeScreen(),
-          );
+            child: const MainScreen(),
+          );*/
         },
       ),
       //test Start up page
