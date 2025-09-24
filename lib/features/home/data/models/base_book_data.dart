@@ -8,6 +8,7 @@ class BaseBookData {
   final String title;
   final String author;
   final String coverImageUrl;
+
   @JsonKey(name: 'isNewBook')
   final bool isNew;
   BaseBookData({
@@ -17,6 +18,7 @@ class BaseBookData {
     required this.coverImageUrl,
     required this.isNew,
   });
-  factory BaseBookData.fromJson(Map<String, dynamic> json) =>
-      _$BaseBookDataFromJson(json);
+  factory BaseBookData.fromJson(Map<String, dynamic> json) {
+    return _$BaseBookDataFromJson(json);
+  }
 }
