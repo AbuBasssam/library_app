@@ -14,6 +14,7 @@ class CategoryBooksCubit extends Cubit<CategoryBooksState> {
   late bool _hasNext;
   static const int _pageSize = 10;
   late List<BookEntity> books;
+
   CategoryBooksCubit(this._repo, this.booksPage)
       : super(const CategoryBooksState.initial()) {
     _currentCategoryId = 1;
@@ -33,6 +34,7 @@ class CategoryBooksCubit extends Cubit<CategoryBooksState> {
       final apiResponse =
           response as ApiResponse<PaginationResult<BaseBookData>>;
       _currentCategoryId = categoryId;
+      _hasNext = response.data.hasNext;
 
       books = _bookEntityMapper(apiResponse.data.items);
 
@@ -45,7 +47,9 @@ class CategoryBooksCubit extends Cubit<CategoryBooksState> {
   }
 
   Future<void> moveToNextPage() async {
-    if (!_hasNext) emit(CategoryBooksState.failure(message: 'No more books'));
+    if (!_hasNext) {
+      return;
+    }
 
     final response = await _repo.getBooksByCategory(
       _currentCategoryId,
