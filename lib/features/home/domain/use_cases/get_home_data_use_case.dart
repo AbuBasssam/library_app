@@ -60,7 +60,7 @@ class GetHomeDataUseCase implements UseCase<HomeDataEntity> {
 
     int newBooksPageCount = (totalNewBooks / newBooksPageSize).ceil();
     PaginationResult<BookEntity> newestBooksPage = PaginationResult<BookEntity>(
-      totalCount: newBooksPageSize,
+      totalCount: totalNewBooks,
       page: 1,
       pageSize: newestBooks.length,
       totalPages: newBooksPageCount,
