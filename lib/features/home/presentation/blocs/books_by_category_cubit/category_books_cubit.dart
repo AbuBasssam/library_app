@@ -13,13 +13,13 @@ class CategoryBooksCubit extends Cubit<CategoryBooksState> {
   late int _currentCategoryId;
   late bool _hasNext;
   static const int _pageSize = 10;
-  late List<BookEntity> books;
+  late Set<BookEntity> books;
 
   CategoryBooksCubit(this._repo, this.booksPage)
       : super(const CategoryBooksState.initial()) {
     _currentCategoryId = 1;
     _hasNext = booksPage.hasNext;
-    books = List<BookEntity>.from(booksPage.items);
+    books = Set<BookEntity>.from(booksPage.items);
   }
 
   Future<void> changeCategory(int categoryId) async {
@@ -36,9 +36,9 @@ class CategoryBooksCubit extends Cubit<CategoryBooksState> {
       _currentCategoryId = categoryId;
       _hasNext = response.data.hasNext;
 
-      books = _bookEntityMapper(apiResponse.data.items);
+      books = _bookEntityMapper(apiResponse.data.items).toSet();
 
-      emit(CategoryBooksState.success(books: books));
+      emit(CategoryBooksState.success(books: books.toList()));
     }, failure: (error) {
       String errMessage = error.apiErrorModel.message;
 
@@ -66,7 +66,7 @@ class CategoryBooksCubit extends Cubit<CategoryBooksState> {
       books.addAll(_bookEntityMapper(apiResponse.data.items));
       _hasNext = apiResponse.data.hasNext;
 
-      emit(CategoryBooksState.success(books: books));
+      emit(CategoryBooksState.success(books: books.toList()));
     }, failure: (error) {
       String errMessage = error.apiErrorModel.message;
 

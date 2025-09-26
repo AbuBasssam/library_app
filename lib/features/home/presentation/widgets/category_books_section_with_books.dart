@@ -52,7 +52,7 @@ class _SuccessWidget extends StatelessWidget {
         CategoriesSection(categories: categories),
         verticalSpace(32),
         CategoryBooksSection(
-          books: context.read<CategoryBooksCubit>().books,
+          books: context.read<CategoryBooksCubit>().books.toList(),
         ),
       ],
     );
