@@ -7,6 +7,7 @@ import 'package:library_app/features/home/domain/entities/home_data_entity.dart'
 import 'package:library_app/features/home/presentation/blocs/books_by_category_cubit/category_books_cubit.dart';
 import 'package:library_app/features/home/presentation/blocs/home_data_cubit/home_data_cubit.dart';
 import 'package:library_app/features/home/presentation/blocs/home_data_cubit/home_data_state.dart';
+import 'package:library_app/features/home/presentation/blocs/newest_books_cubit/newest_books_cubit.dart';
 import 'package:library_app/features/home/presentation/widgets/category_books_section_with_books.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../widgets/collapse_welcome_section.dart';
@@ -81,8 +82,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
                     // Newest Books Section
                     SliverToBoxAdapter(
-                      child: NewestBooksSection(
-                        books: dataEntity.newestBooksSection.items,
+                      child: BlocProvider(
+                        create: (context) => NewestBooksCubit(
+                          getIt<IHomeRepository>(),
+                          dataEntity.newestBooksSection,
+                        ),
+                        child: NewestBooksSection(),
                       ),
                     ),
 
