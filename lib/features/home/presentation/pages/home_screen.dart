@@ -45,55 +45,53 @@ class _HomeScreenState extends State<HomeScreen> {
           loading: loadingDialogWidget,
           success: (data) {
             var dataEntity = data as HomeDataEntity;
-            return Scaffold(
-              body: SafeArea(
-                child: CustomScrollView(
-                  slivers: [
-                    HomeScreenAppBar(
-                      notificationCount: dataEntity.notificationCount,
-                    ),
-                    SliverToBoxAdapter(child: verticalSpace(12)),
-                    CollapseWelcomeSection(),
-                    SliverToBoxAdapter(child: verticalSpace(20)),
-                    PinnedSearchBar(),
-                    SliverToBoxAdapter(child: verticalSpace(20)),
+            return SafeArea(
+              child: CustomScrollView(
+                slivers: [
+                  HomeScreenAppBar(
+                    notificationCount: dataEntity.notificationCount,
+                  ),
+                  SliverToBoxAdapter(child: verticalSpace(12)),
+                  CollapseWelcomeSection(),
+                  SliverToBoxAdapter(child: verticalSpace(20)),
+                  PinnedSearchBar(),
+                  SliverToBoxAdapter(child: verticalSpace(20)),
 
-                    //Books by category section
-                    SliverToBoxAdapter(
-                      child: BlocProvider(
-                        create: (context) => CategoryBooksCubit(
-                          getIt<IHomeRepository>(),
-                          dataEntity.categoryBooksSection,
-                        ),
-                        child: CategoryBooksSectionWithBooks(
-                          categories: dataEntity.categories,
-                        ),
+                  //Books by category section
+                  SliverToBoxAdapter(
+                    child: BlocProvider(
+                      create: (context) => CategoryBooksCubit(
+                        getIt<IHomeRepository>(),
+                        dataEntity.categoryBooksSection,
+                      ),
+                      child: CategoryBooksSectionWithBooks(
+                        categories: dataEntity.categories,
                       ),
                     ),
-                    SliverToBoxAdapter(child: SectionSeparator()),
+                  ),
+                  SliverToBoxAdapter(child: SectionSeparator()),
 
-                    // Top Rated Book Section
-                    SliverToBoxAdapter(
-                        child: MostPopularBooksSection(
-                      books: dataEntity.mostPopularBooksSection,
-                    )),
+                  // Top Rated Book Section
+                  SliverToBoxAdapter(
+                      child: MostPopularBooksSection(
+                    books: dataEntity.mostPopularBooksSection,
+                  )),
 
-                    SliverToBoxAdapter(child: SectionSeparator()),
+                  SliverToBoxAdapter(child: SectionSeparator()),
 
-                    // Newest Books Section
-                    SliverToBoxAdapter(
-                      child: BlocProvider(
-                        create: (context) => NewestBooksCubit(
-                          getIt<IHomeRepository>(),
-                          dataEntity.newestBooksSection,
-                        ),
-                        child: NewestBooksSection(),
+                  // Newest Books Section
+                  SliverToBoxAdapter(
+                    child: BlocProvider(
+                      create: (context) => NewestBooksCubit(
+                        getIt<IHomeRepository>(),
+                        dataEntity.newestBooksSection,
                       ),
+                      child: NewestBooksSection(),
                     ),
+                  ),
 
-                    SliverToBoxAdapter(child: verticalSpace(32)),
-                  ],
-                ),
+                  SliverToBoxAdapter(child: verticalSpace(32)),
+                ],
               ),
             );
           },
