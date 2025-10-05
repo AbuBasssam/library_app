@@ -1,11 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:library_app/core/helper/spacing.dart';
-import 'package:library_app/core/theme/app_colors.dart';
-import 'package:library_app/core/theme/font_weight_helper.dart';
-import 'package:library_app/generated/locale_keys.g.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '/core/helpers/spacing.dart';
+import '/core/theme/app_colors.dart';
+import '/core/theme/font_weight_helper.dart';
+import '/generated/locale_keys.g.dart';
 
 class CustomSearchBar extends StatefulWidget {
   final String? hintTextKey;
