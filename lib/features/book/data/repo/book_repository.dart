@@ -5,7 +5,7 @@ import 'package:library_app/features/book/data/models/book_details.dart';
 import 'package:library_app/features/book/data/services/book_service.dart';
 import 'package:library_app/features/book/domain/abstracts/book_repository.dart';
 
-class BookRepository implements IBookepository {
+class BookRepository implements IBookRepository {
   final BookService _service;
 
   BookRepository(this._service);
