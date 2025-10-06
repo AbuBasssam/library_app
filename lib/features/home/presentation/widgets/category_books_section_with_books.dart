@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:library_app/core/helpers/spacing.dart';
 import 'package:library_app/core/theme/app_colors.dart';
-import 'package:library_app/features/home/domain/entities/book_category.dart';
+import 'package:library_app/features/book/domain/entities/book_category.dart';
 import 'package:library_app/features/home/presentation/blocs/books_by_category_cubit/category_books_cubit.dart';
 import 'package:library_app/features/home/presentation/blocs/books_by_category_cubit/category_books_state.dart';
 import 'package:library_app/features/home/presentation/widgets/categories_section.dart';

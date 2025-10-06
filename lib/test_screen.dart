@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:library_app/features/home/presentation/pages/home_screen.dart';
 
-import 'features/home/domain/entities/book_category.dart';
+import 'features/book/domain/entities/book_category.dart';
 import 'features/home/presentation/widgets/book_category_card.dart';
 
 class TestScreen extends StatelessWidget {

@@ -7,7 +7,7 @@ import 'package:library_app/core/helpers/use_cases/no_param_usecase.dart';
 import 'package:library_app/features/book/domain/entities/book_entity.dart';
 import 'package:library_app/features/home/data/models/home_data.dart';
 import 'package:library_app/features/home/domain/abstracts/ihome_repository.dart';
-import 'package:library_app/features/home/domain/entities/book_category.dart';
+import 'package:library_app/features/book/domain/entities/book_category.dart';
 import 'package:library_app/features/home/domain/entities/home_data_entity.dart';
 
 class GetHomeDataUseCase implements UseCase<HomeDataEntity> {

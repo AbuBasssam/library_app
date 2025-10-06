@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:library_app/features/home/presentation/blocs/books_by_category_cubit/category_books_cubit.dart';
 import '/core/helpers/spacing.dart';
-import '../../domain/entities/book_category.dart';
+import '../../../book/domain/entities/book_category.dart';
 import '/core/theme/app_colors.dart';
 import '/core/theme/app_styles.dart';
 import 'category_card_icon.dart';

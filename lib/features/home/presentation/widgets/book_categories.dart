@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '/core/helpers/spacing.dart';
-import '../../domain/entities/book_category.dart';
+import '../../../book/domain/entities/book_category.dart';
 import 'book_category_card.dart';
 
 class BookCategories extends StatelessWidget {
