@@ -9,11 +9,9 @@ import 'ratintg_row_widget.dart';
 
 class BookInfoWidget extends StatelessWidget {
   final BookInfo info;
-  final IconData categoryIcon;
   const BookInfoWidget({
     super.key,
     required this.info,
-    required this.categoryIcon,
   });
 
   @override
@@ -33,7 +31,7 @@ class BookInfoWidget extends StatelessWidget {
         verticalSpace(4),
         DetailRow(
           detailIcon: Icons.calendar_today,
-          strDetail: '${info.publishYear}',
+          strDetail: info.publishYear,
         ),
         verticalSpace(4),
         DetailRow(
@@ -57,11 +55,12 @@ class BookInfoWidget extends StatelessWidget {
         ),
         verticalSpace(4),
         CategoryRowWidget(
-          icon: categoryIcon,
-          categoryName: info.category,
+          category: info.category,
         ),
         verticalSpace(4),
-        RatintgRowWidget(rating: info.rating),
+        RatintgRowWidget(
+          rating: info.rating,
+        ),
         verticalSpace(4),
         DetailRow(
           detailIcon: Icons.people,

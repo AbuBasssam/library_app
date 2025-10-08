@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../domain/entities/book_info.dart';
 import '../view models/detail_view_info.dart';
 import '../../../../core/helpers/spacing.dart';
@@ -17,40 +16,33 @@ class DetailsViewBookCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Book Cover
-          BookCoverWidget(
-            coverInfo: info.homeViewInfo.coverInfo,
-            coverStyle: BookCoverStyle(
-              imageWidth: 120,
-              imageHeight: 160,
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // Book Cover
+        BookCoverWidget(
+          coverInfo: info.homeViewInfo.coverInfo,
+          coverStyle: BookCoverStyle(imageWidth: 120, imageHeight: 160),
+        ),
+        horizontalSpace(20),
+        // Book Info
+        Expanded(
+          child: BookInfoWidget(
+            info: BookInfo(
+              title: info.homeViewInfo.title,
+              author: info.homeViewInfo.author,
+              publishYear: info.publishYear,
+              pagesCount: info.pagesCount,
+              publisher: info.publisher,
+              isbn: info.isbn,
+              language: info.language,
+              category: info.category,
+              rating: info.rating,
+              readersCount: info.readersCount,
             ),
           ),
-          horizontalSpace(20),
-          // Book Info
-          Expanded(
-            child: BookInfoWidget(
-              info: BookInfo(
-                title: info.homeViewInfo.title,
-                author: info.homeViewInfo.author,
-                publishYear: info.publishDate.year,
-                pagesCount: info.pagesCount,
-                publisher: info.publisher,
-                isbn: info.isbn,
-                language: info.language,
-                category: info.category,
-                rating: info.rating,
-                readersCount: info.readersCount,
-              ),
-              categoryIcon: Icons.science,
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

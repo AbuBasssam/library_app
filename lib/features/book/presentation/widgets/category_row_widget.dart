@@ -1,40 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:library_app/core/helpers/spacing.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:library_app/core/helpers/helper_methods.dart';
 import 'package:library_app/core/theme/app_styles.dart';
 
 class CategoryRowWidget extends StatelessWidget {
-  final IconData icon;
-  final String categoryName;
+  final String category;
   const CategoryRowWidget({
     super.key,
-    required this.icon,
-    required this.categoryName,
+    required this.category,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 2.h),
-          width: 100.w,
-          height: 25.h,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10.r),
-            boxShadow: [
-              BoxShadow(color: Colors.blue.withAlpha(77)),
-            ],
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
+      width: 100.w,
+      height: 25.h,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10.r),
+        boxShadow: [
+          BoxShadow(color: Colors.blue.withAlpha(77)),
+        ],
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          SvgPicture.asset(
+            getCategoryIconByName(category),
+            width: 20.w,
+            height: 20.h,
           ),
-          child: Row(
-            children: [
-              Icon(Icons.science, size: 22),
-              horizontalSpace(4),
-              Text(categoryName, style: AppStyles.font14BlueMedium),
-            ],
-          ),
-        ),
-      ],
+          Text(category, style: AppStyles.font14BlueMedium),
+        ],
+      ),
     );
   }
 }

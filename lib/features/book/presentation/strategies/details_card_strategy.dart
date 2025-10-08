@@ -15,14 +15,4 @@ class DetailsCardStrategy extends BookCardStrategy<DetailViewInfo> {
   DetailViewInfo? toStrategyInfo(BookEntity entity) {
     return entity.toDetailViewInfo();
   }
-  // @override
-  // Widget buildCard(BookEntity entity) {
-  //   final info = entity.toDetailViewInfo();
-  //   if (info == null) {
-  //     assert(
-  //         false, "Cannot build DetailsCardStrategy: missing required fields");
-  //   }
-
-  //   return DetailsViewBookCard(info: info!);
-  // }
 }
