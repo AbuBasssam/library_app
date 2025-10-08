@@ -20,4 +20,22 @@ enum enBookState {
       this == enBookState.borrowed || this == enBookState.reserved;
   bool get needsAction =>
       this == enBookState.overdue || this == enBookState.reserved;
+  static enBookState fromint(int value) {
+    switch (value) {
+      case 1:
+        return enBookState.borrowable;
+      case 2:
+        return enBookState.borrowed;
+      case 3:
+        return enBookState.reservable;
+      case 4:
+        return enBookState.reserved;
+      case 5:
+        return enBookState.unavailable;
+      case 6:
+        return enBookState.overdue;
+      default:
+        throw ArgumentError('Invalid book state: $value');
+    }
+  }
 }
