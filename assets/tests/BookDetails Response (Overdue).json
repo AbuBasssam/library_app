@@ -1,0 +1,104 @@
+{
+  "statusCode": 200,
+  "meta": {
+    "dueDate": "2025-06-28T00:00:00",
+    "estimatedFine": 490
+  },
+  "succeeded": true,
+  "message": "نجاح",
+  "errors": null,
+  "data": {
+    "bookId": 3,
+    "title": "العروس",
+    "author": "نورا روبرتس",
+    "description": "رواية رومانسية معاصرة تستكشف الأسرة والحب.",
+    "isbn": "9780000000333",
+    "bookState": 6,
+    "coverImageUrl": "https://10.0.2.2:7164/image/the-bride.jpg",
+    "isNewBook": false,
+    "publisher": "سايمون وشوستر",
+    "publicationYear": "2001",
+    "pages": 350,
+    "language": "الإنجليزية",
+    "category": "رومانسية",
+    "averageRating": 2.333333,
+    "userRating": 1,
+    "totalReaders": 12,
+    "similarBooks": [
+      {
+        "bookId": 13,
+        "title": "رؤية في الأبيض",
+        "author": "نورا روبرتس",
+        "averageRating": 4,
+        "coverImageUrl": "https://10.0.2.2:7164/image/vision-in-white.jpg",
+        "isNewBook": false
+      },
+      {
+        "bookId": 4,
+        "title": "أنا قبلك",
+        "author": "جوجو مويس",
+        "averageRating": 3,
+        "coverImageUrl": "https://10.0.2.2:7164/image/me-before-you.jpg",
+        "isNewBook": false
+      },
+      {
+        "bookId": 12,
+        "title": "نزهة لا تنسى",
+        "author": "نيكولاس باركس",
+        "averageRating": 3,
+        "coverImageUrl": "https://10.0.2.2:7164/image/a-walk-to-remember.jpg",
+        "isNewBook": false
+      },
+      {
+        "bookId": 9,
+        "title": "الغريب",
+        "author": "ديانا جابالدون",
+        "averageRating": 2.25,
+        "coverImageUrl": "https://10.0.2.2:7164/image/outlander.jpg",
+        "isNewBook": false
+      },
+      {
+        "bookId": 6,
+        "title": "جين آير",
+        "author": "شارلوت برونتي",
+        "averageRating": 5,
+        "coverImageUrl": "https://10.0.2.2:7164/image/jane-eyre.jpg",
+        "isNewBook": false
+      },
+      {
+        "bookId": 3,
+        "title": "العروس",
+        "author": "نورا روبرتس",
+        "averageRating": 2.333333,
+        "coverImageUrl": "https://10.0.2.2:7164/image/the-bride.jpg",
+        "isNewBook": false
+      },
+      {
+        "bookId": 11,
+        "title": "عقل وعاطفة",
+        "author": "جين أوستن",
+        "averageRating": 2,
+        "coverImageUrl": "https://10.0.2.2:7164/image/sense-and-sensibility.jpg",
+        "isNewBook": true
+      }
+    ],
+    "relatedBooks": [
+      {
+        "bookId": 13,
+        "title": "رؤية في الأبيض",
+        "publicationYear": 2009,
+        "averageRating": 4,
+        "coverImageUrl": "https://10.0.2.2:7164/image/vision-in-white.jpg",
+        "isNewBook": false
+      },
+      {
+        "bookId": 3,
+        "title": "العروس",
+        "publicationYear": 2001,
+        "averageRating": 2.333333,
+        "coverImageUrl": "https://10.0.2.2:7164/image/the-bride.jpg",
+        "isNewBook": false
+      }
+    ]
+  }
+}

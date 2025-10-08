@@ -1,0 +1,104 @@
+{
+  "statusCode": 200,
+  "meta": {
+    "estimatedAvailableDate": "2025-10-18T06:05:55.6738871Z",
+    "peopleAhead": 1
+  },
+  "succeeded": true,
+  "message": "نجاح",
+  "errors": null,
+  "data": {
+    "bookId": 33,
+    "title": "Gone Girl",
+    "author": "جيليان فلين",
+    "description": "إثارة نفسية عن زوجة مفقودة وهياج إعلامي.",
+    "isbn": "9780000003663",
+    "bookState": 3,
+    "coverImageUrl": "https://10.0.2.2:7164/image/gone-girl.jpg",
+    "isNewBook": false,
+    "publisher": "سايمون وشوستر",
+    "publicationYear": "2012",
+    "pages": 422,
+    "language": "الإنجليزية",
+    "category": "غموض",
+    "averageRating": 2.666666,
+    "userRating": 2,
+    "totalReaders": 20,
+    "similarBooks": [
+      {
+        "bookId": 34,
+        "title": "في الغابة",
+        "author": "تانا فرينش",
+        "averageRating": 2.75,
+        "coverImageUrl": "https://10.0.2.2:7164/image/in-the-woods.jpg",
+        "isNewBook": false
+      },
+      {
+        "bookId": 39,
+        "title": "الصقر المالطي",
+        "author": "داشيل هاميت",
+        "averageRating": 3,
+        "coverImageUrl": "https://10.0.2.2:7164/image/the-maltese-falcon.jpg",
+        "isNewBook": false
+      },
+      {
+        "bookId": 33,
+        "title": "Gone Girl",
+        "author": "جيليان فلين",
+        "averageRating": 2.666666,
+        "coverImageUrl": "https://10.0.2.2:7164/image/gone-girl.jpg",
+        "isNewBook": false
+      },
+      {
+        "bookId": 44,
+        "title": "المتعدي",
+        "author": "تانا فرينش",
+        "averageRating": 1.5,
+        "coverImageUrl": "https://10.0.2.2:7164/image/the-trespasser.jpg",
+        "isNewBook": true
+      },
+      {
+        "bookId": 38,
+        "title": "ليلة بهيجة",
+        "author": "دوروثي إل. سايرز",
+        "averageRating": 3.333333,
+        "coverImageUrl": "https://10.0.2.2:7164/image/gaudy-night.jpg",
+        "isNewBook": false
+      },
+      {
+        "bookId": 32,
+        "title": "كلب باسترفيل",
+        "author": "أرثر كونان دويل",
+        "averageRating": 4,
+        "coverImageUrl": "https://10.0.2.2:7164/image/the-hound-of-the-baskervilles.jpg",
+        "isNewBook": false
+      },
+      {
+        "bookId": 41,
+        "title": "موت على النيل",
+        "author": "أغاثا كريستي",
+        "averageRating": 4,
+        "coverImageUrl": "https://10.0.2.2:7164/image/death-on-the-nile.jpg",
+        "isNewBook": false
+      }
+    ],
+    "relatedBooks": [
+      {
+        "bookId": 33,
+        "title": "Gone Girl",
+        "publicationYear": 2012,
+        "averageRating": 2.666666,
+        "coverImageUrl": "https://10.0.2.2:7164/image/gone-girl.jpg",
+        "isNewBook": false
+      },
+      {
+        "bookId": 43,
+        "title": "أجسام حادة",
+        "publicationYear": 2006,
+        "averageRating": 2,
+        "coverImageUrl": "https://10.0.2.2:7164/image/sharp-objects.jpg",
+        "isNewBook": false
+      }
+    ]
+  }
+}

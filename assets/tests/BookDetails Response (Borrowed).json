@@ -1,0 +1,103 @@
+{
+  "statusCode": 200,
+  "meta": {
+    "dueDate": "2025-10-08T00:00:00"
+  },
+  "succeeded": true,
+  "message": "نجاح",
+  "errors": null,
+  "data": {
+    "bookId": 29,
+    "title": "خوف الرجل الحكيم",
+    "author": "باتريك روثفوس",
+    "description": "الكتاب الثاني في سلسلة كرونيكل قاتل الملك.",
+    "isbn": "9780000003219",
+    "bookState": 2,
+    "coverImageUrl": "https://10.0.2.2:7164/image/the-wise-man's-fear.jpg",
+    "isNewBook": false,
+    "publisher": "هاشيت ليفر",
+    "publicationYear": "2011",
+    "pages": 994,
+    "language": "الإنجليزية",
+    "category": "فانتازيا",
+    "averageRating": 3.5,
+    "userRating": 4,
+    "totalReaders": 10,
+    "similarBooks": [
+      {
+        "bookId": 19,
+        "title": "اسم الريح",
+        "author": "باتريك روثفوس",
+        "averageRating": 3,
+        "coverImageUrl": "https://10.0.2.2:7164/image/the-name-of-the-wind.jpg",
+        "isNewBook": false
+      },
+      {
+        "bookId": 24,
+        "title": "حراس! حراس!",
+        "author": "تيري براتشيت",
+        "averageRating": 3,
+        "coverImageUrl": "https://10.0.2.2:7164/image/guards-guards-.jpg",
+        "isNewBook": false
+      },
+      {
+        "bookId": 27,
+        "title": "صدام الملوك",
+        "author": "جورج ر. ر. مارتن",
+        "averageRating": 1,
+        "coverImageUrl": "https://10.0.2.2:7164/image/a-clash-of-kings.jpg",
+        "isNewBook": false
+      },
+      {
+        "bookId": 18,
+        "title": "هاري بوتر وحجر الفيلسوف",
+        "author": "ج. ك. رولينغ",
+        "averageRating": 3.333333,
+        "coverImageUrl": "https://10.0.2.2:7164/image/harry-potter-and-the-philosopher's-stone.jpg",
+        "isNewBook": false
+      },
+      {
+        "bookId": 26,
+        "title": "رفقة الخاتم",
+        "author": "ج. ر. ر. تولكين",
+        "averageRating": 5,
+        "coverImageUrl": "https://10.0.2.2:7164/image/the-fellowship-of-the-ring.jpg",
+        "isNewBook": false
+      },
+      {
+        "bookId": 17,
+        "title": "صراع العروش",
+        "author": "جورج ر. ر. مارتن",
+        "averageRating": 4,
+        "coverImageUrl": "https://10.0.2.2:7164/image/a-game-of-thrones.jpg",
+        "isNewBook": false
+      },
+      {
+        "bookId": 23,
+        "title": "أسد، ساحرة وخزانة",
+        "author": "سي. إس. لويس",
+        "averageRating": 2,
+        "coverImageUrl": "https://10.0.2.2:7164/image/the-chronicles-of-narnia-the-lion-the-witch-and-the-wardrobe.jpg",
+        "isNewBook": false
+      }
+    ],
+    "relatedBooks": [
+      {
+        "bookId": 19,
+        "title": "اسم الريح",
+        "publicationYear": 2007,
+        "averageRating": 3,
+        "coverImageUrl": "https://10.0.2.2:7164/image/the-name-of-the-wind.jpg",
+        "isNewBook": false
+      },
+      {
+        "bookId": 29,
+        "title": "خوف الرجل الحكيم",
+        "publicationYear": 2011,
+        "averageRating": 3.5,
+        "coverImageUrl": "https://10.0.2.2:7164/image/the-wise-man's-fear.jpg",
+        "isNewBook": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "statusCode": 200,
+  "meta": null,
+  "succeeded": true,
+  "message": "نجاح",
+  "errors": null,
+  "data": {
+    "bookId": 2,
+    "title": "المفكرة",
+    "author": "نيكولاس باركس",
+    "description": "قصة حب عصرية تمتد عبر عقود وذكريات.",
+    "isbn": "9780000000222",
+    "bookState": 5,
+    "coverImageUrl": "https://10.0.2.2:7164/image/the-notebook.jpg",
+    "isNewBook": true,
+    "publisher": "هاربر كولينز",
+    "publicationYear": "1996",
+    "pages": 214,
+    "language": "الإنجليزية",
+    "category": "رومانسية",
+    "averageRating": 3,
+    "userRating": 0,
+    "totalReaders": 7,
+    "similarBooks": [
+      {
+        "bookId": 13,
+        "title": "رؤية في الأبيض",
+        "author": "نورا روبرتس",
+        "averageRating": 4,
+        "coverImageUrl": "https://10.0.2.2:7164/image/vision-in-white.jpg",
+        "isNewBook": false
+      },
+      {
+        "bookId": 4,
+        "title": "أنا قبلك",
+        "author": "جوجو مويس",
+        "averageRating": 3,
+        "coverImageUrl": "https://10.0.2.2:7164/image/me-before-you.jpg",
+        "isNewBook": false
+      },
+      {
+        "bookId": 12,
+        "title": "نزهة لا تنسى",
+        "author": "نيكولاس باركس",
+        "averageRating": 3,
+        "coverImageUrl": "https://10.0.2.2:7164/image/a-walk-to-remember.jpg",
+        "isNewBook": false
+      },
+      {
+        "bookId": 9,
+        "title": "الغريب",
+        "author": "ديانا جابالدون",
+        "averageRating": 2.25,
+        "coverImageUrl": "https://10.0.2.2:7164/image/outlander.jpg",
+        "isNewBook": false
+      },
+      {
+        "bookId": 6,
+        "title": "جين آير",
+        "author": "شارلوت برونتي",
+        "averageRating": 5,
+        "coverImageUrl": "https://10.0.2.2:7164/image/jane-eyre.jpg",
+        "isNewBook": false
+      },
+      {
+        "bookId": 3,
+        "title": "العروس",
+        "author": "نورا روبرتس",
+        "averageRating": 2.333333,
+        "coverImageUrl": "https://10.0.2.2:7164/image/the-bride.jpg",
+        "isNewBook": false
+      },
+      {
+        "bookId": 11,
+        "title": "عقل وعاطفة",
+        "author": "جين أوستن",
+        "averageRating": 2,
+        "coverImageUrl": "https://10.0.2.2:7164/image/sense-and-sensibility.jpg",
+        "isNewBook": true
+      }
+    ],
+    "relatedBooks": [
+      {
+        "bookId": 12,
+        "title": "نزهة لا تنسى",
+        "publicationYear": 1999,
+        "averageRating": 3,
+        "coverImageUrl": "https://10.0.2.2:7164/image/a-walk-to-remember.jpg",
+        "isNewBook": false
+      },
+      {
+        "bookId": 2,
+        "title": "المفكرة",
+        "publicationYear": 1996,
+        "averageRating": 3,
+        "coverImageUrl": "https://10.0.2.2:7164/image/the-notebook.jpg",
+        "isNewBook": true
+      }
+    ]
+  }
+}
