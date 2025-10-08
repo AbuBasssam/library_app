@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:library_app/core/helpers/app_strings.dart';
 
 class WelcomeSection extends StatelessWidget {
   const WelcomeSection({super.key});
@@ -7,7 +8,7 @@ class WelcomeSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Image.asset(
-      'assets/images/WelcomeToBookWord.jpg',
+      AppStrings.imgWelcom,
       width: double.infinity,
       height: 160.h,
       fit: BoxFit.cover,
