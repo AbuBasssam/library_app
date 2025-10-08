@@ -14,7 +14,7 @@ extension BookEntityExtensions on BookEntity {
 
   bool get canMapToDetailView =>
       canMapToHomeView &&
-      !(publishDate == null ||
+      !(publishYear == null ||
           pagesCount == null ||
           publisher == null ||
           language == null ||
@@ -25,7 +25,7 @@ extension BookEntityExtensions on BookEntity {
 
   bool get canMapToAuthorView =>
       canMapToCoverInfo &&
-      !(title == null || publishDate == null || rating == null);
+      !(title == null || publishYear == null || rating == null);
 
   bool get canMapToSimilarView =>
       canMapToCoverInfo && !(title == null || author == null || rating == null);
@@ -55,7 +55,7 @@ extension BookEntityExtensions on BookEntity {
 
     return DetailViewInfo(
       homeViewInfo: toHomeViewInfo()!,
-      publishDate: publishDate!,
+      publishYear: publishYear!,
       pagesCount: pagesCount!,
       publisher: publisher!,
       language: language!,
@@ -73,7 +73,7 @@ extension BookEntityExtensions on BookEntity {
 
     return AuthorBookViewInfo(
       title: title!,
-      publishYear: publishDate!.year,
+      publishYear: publishYear!,
       rating: rating!,
       coverInfo: coverInfo!,
     );

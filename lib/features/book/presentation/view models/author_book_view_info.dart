@@ -3,7 +3,7 @@ import '../../domain/entities/cover_info.dart';
 class AuthorBookViewInfo {
   final CoverInfo coverInfo;
   final String title;
-  final int publishYear;
+  final String publishYear;
   final double rating;
 
   AuthorBookViewInfo({

@@ -6,7 +6,7 @@ class BookEntity extends Equatable {
   final String? author;
   final String? imageUrl;
   final bool isNew;
-  final DateTime? publishDate;
+  final String? publishYear;
   final int? pagesCount;
   final String? isbn;
   final String? publisher;
@@ -22,7 +22,7 @@ class BookEntity extends Equatable {
     this.imageUrl,
     this.isNew = false,
     this.isbn,
-    this.publishDate,
+    this.publishYear,
     this.pagesCount,
     this.publisher,
     this.language,
@@ -40,7 +40,7 @@ class BookEntity extends Equatable {
         imageUrl,
         isNew,
         isbn,
-        publishDate,
+        publishYear,
         pagesCount,
         publisher,
         language,

@@ -1,7 +1,7 @@
 class BookInfo {
   final String title;
   final String author;
-  final int publishYear;
+  final String publishYear;
   final int pagesCount;
   final String publisher;
   final String isbn;

@@ -2,7 +2,7 @@ import '/features/book/presentation/view%20models/home_view_info.dart';
 
 class DetailViewInfo {
   final HomeViewInfo homeViewInfo;
-  final DateTime publishDate;
+  final String publishYear;
   final int pagesCount;
   final String publisher;
   final String language;
@@ -13,7 +13,7 @@ class DetailViewInfo {
 
   DetailViewInfo({
     required this.homeViewInfo,
-    required this.publishDate,
+    required this.publishYear,
     required this.pagesCount,
     required this.publisher,
     required this.language,
