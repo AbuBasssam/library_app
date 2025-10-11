@@ -32,4 +32,18 @@ class AppStrings {
   static const String arEconomic = 'إقتصاد';
   static const String arHistory = 'تاريخ';
   static const String arScience = 'علوم';
+
+  // mock data
+  static const String borrowableBookDetails =
+      'assets/tests/BookDetails Response (Borrowable).json';
+  static const String borrowedBookDetails =
+      'assets/tests/BookDetails Response (Borrowed).json';
+  static const String reservableBookDetails =
+      'assets/tests/BookDetails Response (Reservable).json';
+  static const String reservedBookDetails =
+      'assets/tests/BookDetails Response (Reserved).json';
+  static const String uavailableBookDetails =
+      'assets/tests/BookDetails Response (Unavailable).json';
+  static const String overdueBookDetails =
+      'assets/tests/BookDetails Response (Overdue).json';
 }
