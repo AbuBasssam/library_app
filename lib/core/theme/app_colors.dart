@@ -10,4 +10,45 @@ class AppColors {
   static const Color lightGray = Color(0xFFE5E7EB);
   static const Color whiteSmoke = Color(0xFFF3F4F6);
   static const Color mainBlue = Color(0xFF1967FF);
+
+  // 🟢 Green
+  static const Color green100 = Color(0xFFDCFCE7);
+  static const Color green200 = Color(0xFFBBF7D0);
+  static const Color green600 = Color(0xFF16A34A);
+  static const Color green700 = Color(0xFF15803D);
+  static const Color green800 = Color(0xFF166534);
+
+  // 🔵 Blue
+  static const Color blue100 = Color(0xFFDBEAFE);
+  static const Color blue200 = Color(0xFFBFDBFE);
+  static const Color blue600 = Color(0xFF2563EB);
+  static const Color blue800 = Color(0xFF1E40AF);
+
+  // 🟡 Yellow
+  static const Color yellow100 = Color(0xFFFEF9C3);
+  static const Color yellow200 = Color(0xFFFEF08A);
+  static const Color yellow700 = Color(0xFF92400E);
+  static const Color yellow800 = Color(0xFF854D0E);
+  static const Color yellow900 = Color(0xFF713F12);
+
+  // 🟧 Orange
+  static const Color orange100 = Color(0xFFFFEDD5);
+  static const Color orange200 = Color(0xFFFED7AA);
+  static const Color orange600 = Color(0xFFC2410C);
+  static const Color orange800 = Color(0xFF9A3412);
+
+  // 🔴 Red
+  static const Color red100 = Color(0xFFFEE2E2);
+  static const Color red200 = Color(0xFFFECACA);
+  static const Color red600 = Color(0xFFDC2626);
+  static const Color red700 = Color(0xFFB91C1C);
+  static const Color red800 = Color(0xFF991B1B);
+
+  // ⚪ Gray
+  static const Color gray100 = Color(0xFFF3F4F6);
+  static const Color gray200 = Color(0xFFE5E7EB);
+  static const Color gray600 = Color(0xFF4B5563);
+  static const Color gray700 = Color(0xFF374151);
+
+  static const Color gray800 = Color(0xFF1F2937);
 }

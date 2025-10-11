@@ -44,4 +44,68 @@ class AppStyles {
     fontWeight: FontWeightHelper.bold,
     fontSize: 12.sp,
   );
+  static TextStyle font14RichBlackRegular = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 14.sp,
+    color: AppColors.richBlack,
+    fontWeight: FontWeightHelper.regular,
+  );
+
+  static TextStyle font14CoolGrayRegular = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 14.sp,
+    color: AppColors.coolGray,
+    fontWeight: FontWeightHelper.regular,
+  );
+
+  static TextStyle font14Gray700Regular = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 14.sp,
+    color: AppColors.gray700,
+    fontWeight: FontWeightHelper.regular,
+  );
+
+  // SemiBold 14
+  static TextStyle font14Blue600SemiBold = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 14.sp,
+    color: AppColors.blue600,
+    fontWeight: FontWeightHelper.semiBold,
+  );
+
+  static TextStyle font14SemiBold = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.semiBold,
+  );
+
+  // SemiBold 16
+  static TextStyle font16Gray800SemiBold = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: AppColors.gray800,
+  );
+
+  static TextStyle font12Gray600Regular = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 12.sp,
+    color: AppColors.gray600,
+    fontWeight: FontWeightHelper.regular,
+  );
+
+  // Bold with colors
+  static TextStyle font14Red600Bold = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: AppColors.red600,
+  );
+
+  static TextStyle font18Yellow900Bold = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 18.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: AppColors.yellow900,
+  );
 }
