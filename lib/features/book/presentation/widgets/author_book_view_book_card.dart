@@ -40,7 +40,7 @@ class AuthorBookViewBookCard extends StatelessWidget {
           ),
           verticalSpace(2),
           Text(
-            '${info.publishYear}',
+            info.publishYear,
             style: AppStyles.font14BlueMedium,
           ),
           verticalSpace(2),
