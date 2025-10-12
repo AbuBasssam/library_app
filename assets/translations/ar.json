@@ -10,6 +10,41 @@
   "Home": "الصفحة الرئيسية",
   "library": "المكتبة",
   "profile": "الملف الشخصي",
+  "author_books":"كتب أخرى للمؤلف {author}",
+  "similar_books":"كتب مشابهة",
+  "book_details_title":"تفاصيل الكتاب",
+  "borrow_book":"استعارة الكتاب",
+  "currently_borrowed":"الكتاب المستعار حاليا أفضل",
+  "return_date":"موعد الإرجاع: {date}",
+  "extend_loan":"تمديد الاستعارة",
+  
+  "estimated_availability": "متوقع توفره خلال: {day} أيام",
+  "availability_notification": "سيصلك إشعار فوري عند توفر الكتاب",
+  "reserve_book": "حجز الكتاب",
+  "cancel_reservation": "إلغاء الحجز",
+  
+  "ready_for_pickup": "جاهز للاستلام",
+  "pickup_deadline": "يجب الاستلام خلال:",
+  "time_remaining": "{hours} ساعة و {minutes} دقيقة",
+  "pickup_instruction": "يمكنك استلام الكتاب من مكتب الاستلام الرئيسي",
+  
+  "book_overdue": "الكتاب متأخر!",
+  "return_urgent": "يرجى إرجاع الكتاب في أقرب وقت لتجنب غرامات إضافية",
+  "due_date": "تاريخ الاستحقاق",
+  "current_fine": "الغرامة الحالية",
+  "currently_unavailable": "غير متاح حالياً",
+  "unavailable_description": "هذا الكتاب غير متاح للاستعارة أو الحجز في الوقت الحالي.",
+  "notify_availability": "كن أول من يعلم عند توفر الكتاب مرة أخرى!",
+  "notify_me_button": "أخبرني عند التوفر",
+
+  "book_state":{
+    "borrowable":"متاح للاستعارة",
+    "borrowed":"مستعار",
+    "reservable":"قابل للحجز'",
+    "reserved":"محجوز",
+    "unavailable":"غير متاح",
+    "overdue":"متأخر"
+  },
   "time_ago":
   {
     "now": "الآن",
