@@ -16,28 +16,21 @@ class BookImageWidget extends StatelessWidget {
   });
 
   @override
+  @override
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(imageRadius.r),
-      child: _cacheVersion(),
+      child: SizedBox(
+        width: imageWidth.w,
+        child: AspectRatio(
+          aspectRatio: 2 / 3,
+          child: CachedNetworkImage(
+            imageUrl: coverImage,
+            fit: BoxFit.cover,
+            alignment: Alignment.center,
+          ),
+        ),
+      ),
     );
   }
-
-  Widget _cacheVersion() {
-    return CachedNetworkImage(
-      imageUrl: coverImage,
-      fit: BoxFit.cover,
-      width: imageWidth.w,
-      height: imageHeight.h,
-    );
-  }
-
-  /*Widget _networkVersion() {
-    return Image.network(
-      coverImage,
-      fit: BoxFit.cover,
-      width: imageWidth.w,
-      height: imageHeight.h,
-    );
-  }*/
 }
