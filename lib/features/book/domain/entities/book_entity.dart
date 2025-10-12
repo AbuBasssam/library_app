@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:library_app/features/book/domain/entities/en_book_state.dart';
 
 class BookEntity extends Equatable {
   final int? id;
@@ -6,6 +7,7 @@ class BookEntity extends Equatable {
   final String? author;
   final String? imageUrl;
   final bool isNew;
+  final String? description;
   final String? publishYear;
   final int? pagesCount;
   final String? isbn;
@@ -14,6 +16,7 @@ class BookEntity extends Equatable {
   final String? category;
   final double? rating;
   final int? readersCount;
+  final enBookState? state;
   final DateTime? searchDate;
   const BookEntity({
     this.id,
@@ -21,6 +24,7 @@ class BookEntity extends Equatable {
     this.author,
     this.imageUrl,
     this.isNew = false,
+    this.description,
     this.isbn,
     this.publishYear,
     this.pagesCount,
@@ -29,6 +33,7 @@ class BookEntity extends Equatable {
     this.category,
     this.rating,
     this.readersCount,
+    this.state,
     this.searchDate,
   });
 
@@ -39,6 +44,7 @@ class BookEntity extends Equatable {
         author,
         imageUrl,
         isNew,
+        description,
         isbn,
         publishYear,
         pagesCount,
