@@ -36,6 +36,15 @@ class SimilarViewBookCard extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
           ),
           verticalSpace(2),
+          Text(
+            info.author,
+            style: AppStyles.font12CoolGrayMedium,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            textAlign: TextAlign.left,
+          ),
+
+          verticalSpace(2),
           RatintgRowWidget(rating: info.rating),
         ],
       ),
