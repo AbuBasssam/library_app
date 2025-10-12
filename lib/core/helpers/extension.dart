@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:library_app/core/theme/app_colors.dart';
 import 'package:library_app/features/book/domain/entities/en_book_state.dart';
-
+import 'package:library_app/generated/locale_keys.g.dart';
 import '../../features/book/domain/entities/book_entity.dart';
 import '../../features/book/domain/entities/cover_info.dart';
 import '../../features/book/presentation/view%20models/detail_view_info.dart';
@@ -8,16 +10,19 @@ import '../../features/book/presentation/view%20models/home_view_info.dart';
 import '../../features/book/presentation/view%20models/most_search_view_info.dart';
 import '../../features/book/presentation/view%20models/similar_books_view_info.dart';
 import '../../features/book/presentation/view models/author_book_view_info.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 extension BookEntityExtensions on BookEntity {
-  bool get canMapToCoverInfo => !(imageUrl == null); // || isNew == null);
+  bool get canMapToCoverInfo => !(imageUrl == null);
 
   bool get canMapToHomeView =>
       canMapToCoverInfo && !(title == null || author == null);
 
   bool get canMapToDetailView =>
       canMapToHomeView &&
-      !(publishYear == null ||
+      !(description == null ||
+          state == null ||
+          publishYear == null ||
           pagesCount == null ||
           publisher == null ||
           language == null ||
@@ -112,87 +117,57 @@ extension StringExtension on String? {
 
 extension BookStateUI on enBookState {
   String get displayText {
-    switch (this) {
-      case enBookState.borrowable:
-        return 'Borrowable';
-      case enBookState.borrowed:
-        return 'Borrowed';
-      case enBookState.reservable:
-        return 'قابل للحجز';
-      case enBookState.reserved:
-        return 'محجوز';
-      case enBookState.unavailable:
-        return 'غير متاح';
-      case enBookState.overdue:
-        return 'متأخر';
-    }
+    return switch (this) {
+      enBookState.borrowable => LocaleKeys.book_state_borrowable.tr(),
+      enBookState.borrowed => LocaleKeys.book_state_borrowed.tr(),
+      enBookState.reservable => LocaleKeys.book_state_reservable.tr(),
+      enBookState.reserved => LocaleKeys.book_state_reserved.tr(),
+      enBookState.unavailable => LocaleKeys.book_state_unavailable.tr(),
+      enBookState.overdue => LocaleKeys.book_state_overdue.tr()
+    };
   }
 
   Color get backgroundColor {
-    switch (this) {
-      case enBookState.borrowable:
-        return Color(0xFFDCFCE7);
-      case enBookState.borrowed:
-        return Color(0xFFDBEAFE);
-      case enBookState.reservable:
-        return Color(0xFFFFEDD5);
-      case enBookState.reserved:
-        return Color(0xFFFEF9C3);
-      case enBookState.unavailable:
-        return Color(0xFFF3F4F6);
-      case enBookState.overdue:
-        return Color(0xFFFEE2E2);
-    }
+    return switch (this) {
+      enBookState.borrowable => AppColors.green100,
+      enBookState.borrowed => AppColors.blue100,
+      enBookState.reservable => AppColors.orange100,
+      enBookState.reserved => AppColors.yellow100,
+      enBookState.unavailable => AppColors.gray100,
+      enBookState.overdue => AppColors.red100
+    };
   }
 
   IconData get icon {
-    switch (this) {
-      case enBookState.borrowable:
-        return Icons.check_circle;
-      case enBookState.borrowed:
-        return Icons.book;
-      case enBookState.reservable:
-        return Icons.bookmark_border;
-      case enBookState.reserved:
-        return Icons.access_time;
-      case enBookState.unavailable:
-        return Icons.warning;
-      case enBookState.overdue:
-        return Icons.error_outline;
-    }
+    return switch (this) {
+      enBookState.borrowable => LucideIcons.checkCircle,
+      enBookState.borrowed => Icons.book,
+      enBookState.reservable => LucideIcons.users,
+      enBookState.reserved => Icons.access_time,
+      enBookState.unavailable => Icons.warning,
+      enBookState.overdue => Icons.error_outline
+    };
   }
 
   Color get borderColor {
-    switch (this) {
-      case enBookState.borrowable:
-        return Color(0xFFBBF7D0);
-      case enBookState.borrowed:
-        return Color(0xFFBFDBFE);
-      case enBookState.reservable:
-        return Color(0xFFFED7AA);
-      case enBookState.reserved:
-        return Color(0xFFFEF08A);
-      case enBookState.unavailable:
-        return Color(0xFFE5E7EB);
-      case enBookState.overdue:
-        return Color(0xFFFECACA);
-    }
+    return switch (this) {
+      enBookState.borrowable => AppColors.green200,
+      enBookState.borrowed => AppColors.blue200,
+      enBookState.reservable => AppColors.orange200,
+      enBookState.reserved => AppColors.yellow200,
+      enBookState.unavailable => AppColors.gray200,
+      enBookState.overdue => AppColors.red200
+    };
   }
 
   Color get textColor {
-    switch (this) {
-      case enBookState.borrowable:
-        return Color(0xFF166534);
-      case enBookState.borrowed:
-        return Color(0xFF1E40AF);
-      case enBookState.reservable:
-        return Color(0xFF9A3412);
-      case enBookState.reserved:
-        return Color(0xFF854D0E);
-      case enBookState.unavailable:
-        return Color(0xFF1F2937);
-      case enBookState.overdue:
-        return Color(0xFF991B1B);
-    }
+    return switch (this) {
+      enBookState.borrowable => AppColors.green800,
+      enBookState.borrowed => AppColors.blue800,
+      enBookState.reservable => AppColors.orange800,
+      enBookState.reserved => AppColors.yellow800,
+      enBookState.unavailable => AppColors.gray800,
+      enBookState.overdue => AppColors.red800
+    };
   }
 }
