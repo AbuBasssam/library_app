@@ -35,7 +35,7 @@ class BorrowedBookStateWidget extends StatelessWidget {
           title: LocaleKeys.currently_borrowed.tr(),
           titleColor: AppColors.green800,
           content: Text(
-            '📅${LocaleKeys.return_date.tr(
+            '📅 ${LocaleKeys.return_date.tr(
               namedArgs: {'date': _formatDate(returnDate)},
             )}',
             style: AppStyles.font14RichBlackRegular.copyWith(

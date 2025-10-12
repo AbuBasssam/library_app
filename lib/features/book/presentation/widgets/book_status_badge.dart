@@ -25,7 +25,10 @@ class BookStatusBadge extends StatelessWidget {
         children: [
           Text(
             state.displayText,
-            style: AppStyles.font14SemiBold.copyWith(color: state.textColor),
+            style: AppStyles.font14SemiBold.copyWith(
+              fontSize: 13,
+              color: state.textColor,
+            ),
           ),
           Icon(
             state.icon,

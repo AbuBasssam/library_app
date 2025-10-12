@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/app_styles.dart';
@@ -36,7 +37,7 @@ class BookInfoWidget extends StatelessWidget {
         verticalSpace(4),
         DetailRow(
           detailIcon: Icons.menu_book_rounded,
-          strDetail: '${info.pagesCount} ${LocaleKeys.Pages}',
+          strDetail: '${info.pagesCount} ${LocaleKeys.Pages.tr()}',
         ),
         verticalSpace(4),
         DetailRow(
@@ -64,7 +65,7 @@ class BookInfoWidget extends StatelessWidget {
         verticalSpace(4),
         DetailRow(
           detailIcon: Icons.people,
-          strDetail: '${info.readersCount} ${LocaleKeys.Readers}',
+          strDetail: '${info.readersCount} ${LocaleKeys.Readers.tr()}',
         ),
       ],
     );
