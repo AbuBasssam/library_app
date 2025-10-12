@@ -14,10 +14,10 @@
   "similar_books":"كتب مشابهة",
   "book_details_title":"تفاصيل الكتاب",
   "borrow_book":"استعارة الكتاب",
-  "currently_borrowed":"الكتاب المستعار حاليا أفضل",
+  "currently_borrowed":"الكتاب المستعار حاليا",
   "return_date":"موعد الإرجاع: {date}",
   "extend_loan":"تمديد الاستعارة",
-  
+  "waiting_list_status": "{count} أشخاص في قائمة الانتظار",
   "estimated_availability": "متوقع توفره خلال: {day} أيام",
   "availability_notification": "سيصلك إشعار فوري عند توفر الكتاب",
   "reserve_book": "حجز الكتاب",
@@ -36,6 +36,7 @@
   "unavailable_description": "هذا الكتاب غير متاح للاستعارة أو الحجز في الوقت الحالي.",
   "notify_availability": "كن أول من يعلم عند توفر الكتاب مرة أخرى!",
   "notify_me_button": "أخبرني عند التوفر",
+  "Wishlist":"قائمة الرغبات",
 
   "book_state":{
     "borrowable":"متاح للاستعارة",

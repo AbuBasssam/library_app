@@ -21,6 +21,7 @@ abstract class  LocaleKeys {
   static const currently_borrowed = 'currently_borrowed';
   static const return_date = 'return_date';
   static const extend_loan = 'extend_loan';
+  static const waiting_list_status = 'waiting_list_status';
   static const estimated_availability = 'estimated_availability';
   static const availability_notification = 'availability_notification';
   static const reserve_book = 'reserve_book';
@@ -37,6 +38,7 @@ abstract class  LocaleKeys {
   static const unavailable_description = 'unavailable_description';
   static const notify_availability = 'notify_availability';
   static const notify_me_button = 'notify_me_button';
+  static const Wishlist = 'Wishlist';
   static const book_state_borrowable = 'book_state.borrowable';
   static const book_state_borrowed = 'book_state.borrowed';
   static const book_state_reservable = 'book_state.reservable';
