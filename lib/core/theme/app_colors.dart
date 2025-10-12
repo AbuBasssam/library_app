@@ -12,6 +12,7 @@ class AppColors {
   static const Color mainBlue = Color(0xFF1967FF);
 
   // 🟢 Green
+  static const Color green50 = Color(0xFFF0FDF4);
   static const Color green100 = Color(0xFFDCFCE7);
   static const Color green200 = Color(0xFFBBF7D0);
   static const Color green600 = Color(0xFF16A34A);
@@ -25,22 +26,31 @@ class AppColors {
   static const Color blue800 = Color(0xFF1E40AF);
 
   // 🟡 Yellow
+  static const Color yellow50 = Color(0xFFFEFCE8);
   static const Color yellow100 = Color(0xFFFEF9C3);
   static const Color yellow200 = Color(0xFFFEF08A);
+  static const Color yellow300 = Color(0xFFFDE68A);
   static const Color yellow700 = Color(0xFF92400E);
   static const Color yellow800 = Color(0xFF854D0E);
+  static const Color amber800 = Color(0xFFCA8A04);
   static const Color yellow900 = Color(0xFF713F12);
 
   // 🟧 Orange
+  static const Color orange50 = Color(0xFFFFF7ED);
   static const Color orange100 = Color(0xFFFFEDD5);
   static const Color orange200 = Color(0xFFFED7AA);
   static const Color orange600 = Color(0xFFC2410C);
+  static const Color orange700 = Color(0xFFEA580C);
   static const Color orange800 = Color(0xFF9A3412);
 
   // 🔴 Red
+
+  static const Color red50 = Color(0xFFFEF2F2);
   static const Color red100 = Color(0xFFFEE2E2);
   static const Color red200 = Color(0xFFFECACA);
+  static const Color red300 = Color(0xFFFCA5A5);
   static const Color red600 = Color(0xFFDC2626);
+  static const Color red600With10Opacity = Color(0x1ADC2626);
   static const Color red700 = Color(0xFFB91C1C);
   static const Color red800 = Color(0xFF991B1B);
 
@@ -49,6 +59,5 @@ class AppColors {
   static const Color gray200 = Color(0xFFE5E7EB);
   static const Color gray600 = Color(0xFF4B5563);
   static const Color gray700 = Color(0xFF374151);
-
   static const Color gray800 = Color(0xFF1F2937);
 }
