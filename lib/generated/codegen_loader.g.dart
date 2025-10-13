@@ -55,6 +55,7 @@ class CodegenLoader extends AssetLoader{
   "show_more": "إظهار المزيد",
   "rate_book_title": "قيم هذا الكتاب",
   "your_rating": "شكراً لك! تم تسجيل تقييمك",
+  "rate_book_description": "هل قرأت هذا الكتاب من قبل؟ شارك تقييمك",
   "book_state": {
     "borrowable": "متاح للاستعارة",
     "borrowed": "مستعار",
@@ -120,6 +121,7 @@ static const Map<String,dynamic> _en = {
   "show_more": "Show More",
   "rate_book_title": "Rate this book",
   "your_rating": "Thank you! Your rating has been recorded",
+  "rate_book_description": "Have you read this book before? Share your rating",
   "book_state": {
     "borrowable": "Borrowable",
     "borrowed": "Borrowable",

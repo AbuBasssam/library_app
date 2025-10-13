@@ -41,6 +41,8 @@
   "show_more":"إظهار المزيد",
   "rate_book_title":"قيم هذا الكتاب",
   "your_rating":"شكراً لك! تم تسجيل تقييمك",
+  "rate_book_description":"هل قرأت هذا الكتاب من قبل؟ شارك تقييمك",
+
 
   "book_state":{
     "borrowable":"متاح للاستعارة",
