@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:library_app/core/helpers/spacing.dart';
+import 'package:library_app/core/theme/app_styles.dart';
 import 'package:library_app/generated/locale_keys.g.dart';
 
 class UnRatedWidget extends StatefulWidget {
@@ -31,21 +32,14 @@ class _UnRatedWidgetState extends State<UnRatedWidget> {
             horizontalSpace(8),
             Text(
               LocaleKeys.rate_book_title.tr(),
-              style: TextStyle(
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w600,
-                color: Colors.grey[800],
-              ),
+              style: AppStyles.font16Gray800SemiBold,
             ),
           ],
         ),
         verticalSpace(12),
         Text(
           LocaleKeys.rate_book_description.tr(),
-          style: TextStyle(
-            fontSize: 14.sp,
-            color: Colors.grey[700],
-          ),
+          style: AppStyles.font14Gray700Regular,
         ),
         verticalSpace(12),
         RatingBar.builder(
