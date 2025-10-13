@@ -41,6 +41,8 @@ abstract class  LocaleKeys {
   static const Wishlist = 'Wishlist';
   static const show_less = 'show_less';
   static const show_more = 'show_more';
+  static const rate_book_title = 'rate_book_title';
+  static const your_rating = 'your_rating';
   static const book_state_borrowable = 'book_state.borrowable';
   static const book_state_borrowed = 'book_state.borrowed';
   static const book_state_reservable = 'book_state.reservable';

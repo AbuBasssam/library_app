@@ -39,6 +39,8 @@
   "Wishlist":"قائمة الرغبات",
   "show_less":"إظهار أقل",
   "show_more":"إظهار المزيد",
+  "rate_book_title":"قيم هذا الكتاب",
+  "your_rating":"شكراً لك! تم تسجيل تقييمك",
 
   "book_state":{
     "borrowable":"متاح للاستعارة",

@@ -53,6 +53,8 @@ class CodegenLoader extends AssetLoader{
   "Wishlist": "قائمة الرغبات",
   "show_less": "إظهار أقل",
   "show_more": "إظهار المزيد",
+  "rate_book_title": "قيم هذا الكتاب",
+  "your_rating": "شكراً لك! تم تسجيل تقييمك",
   "book_state": {
     "borrowable": "متاح للاستعارة",
     "borrowed": "مستعار",
@@ -116,6 +118,8 @@ static const Map<String,dynamic> _en = {
   "Wishlist": "Wishlist",
   "show_less": "Show Less",
   "show_more": "Show More",
+  "rate_book_title": "Rate this book",
+  "your_rating": "Thank you! Your rating has been recorded",
   "book_state": {
     "borrowable": "Borrowable",
     "borrowed": "Borrowable",
