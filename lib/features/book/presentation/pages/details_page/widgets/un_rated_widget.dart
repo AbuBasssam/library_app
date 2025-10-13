@@ -1,7 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:library_app/core/helpers/spacing.dart';
+import 'package:library_app/generated/locale_keys.g.dart';
 
 class UnRatedWidget extends StatefulWidget {
   const UnRatedWidget({super.key});
@@ -28,7 +30,7 @@ class _UnRatedWidgetState extends State<UnRatedWidget> {
             Icon(Icons.star, size: 16.w, color: Colors.grey[700]),
             horizontalSpace(8),
             Text(
-              'Rate this book',
+              LocaleKeys.rate_book_title.tr(),
               style: TextStyle(
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w600,
@@ -39,7 +41,7 @@ class _UnRatedWidgetState extends State<UnRatedWidget> {
         ),
         verticalSpace(12),
         Text(
-          'Have you read this book before? Share your rating',
+          LocaleKeys.rate_book_description.tr(),
           style: TextStyle(
             fontSize: 14.sp,
             color: Colors.grey[700],
