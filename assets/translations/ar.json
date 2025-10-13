@@ -37,6 +37,8 @@
   "notify_availability": "كن أول من يعلم عند توفر الكتاب مرة أخرى!",
   "notify_me_button": "أخبرني عند التوفر",
   "Wishlist":"قائمة الرغبات",
+  "show_less":"إظهار أقل",
+  "show_more":"إظهار المزيد",
 
   "book_state":{
     "borrowable":"متاح للاستعارة",

@@ -51,6 +51,8 @@ class CodegenLoader extends AssetLoader{
   "notify_availability": "كن أول من يعلم عند توفر الكتاب مرة أخرى!",
   "notify_me_button": "أخبرني عند التوفر",
   "Wishlist": "قائمة الرغبات",
+  "show_less": "إظهار أقل",
+  "show_more": "إظهار المزيد",
   "book_state": {
     "borrowable": "متاح للاستعارة",
     "borrowed": "مستعار",
@@ -112,6 +114,8 @@ static const Map<String,dynamic> _en = {
   "notify_availability": "Be the first to know when it becomes available again!",
   "notify_me_button": "Notify When Available",
   "Wishlist": "Wishlist",
+  "show_less": "Show Less",
+  "show_more": "Show More",
   "book_state": {
     "borrowable": "Borrowable",
     "borrowed": "Borrowable",

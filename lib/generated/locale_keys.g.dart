@@ -39,6 +39,8 @@ abstract class  LocaleKeys {
   static const notify_availability = 'notify_availability';
   static const notify_me_button = 'notify_me_button';
   static const Wishlist = 'Wishlist';
+  static const show_less = 'show_less';
+  static const show_more = 'show_more';
   static const book_state_borrowable = 'book_state.borrowable';
   static const book_state_borrowed = 'book_state.borrowed';
   static const book_state_reservable = 'book_state.reservable';
