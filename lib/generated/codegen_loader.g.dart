@@ -48,7 +48,7 @@ class CodegenLoader extends AssetLoader{
   "current_fine": "الغرامة الحالية",
   "currently_unavailable": "غير متاح حالياً",
   "unavailable_description": "هذا الكتاب غير متاح للاستعارة أو الحجز في الوقت الحالي.",
-  "notify_availability": "كن أول من يعلم عند توفر الكتاب مرة أخرى!",
+  "notify_availability": "كن أول من يعلم عند توفر الكتاب مرة أخرى !",
   "notify_me_button": "أخبرني عند التوفر",
   "Wishlist": "قائمة الرغبات",
   "show_less": "إظهار أقل",
@@ -59,7 +59,7 @@ class CodegenLoader extends AssetLoader{
   "book_state": {
     "borrowable": "متاح للاستعارة",
     "borrowed": "مستعار",
-    "reservable": "قابل للحجز'",
+    "reservable": "قابل للحجز",
     "reserved": "محجوز",
     "unavailable": "غير متاح",
     "overdue": "متأخر"
