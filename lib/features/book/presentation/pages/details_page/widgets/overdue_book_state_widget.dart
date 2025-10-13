@@ -34,7 +34,7 @@ class OverdueBookStateWidget extends StatelessWidget {
           icon: Icons.warning_amber_rounded,
           iconColor: AppColors.red600,
           title: LocaleKeys.book_overdue.tr(),
-          titleColor: const Color(0xFF7F1D1D),
+          titleColor: AppColors.deepCherry,
           gradient: const LinearGradient(
             colors: [AppColors.red50, AppColors.orange200],
           ),
@@ -50,10 +50,12 @@ class OverdueBookStateWidget extends StatelessWidget {
           content: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(LocaleKeys.return_urgent.tr(),
-                  style: AppStyles.font14RichBlackRegular.copyWith(
-                    color: AppColors.red700,
-                  )),
+              Text(
+                LocaleKeys.return_urgent.tr(),
+                style: AppStyles.font14RichBlackRegular.copyWith(
+                  color: AppColors.red700,
+                ),
+              ),
               verticalSpace(16),
 
               // Overdue Details
@@ -117,10 +119,7 @@ class OverdueBookStateWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            label,
-            style: TextStyle(fontSize: 12.sp, color: Colors.grey[600]),
-          ),
+          Text(label, style: AppStyles.font12Gray600Regular),
           verticalSpace(4),
           Text(
             value,
