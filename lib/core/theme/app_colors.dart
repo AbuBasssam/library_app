@@ -55,6 +55,7 @@ class AppColors {
   static const Color red600With10Opacity = Color(0x1ADC2626);
   static const Color red700 = Color(0xFFB91C1C);
   static const Color red800 = Color(0xFF991B1B);
+  static const Color deepCherry = Color(0xFF7F1D1D);
 
   // ⚪ Gray
   static const Color gray100 = Color(0xFFF3F4F6);
