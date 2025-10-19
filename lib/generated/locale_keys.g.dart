@@ -38,12 +38,16 @@ abstract class  LocaleKeys {
   static const unavailable_description = 'unavailable_description';
   static const notify_availability = 'notify_availability';
   static const notify_me_button = 'notify_me_button';
-  static const Wishlist = 'Wishlist';
   static const show_less = 'show_less';
   static const show_more = 'show_more';
   static const rate_book_title = 'rate_book_title';
   static const your_rating = 'your_rating';
   static const rate_book_description = 'rate_book_description';
+  static const cancel = 'cancel';
+  static const save = 'save';
+  static const add_to_list = 'add_to_list';
+  static const create_new_list = 'create_new_list';
+  static const create_new_list_description = 'create_new_list_description';
   static const book_state_borrowable = 'book_state.borrowable';
   static const book_state_borrowed = 'book_state.borrowed';
   static const book_state_reservable = 'book_state.reservable';

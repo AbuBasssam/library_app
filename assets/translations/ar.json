@@ -36,12 +36,17 @@
   "unavailable_description": "هذا الكتاب غير متاح للاستعارة أو الحجز في الوقت الحالي.",
   "notify_availability": "كن أول من يعلم عند توفر الكتاب مرة أخرى !",
   "notify_me_button": "أخبرني عند التوفر",
-  "Wishlist":"قائمة الرغبات",
   "show_less":"إظهار أقل",
   "show_more":"إظهار المزيد",
   "rate_book_title":"قيم هذا الكتاب",
   "your_rating":"شكراً لك! تم تسجيل تقييمك",
   "rate_book_description":"هل قرأت هذا الكتاب من قبل؟ شارك تقييمك",
+  "cancel":"إلغاء",
+  "save":"حفظ",
+  "add_to_list":"إضافة إلى قائمة",
+  "create_new_list":"إنشاء قائمة جديدة",
+  "create_new_list_description":"أدخل اسم القائمة",
+
 
 
   "book_state":{
