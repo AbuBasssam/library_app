@@ -49,6 +49,8 @@ abstract class  LocaleKeys {
   static const create_new_list = 'create_new_list';
   static const create_new_list_description = 'create_new_list_description';
   static const saving_in_progress = 'saving_in_progress';
+  static const no_lists_yet = 'no_lists_yet';
+  static const create_first_list = 'create_first_list';
   static const book_state_borrowable = 'book_state.borrowable';
   static const book_state_borrowed = 'book_state.borrowed';
   static const book_state_reservable = 'book_state.reservable';

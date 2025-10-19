@@ -61,6 +61,8 @@ class CodegenLoader extends AssetLoader{
   "create_new_list": "إنشاء قائمة جديدة",
   "create_new_list_description": "أدخل اسم القائمة",
   "saving_in_progress": "جاري الحفظ...",
+  "no_lists_yet": "لا توجد قوائم بعد",
+  "create_first_list": "ابدأ بإنشاء قائمة جديدة لتنظيم كتبك المفضلة",
   "book_state": {
     "borrowable": "متاح للاستعارة",
     "borrowed": "مستعار",
@@ -132,6 +134,8 @@ static const Map<String,dynamic> _en = {
   "create_new_list": "Create new list",
   "create_new_list_description": "Please enter List Name",
   "saving_in_progress": "Saving...",
+  "no_lists_yet": "No lists yet",
+  "create_first_list": "Start by creating a new list to organize your favorite books",
   "book_state": {
     "borrowable": "Borrowable",
     "borrowed": "Borrowable",
