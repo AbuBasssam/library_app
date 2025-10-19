@@ -44,7 +44,9 @@
   "save":"Save",
   "add_to_list":"Add to List",
   "create_new_list":"Create new list",
-    "create_new_list_description":"Please enter List Name",
+  "create_new_list_description":"Please enter List Name",
+  "saving_in_progress":"Saving...",
+
 
 
   "book_state":{

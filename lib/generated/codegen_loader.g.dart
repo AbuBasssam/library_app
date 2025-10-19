@@ -60,6 +60,7 @@ class CodegenLoader extends AssetLoader{
   "add_to_list": "إضافة إلى قائمة",
   "create_new_list": "إنشاء قائمة جديدة",
   "create_new_list_description": "أدخل اسم القائمة",
+  "saving_in_progress": "جاري الحفظ...",
   "book_state": {
     "borrowable": "متاح للاستعارة",
     "borrowed": "مستعار",
@@ -130,6 +131,7 @@ static const Map<String,dynamic> _en = {
   "add_to_list": "Add to List",
   "create_new_list": "Create new list",
   "create_new_list_description": "Please enter List Name",
+  "saving_in_progress": "Saving...",
   "book_state": {
     "borrowable": "Borrowable",
     "borrowed": "Borrowable",
