@@ -1,7 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:library_app/features/book/data/models/book_data_hive_model.dart';
 import 'package:library_app/features/book/domain/abstracts/book_repository.dart';
 import 'package:library_app/features/book/presentation/bloc/saved_list_bottom_sheet_cubit/saved_list_bottom_sheet_state.dart';
 import 'package:library_app/features/book/presentation/models/book_list.dart';
+import 'package:library_app/features/book/presentation/models/book_list_data.dart';
+import 'package:library_app/generated/locale_keys.g.dart';
 
 class SavedListBottomSheetCubit extends Cubit<SavedListBottomSheetState> {
   final IBookRepository _repo;
@@ -156,5 +160,35 @@ class SavedListBottomSheetCubit extends Cubit<SavedListBottomSheetState> {
     }
 
     await loadSavedists();
+  }
+
+  Future<void> addBookToNewList(
+    String listName,
+    BookListData bookData,
+  ) async {
+    emit(const SavedListBottomSheetState.saving());
+
+    final hiveDataModel = BookDataHiveModel(
+      bookId: bookData.bookId,
+      title: bookData.title,
+      author: bookData.author,
+      coverImage: bookData.coverImage,
+    );
+
+    final addingResult = await _repo.addBookToNewList(
+      listName: listName,
+      bookData: hiveDataModel,
+    );
+    if (addingResult.isSuccess) {
+      String successMessage = LocaleKeys.successfully_operation.tr();
+
+      emit(SavedListBottomSheetState.saveSuccess(message: successMessage));
+      return;
+    }
+    String errMessage = _errMessage(addingResult.errors!);
+
+    emit(SavedListBottomSheetState.saveError(
+      error: LocaleKeys.operation_failed.tr(namedArgs: {"message": errMessage}),
+    ));
   }
 }
