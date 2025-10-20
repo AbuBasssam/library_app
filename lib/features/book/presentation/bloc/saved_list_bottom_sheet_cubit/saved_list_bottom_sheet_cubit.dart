@@ -137,4 +137,13 @@ class SavedListBottomSheetCubit extends Cubit<SavedListBottomSheetState> {
   String _errMessage(List<String> errors) {
     return errors.length > 1 ? errors.join(",") : errors.first;
   }
+
+  /// chanage selected list
+  void selectList(int index) {
+    final currentState = state;
+
+    if (currentState is! Loaded) return;
+
+    emit(currentState.copyWith(selectedIndex: index));
+  }
 }
