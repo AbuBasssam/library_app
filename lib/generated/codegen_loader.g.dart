@@ -63,6 +63,8 @@ class CodegenLoader extends AssetLoader{
   "saving_in_progress": "جاري الحفظ...",
   "no_lists_yet": "لا توجد قوائم بعد",
   "create_first_list": "ابدأ بإنشاء قائمة جديدة لتنظيم كتبك المفضلة",
+  "successfully_operation": "تمت العملية بنجاح'",
+  "operation_failed": "فشلت العملية: {message}",
   "book_state": {
     "borrowable": "متاح للاستعارة",
     "borrowed": "مستعار",
@@ -136,6 +138,8 @@ static const Map<String,dynamic> _en = {
   "saving_in_progress": "Saving...",
   "no_lists_yet": "No lists yet",
   "create_first_list": "Start by creating a new list to organize your favorite books",
+  "successfully_operation": "Operation done successfully",
+  "operation_failed": "Operation failed: {message}",
   "book_state": {
     "borrowable": "Borrowable",
     "borrowed": "Borrowable",

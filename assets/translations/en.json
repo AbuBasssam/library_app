@@ -48,6 +48,9 @@
   "saving_in_progress":"Saving...",
   "no_lists_yet":"No lists yet",
   "create_first_list":"Start by creating a new list to organize your favorite books",
+  "successfully_operation":"Operation done successfully",
+  "operation_failed":"Operation failed: {message}",
+
 
 
 
