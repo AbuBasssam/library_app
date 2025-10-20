@@ -146,4 +146,15 @@ class SavedListBottomSheetCubit extends Cubit<SavedListBottomSheetState> {
 
     emit(currentState.copyWith(selectedIndex: index));
   }
+
+  Future<void> createNewList(String listName) async {
+    final result = await _repo.createList(listName: listName);
+    if (!result.isSuccess) {
+      String errMessage = _errMessage(result.errors!);
+      emit(SavedListBottomSheetState.saveError(error: errMessage));
+      return;
+    }
+
+    await loadSavedists();
+  }
 }
