@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:library_app/features/book/domain/entities/en_book_state.dart';
 
 class BookEntity extends Equatable {
   final int? id;
@@ -16,8 +15,6 @@ class BookEntity extends Equatable {
   final String? category;
   final double? rating;
   final int? readersCount;
-  final enBookState? state;
-  final DateTime? searchDate;
   const BookEntity({
     this.id,
     this.title,
@@ -33,8 +30,6 @@ class BookEntity extends Equatable {
     this.category,
     this.rating,
     this.readersCount,
-    this.state,
-    this.searchDate,
   });
 
   @override
@@ -53,6 +48,5 @@ class BookEntity extends Equatable {
         category,
         rating,
         readersCount,
-        searchDate,
       ];
 }

@@ -21,7 +21,6 @@ extension BookEntityExtensions on BookEntity {
   bool get canMapToDetailView =>
       canMapToHomeView &&
       !(description == null ||
-          state == null ||
           publishYear == null ||
           pagesCount == null ||
           publisher == null ||
