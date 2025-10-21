@@ -1,13 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:library_app/core/helpers/helper_methods.dart';
 import 'package:library_app/core/theme/app_colors.dart';
 import 'package:library_app/core/theme/app_styles.dart';
 import 'package:library_app/generated/locale_keys.g.dart';
 
 class CreateListButton extends StatelessWidget {
-  const CreateListButton({super.key, required this.onPressed});
-  final VoidCallback? onPressed;
+  const CreateListButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class CreateListButton extends StatelessWidget {
       width: double.infinity,
       child: ElevatedButton.icon(
         style: _btnStyle(),
-        onPressed: onPressed,
+        onPressed: () => showCreateListDialog(context),
         icon: const Icon(Icons.add, color: Colors.white),
         label: Text(
           LocaleKeys.create_new_list.tr(),

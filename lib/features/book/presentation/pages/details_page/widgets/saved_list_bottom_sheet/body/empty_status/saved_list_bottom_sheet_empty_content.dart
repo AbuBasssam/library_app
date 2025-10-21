@@ -7,8 +7,7 @@ import 'package:library_app/features/book/presentation/pages/details_page/widget
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/saved_list_bottom_sheet/body/empty_status/empty_list_title.dart';
 
 class SavedListBottomSheetEmptyContent extends StatelessWidget {
-  final VoidCallback? onCreateNewList;
-  const SavedListBottomSheetEmptyContent({this.onCreateNewList, super.key});
+  const SavedListBottomSheetEmptyContent({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +33,7 @@ class SavedListBottomSheetEmptyContent extends StatelessWidget {
             verticalSpace(12),
             EmptyListDescription(),
             verticalSpace(32),
-            CreateListButton(onPressed: onCreateNewList),
+            CreateListButton(),
           ],
         ),
       ),

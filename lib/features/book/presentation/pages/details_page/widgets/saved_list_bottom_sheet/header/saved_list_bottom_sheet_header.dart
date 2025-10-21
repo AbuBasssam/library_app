@@ -5,12 +5,7 @@ import 'package:library_app/features/book/presentation/pages/details_page/widget
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/saved_list_bottom_sheet/header/title_and_crreate_buttton_row.dart';
 
 class SavedListBottomSheetHeader extends StatelessWidget {
-  final VoidCallback? onCreateNewList;
-
-  const SavedListBottomSheetHeader({
-    super.key,
-    this.onCreateNewList,
-  });
+  const SavedListBottomSheetHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +19,7 @@ class SavedListBottomSheetHeader extends StatelessWidget {
         children: [
           DragHandle(),
           verticalSpace(12),
-          TitleAndCrreateButttonRow(onCreateNewList: onCreateNewList),
+          TitleAndCrreateButttonRow(),
         ],
       ),
     );

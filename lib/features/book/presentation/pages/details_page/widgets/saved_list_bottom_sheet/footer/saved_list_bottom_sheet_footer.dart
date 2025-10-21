@@ -33,9 +33,7 @@ class SavedListBottomSheetFooter extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Expanded(
-            child: CancelButton(onPressed: isSaving ? null : onCancel),
-          ),
+          Expanded(child: CancelButton(onPressed: isSaving ? null : onCancel)),
           horizontalSpace(12),
           Expanded(
             child: SaveButton(

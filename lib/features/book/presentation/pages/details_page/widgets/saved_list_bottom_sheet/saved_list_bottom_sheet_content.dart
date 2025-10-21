@@ -8,13 +8,8 @@ import 'package:library_app/features/book/presentation/pages/details_page/widget
 
 class SavedListBottomSheetContent extends StatelessWidget {
   final SavedListBottomSheetState state;
-  final VoidCallback onCreateNewList;
 
-  const SavedListBottomSheetContent({
-    super.key,
-    required this.state,
-    required this.onCreateNewList,
-  });
+  const SavedListBottomSheetContent({super.key, required this.state});
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +21,7 @@ class SavedListBottomSheetContent extends StatelessWidget {
           child: CircularProgressIndicator(),
         ),
       ),
-      empty: () => SavedListBottomSheetEmptyContent(
-        onCreateNewList: onCreateNewList,
-      ),
+      empty: () => SavedListBottomSheetEmptyContent(),
       loaded: (bookLists, selectedIndex) => SavedListBottomSheetBookLists(
         content: bookLists,
         selectedIndex: selectedIndex,

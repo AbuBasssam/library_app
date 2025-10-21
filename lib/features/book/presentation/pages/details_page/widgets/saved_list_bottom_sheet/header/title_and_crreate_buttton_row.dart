@@ -1,67 +1,33 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:library_app/core/helpers/spacing.dart';
-import 'package:library_app/core/theme/app_colors.dart';
 import 'package:library_app/core/theme/app_styles.dart';
+import 'package:library_app/features/book/presentation/bloc/saved_list_bottom_sheet_cubit/saved_list_bottom_sheet_cubit.dart';
+import 'package:library_app/features/book/presentation/bloc/saved_list_bottom_sheet_cubit/saved_list_bottom_sheet_state.dart';
+import 'package:library_app/features/book/presentation/pages/details_page/widgets/saved_list_bottom_sheet/header/create_list_chip.dart';
 import 'package:library_app/generated/locale_keys.g.dart';
 
 class TitleAndCrreateButttonRow extends StatelessWidget {
-  final VoidCallback? onCreateNewList;
-
-  const TitleAndCrreateButttonRow({
-    super.key,
-    required this.onCreateNewList,
-  });
+  const TitleAndCrreateButttonRow({super.key});
 
   @override
   Widget build(BuildContext context) {
+    bool hasBookLists =
+        context.read<SavedListBottomSheetCubit>().state is Empty;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Expanded(
-          child: Text(
-            LocaleKeys.add_to_list.tr(),
-            style: AppStyles.font24Black87Bold.copyWith(fontSize: 20.sp),
-          ),
-        ),
-        InkWell(
-          onTap: onCreateNewList,
-          borderRadius: BorderRadius.circular(8.r),
-          child: Container(
-            padding: EdgeInsets.symmetric(
-              horizontal: 12.w,
-              vertical: 6.h,
-            ),
-            decoration: _btnDecoration(),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                // plus icon
-                Icon(
-                  Icons.add,
-                  size: 18.w,
-                  color: AppColors.mainBlue,
-                ),
-                horizontalSpace(4),
-                Text(
-                  LocaleKeys.create_new_list.tr(),
-                  style: AppStyles.font14Blue600SemiBold.copyWith(
-                    color: AppColors.mainBlue,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
+        Expanded(child: _txtTitle()),
+        if (!hasBookLists) CreateListChip()
       ],
     );
   }
 
-  BoxDecoration _btnDecoration() {
-    return BoxDecoration(
-      color: AppColors.mainBlue.withValues(alpha: 0.1),
-      borderRadius: BorderRadius.circular(8.r),
+  Text _txtTitle() {
+    return Text(
+      LocaleKeys.add_to_list.tr(),
+      style: AppStyles.font24Black87Bold.copyWith(fontSize: 20.sp),
     );
   }
 }
