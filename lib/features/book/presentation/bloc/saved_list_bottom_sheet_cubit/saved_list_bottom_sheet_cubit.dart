@@ -191,4 +191,36 @@ class SavedListBottomSheetCubit extends Cubit<SavedListBottomSheetState> {
       error: LocaleKeys.operation_failed.tr(namedArgs: {"message": errMessage}),
     ));
   }
+
+  Future<void> saveBookToList(BookListData bookData) async {
+    final currentState = state;
+    if (currentState is! Loaded) return;
+
+    emit(const SavedListBottomSheetState.saving());
+
+    final selectedList = currentState.bookLists[currentState.selectedIndex];
+    final hiveDataModel = BookDataHiveModel(
+      bookId: bookData.bookId,
+      title: bookData.title,
+      author: bookData.author,
+      coverImage: bookData.coverImage,
+    );
+    final savingResult = await _repo.addBookToList(
+      listId: selectedList.id,
+      bookData: hiveDataModel,
+    );
+    if (savingResult.isSuccess) {
+      emit(
+        SavedListBottomSheetState.saveSuccess(
+          message: LocaleKeys.successfully_operation.tr(),
+        ),
+      );
+
+      return;
+    }
+    String errMessage = _errMessage(savingResult.errors!);
+    emit(SavedListBottomSheetState.saveError(
+      error: LocaleKeys.operation_failed.tr(namedArgs: {"message": errMessage}),
+    ));
+  }
 }
