@@ -90,7 +90,6 @@ class OverdueBookStateWidget extends StatelessWidget {
           child: WishlistButton(
             onPressed: onWishlistPressed,
             isExpanded: false,
-            label: LocaleKeys.Wishlist.tr(),
           ),
         ),
       ],

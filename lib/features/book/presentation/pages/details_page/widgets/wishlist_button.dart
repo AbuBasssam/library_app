@@ -28,7 +28,7 @@ class WishlistButton extends StatelessWidget {
         color: AppColors.richBlack,
       ),
       label: Text(
-        label ?? LocaleKeys.Wishlist.tr(),
+        label ?? LocaleKeys.save.tr(),
         style: const TextStyle(fontWeight: FontWeightHelper.semiBold),
       ),
       style: OutlinedButton.styleFrom(
