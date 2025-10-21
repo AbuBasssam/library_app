@@ -9,7 +9,7 @@ part of 'related_book.dart';
 RelatedBook _$RelatedBookFromJson(Map<String, dynamic> json) => RelatedBook(
       bookId: (json['bookId'] as num).toInt(),
       title: json['title'] as String,
-      publicationYear: json['publicationYear'] as String,
+      publicationYear: json['publicationYear'].toString(),
       averageRating: (json['averageRating'] as num).toDouble(),
       coverImageUrl: json['coverImageUrl'] as String,
       isNewBook: json['isNewBook'] as bool,
