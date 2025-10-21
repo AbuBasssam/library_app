@@ -26,14 +26,14 @@ class BookListHiveModel {
   BookListHiveModel copyWith({
     int? id,
     String? name,
-    String? coverimage,
+    String? coverImage,
     DateTime? lastModified,
     List<BookDataHiveModel>? books,
   }) {
     return BookListHiveModel(
       id: id ?? this.id,
       name: name ?? this.name,
-      coverImage: coverimage ?? this.coverImage,
+      coverImage: coverImage ?? this.coverImage,
       lastModified: lastModified ?? this.lastModified,
       books: books ?? this.books,
     );
