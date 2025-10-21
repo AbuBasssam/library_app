@@ -7,15 +7,12 @@ class CheckIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
+    return Container(
       key: const ValueKey('selected'),
-      top: 8.h,
-      right: 8.w,
-      child: Container(
-          width: 24.w,
-          height: 24.h,
-          decoration: _iconDecoration(),
-          child: Icon(Icons.check, size: 16.w, color: Colors.white)),
+      width: 24.w,
+      height: 24.h,
+      decoration: _iconDecoration(),
+      child: Icon(Icons.check, size: 16.w, color: Colors.white),
     );
   }
 

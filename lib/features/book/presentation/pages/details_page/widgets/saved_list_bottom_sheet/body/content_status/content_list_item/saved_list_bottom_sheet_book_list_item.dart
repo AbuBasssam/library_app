@@ -21,6 +21,8 @@ class SavedListBottomSheetBookListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isRTL = Directionality.of(context) == TextDirection.rtl;
+
     return TweenAnimationBuilder<double>(
       tween: Tween(begin: 0.0, end: 1.0),
       duration: Duration(milliseconds: 300 + (item.id * 100)),
@@ -34,6 +36,7 @@ class SavedListBottomSheetBookListItem extends StatelessWidget {
           ),
         );
       },
+      //Book List Card
       child: InkWell(
         onTap: onTap,
         child: AnimatedContainer(
@@ -62,7 +65,12 @@ class SavedListBottomSheetBookListItem extends StatelessWidget {
                 ],
               ),
               // Selected Indicator with Animation
-              AnimatedSelectedIndicator(isSelected: isSelected),
+              Positioned(
+                top: 5.h,
+                left: isRTL ? null : 5.0.w,
+                right: isRTL ? 5.0.w : null,
+                child: AnimatedSelectedIndicator(isSelected: isSelected),
+              ),
             ],
           ),
         ),
