@@ -20,7 +20,7 @@ class SimilarBookList extends StatelessWidget {
         SectionTitle(title: LocaleKeys.similar_books.tr()),
         verticalSpace(12),
         SizedBox(
-          height: 280.h,
+          height: 290.h,
           width: 393.w,
           child: ListView.separated(
             itemCount: books.length,
