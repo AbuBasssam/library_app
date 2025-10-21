@@ -9,8 +9,13 @@ import 'package:library_app/features/home/presentation/widgets/section_title.dar
 import 'package:library_app/generated/locale_keys.g.dart';
 
 class AuthorBookList extends StatelessWidget {
+  final String authorName;
   final List<BookEntity> books;
-  const AuthorBookList({super.key, required this.books});
+  const AuthorBookList({
+    super.key,
+    required this.authorName,
+    required this.books,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +24,7 @@ class AuthorBookList extends StatelessWidget {
       children: [
         SectionTitle(
           title: LocaleKeys.author_books.tr(namedArgs: {
-            'author': books[0].author!,
+            'author': authorName,
           }),
         ),
         verticalSpace(12),
