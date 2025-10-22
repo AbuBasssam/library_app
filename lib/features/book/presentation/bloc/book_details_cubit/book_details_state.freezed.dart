@@ -20,7 +20,12 @@ mixin _$BookDetailsState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(BookDetailsModel data) success,
+    required TResult Function(
+            BookEntity bookDetails,
+            BookStatus bookStatus,
+            UserBookPreference userPreference,
+            BookRecommendations recommendations)
+        success,
     required TResult Function(String message) failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +33,12 @@ mixin _$BookDetailsState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(BookDetailsModel data)? success,
+    TResult? Function(
+            BookEntity bookDetails,
+            BookStatus bookStatus,
+            UserBookPreference userPreference,
+            BookRecommendations recommendations)?
+        success,
     TResult? Function(String message)? failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +46,12 @@ mixin _$BookDetailsState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(BookDetailsModel data)? success,
+    TResult Function(
+            BookEntity bookDetails,
+            BookStatus bookStatus,
+            UserBookPreference userPreference,
+            BookRecommendations recommendations)?
+        success,
     TResult Function(String message)? failure,
     required TResult orElse(),
   }) =>
@@ -45,7 +60,7 @@ mixin _$BookDetailsState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
+    required TResult Function(Success value) success,
     required TResult Function(_Failure value) failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -53,7 +68,7 @@ mixin _$BookDetailsState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
+    TResult? Function(Success value)? success,
     TResult? Function(_Failure value)? failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -61,7 +76,7 @@ mixin _$BookDetailsState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
+    TResult Function(Success value)? success,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) =>
@@ -132,7 +147,12 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(BookDetailsModel data) success,
+    required TResult Function(
+            BookEntity bookDetails,
+            BookStatus bookStatus,
+            UserBookPreference userPreference,
+            BookRecommendations recommendations)
+        success,
     required TResult Function(String message) failure,
   }) {
     return initial();
@@ -143,7 +163,12 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(BookDetailsModel data)? success,
+    TResult? Function(
+            BookEntity bookDetails,
+            BookStatus bookStatus,
+            UserBookPreference userPreference,
+            BookRecommendations recommendations)?
+        success,
     TResult? Function(String message)? failure,
   }) {
     return initial?.call();
@@ -154,7 +179,12 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(BookDetailsModel data)? success,
+    TResult Function(
+            BookEntity bookDetails,
+            BookStatus bookStatus,
+            UserBookPreference userPreference,
+            BookRecommendations recommendations)?
+        success,
     TResult Function(String message)? failure,
     required TResult orElse(),
   }) {
@@ -169,7 +199,7 @@ class _$InitialImpl implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
+    required TResult Function(Success value) success,
     required TResult Function(_Failure value) failure,
   }) {
     return initial(this);
@@ -180,7 +210,7 @@ class _$InitialImpl implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
+    TResult? Function(Success value)? success,
     TResult? Function(_Failure value)? failure,
   }) {
     return initial?.call(this);
@@ -191,7 +221,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
+    TResult Function(Success value)? success,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
@@ -249,7 +279,12 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(BookDetailsModel data) success,
+    required TResult Function(
+            BookEntity bookDetails,
+            BookStatus bookStatus,
+            UserBookPreference userPreference,
+            BookRecommendations recommendations)
+        success,
     required TResult Function(String message) failure,
   }) {
     return loading();
@@ -260,7 +295,12 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(BookDetailsModel data)? success,
+    TResult? Function(
+            BookEntity bookDetails,
+            BookStatus bookStatus,
+            UserBookPreference userPreference,
+            BookRecommendations recommendations)?
+        success,
     TResult? Function(String message)? failure,
   }) {
     return loading?.call();
@@ -271,7 +311,12 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(BookDetailsModel data)? success,
+    TResult Function(
+            BookEntity bookDetails,
+            BookStatus bookStatus,
+            UserBookPreference userPreference,
+            BookRecommendations recommendations)?
+        success,
     TResult Function(String message)? failure,
     required TResult orElse(),
   }) {
@@ -286,7 +331,7 @@ class _$LoadingImpl implements _Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
+    required TResult Function(Success value) success,
     required TResult Function(_Failure value) failure,
   }) {
     return loading(this);
@@ -297,7 +342,7 @@ class _$LoadingImpl implements _Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
+    TResult? Function(Success value)? success,
     TResult? Function(_Failure value)? failure,
   }) {
     return loading?.call(this);
@@ -308,7 +353,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
+    TResult Function(Success value)? success,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
@@ -329,7 +374,11 @@ abstract class _$$SuccessImplCopyWith<$Res> {
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({BookDetailsModel data});
+  $Res call(
+      {BookEntity bookDetails,
+      BookStatus bookStatus,
+      UserBookPreference userPreference,
+      BookRecommendations recommendations});
 }
 
 /// @nodoc
@@ -345,28 +394,53 @@ class __$$SuccessImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = null,
+    Object? bookDetails = null,
+    Object? bookStatus = null,
+    Object? userPreference = null,
+    Object? recommendations = null,
   }) {
     return _then(_$SuccessImpl(
-      data: null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as BookDetailsModel,
+      bookDetails: null == bookDetails
+          ? _value.bookDetails
+          : bookDetails // ignore: cast_nullable_to_non_nullable
+              as BookEntity,
+      bookStatus: null == bookStatus
+          ? _value.bookStatus
+          : bookStatus // ignore: cast_nullable_to_non_nullable
+              as BookStatus,
+      userPreference: null == userPreference
+          ? _value.userPreference
+          : userPreference // ignore: cast_nullable_to_non_nullable
+              as UserBookPreference,
+      recommendations: null == recommendations
+          ? _value.recommendations
+          : recommendations // ignore: cast_nullable_to_non_nullable
+              as BookRecommendations,
     ));
   }
 }
 
 /// @nodoc
 
-class _$SuccessImpl implements _Success {
-  const _$SuccessImpl({required this.data});
+class _$SuccessImpl implements Success {
+  const _$SuccessImpl(
+      {required this.bookDetails,
+      required this.bookStatus,
+      required this.userPreference,
+      required this.recommendations});
 
   @override
-  final BookDetailsModel data;
+  final BookEntity bookDetails;
+  @override
+  final BookStatus bookStatus;
+  @override
+  final UserBookPreference userPreference;
+  @override
+  final BookRecommendations recommendations;
 
   @override
   String toString() {
-    return 'BookDetailsState.success(data: $data)';
+    return 'BookDetailsState.success(bookDetails: $bookDetails, bookStatus: $bookStatus, userPreference: $userPreference, recommendations: $recommendations)';
   }
 
   @override
@@ -374,11 +448,19 @@ class _$SuccessImpl implements _Success {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SuccessImpl &&
-            (identical(other.data, data) || other.data == data));
+            (identical(other.bookDetails, bookDetails) ||
+                other.bookDetails == bookDetails) &&
+            (identical(other.bookStatus, bookStatus) ||
+                other.bookStatus == bookStatus) &&
+            (identical(other.userPreference, userPreference) ||
+                other.userPreference == userPreference) &&
+            (identical(other.recommendations, recommendations) ||
+                other.recommendations == recommendations));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, data);
+  int get hashCode => Object.hash(
+      runtimeType, bookDetails, bookStatus, userPreference, recommendations);
 
   /// Create a copy of BookDetailsState
   /// with the given fields replaced by the non-null parameter values.
@@ -393,10 +475,15 @@ class _$SuccessImpl implements _Success {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(BookDetailsModel data) success,
+    required TResult Function(
+            BookEntity bookDetails,
+            BookStatus bookStatus,
+            UserBookPreference userPreference,
+            BookRecommendations recommendations)
+        success,
     required TResult Function(String message) failure,
   }) {
-    return success(data);
+    return success(bookDetails, bookStatus, userPreference, recommendations);
   }
 
   @override
@@ -404,10 +491,16 @@ class _$SuccessImpl implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(BookDetailsModel data)? success,
+    TResult? Function(
+            BookEntity bookDetails,
+            BookStatus bookStatus,
+            UserBookPreference userPreference,
+            BookRecommendations recommendations)?
+        success,
     TResult? Function(String message)? failure,
   }) {
-    return success?.call(data);
+    return success?.call(
+        bookDetails, bookStatus, userPreference, recommendations);
   }
 
   @override
@@ -415,12 +508,17 @@ class _$SuccessImpl implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(BookDetailsModel data)? success,
+    TResult Function(
+            BookEntity bookDetails,
+            BookStatus bookStatus,
+            UserBookPreference userPreference,
+            BookRecommendations recommendations)?
+        success,
     TResult Function(String message)? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(data);
+      return success(bookDetails, bookStatus, userPreference, recommendations);
     }
     return orElse();
   }
@@ -430,7 +528,7 @@ class _$SuccessImpl implements _Success {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
+    required TResult Function(Success value) success,
     required TResult Function(_Failure value) failure,
   }) {
     return success(this);
@@ -441,7 +539,7 @@ class _$SuccessImpl implements _Success {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
+    TResult? Function(Success value)? success,
     TResult? Function(_Failure value)? failure,
   }) {
     return success?.call(this);
@@ -452,7 +550,7 @@ class _$SuccessImpl implements _Success {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
+    TResult Function(Success value)? success,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
@@ -463,11 +561,17 @@ class _$SuccessImpl implements _Success {
   }
 }
 
-abstract class _Success implements BookDetailsState {
-  const factory _Success({required final BookDetailsModel data}) =
-      _$SuccessImpl;
+abstract class Success implements BookDetailsState {
+  const factory Success(
+      {required final BookEntity bookDetails,
+      required final BookStatus bookStatus,
+      required final UserBookPreference userPreference,
+      required final BookRecommendations recommendations}) = _$SuccessImpl;
 
-  BookDetailsModel get data;
+  BookEntity get bookDetails;
+  BookStatus get bookStatus;
+  UserBookPreference get userPreference;
+  BookRecommendations get recommendations;
 
   /// Create a copy of BookDetailsState
   /// with the given fields replaced by the non-null parameter values.
@@ -546,7 +650,12 @@ class _$FailureImpl implements _Failure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(BookDetailsModel data) success,
+    required TResult Function(
+            BookEntity bookDetails,
+            BookStatus bookStatus,
+            UserBookPreference userPreference,
+            BookRecommendations recommendations)
+        success,
     required TResult Function(String message) failure,
   }) {
     return failure(message);
@@ -557,7 +666,12 @@ class _$FailureImpl implements _Failure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(BookDetailsModel data)? success,
+    TResult? Function(
+            BookEntity bookDetails,
+            BookStatus bookStatus,
+            UserBookPreference userPreference,
+            BookRecommendations recommendations)?
+        success,
     TResult? Function(String message)? failure,
   }) {
     return failure?.call(message);
@@ -568,7 +682,12 @@ class _$FailureImpl implements _Failure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(BookDetailsModel data)? success,
+    TResult Function(
+            BookEntity bookDetails,
+            BookStatus bookStatus,
+            UserBookPreference userPreference,
+            BookRecommendations recommendations)?
+        success,
     TResult Function(String message)? failure,
     required TResult orElse(),
   }) {
@@ -583,7 +702,7 @@ class _$FailureImpl implements _Failure {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
+    required TResult Function(Success value) success,
     required TResult Function(_Failure value) failure,
   }) {
     return failure(this);
@@ -594,7 +713,7 @@ class _$FailureImpl implements _Failure {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
+    TResult? Function(Success value)? success,
     TResult? Function(_Failure value)? failure,
   }) {
     return failure?.call(this);
@@ -605,7 +724,7 @@ class _$FailureImpl implements _Failure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
+    TResult Function(Success value)? success,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
