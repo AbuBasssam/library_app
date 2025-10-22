@@ -26,7 +26,7 @@ class SaveButton extends StatelessWidget {
           backgroundColor: AppColors.mainBlue,
           disabledBackgroundColor: Colors.grey[300],
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(999),
+            borderRadius: BorderRadius.circular(999.r),
           ),
           minimumSize: Size(48.w, 48.h),
         ),

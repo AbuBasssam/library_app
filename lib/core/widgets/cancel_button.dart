@@ -21,6 +21,7 @@ class CancelButton extends StatelessWidget {
         ),
         side: const BorderSide(color: Colors.grey),
         minimumSize: Size(48.w, 48.h),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
       ),
       child: Text(
         LocaleKeys.cancel.tr(),
