@@ -51,9 +51,34 @@
   "create_first_list":"ابدأ بإنشاء قائمة جديدة لتنظيم كتبك المفضلة",
   "successfully_operation":"تمت العملية بنجاح'",
   "operation_failed":"فشلت العملية: {message}",
-
-
-
+  
+  "borrow": {
+    "title": "استعارة الكتاب",
+    "select_duration": "اختر مدة الاستعارة:",
+    "days_count": "{count} أيام",
+    "recommended": "موصى به",
+    "today": "اليوم",
+    "custom_option": {
+      "title": "تحديد يدوي",
+      "description": "اختر المدة التي تناسبك"
+    },
+    "enter_days": "حدد عدد الأيام (1 - {max}):",
+    "enter_number_hint": "أدخل رقم من 1 إلى {max}",
+    "details": {
+      "title": "تفاصيل الاستعارة:",
+      "start_date": "تاريخ البداية",
+      "return_date": "تاريخ الإرجاع",
+      "duration": "مدة الاستعارة"
+    },
+    "warnings": {
+      "important_info": "معلومات مهمة:",
+      "pickup": "يجب استلام الكتاب خلال {hours} ساعة من التأكيد",
+      "fine": "غرامة التأخير: {amount} ريال سعودي لكل يوم تأخير",
+      "auto_charge": "سيتم احتساب الغرامة تلقائياً في حالة التأخير"
+    },
+    "actions": {
+      "confirm": "تأكيد الاستعارة"}
+    },
 
   "book_state":{
     "borrowable":"متاح للاستعارة",
@@ -63,8 +88,8 @@
     "unavailable":"غير متاح",
     "overdue":"متأخر"
   },
-  "time_ago":
-  {
+
+  "time_ago":{
     "now": "الآن",
       
     "days_ago_single": "منذ يوم",

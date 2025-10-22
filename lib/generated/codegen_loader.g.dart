@@ -65,6 +65,34 @@ class CodegenLoader extends AssetLoader{
   "create_first_list": "ابدأ بإنشاء قائمة جديدة لتنظيم كتبك المفضلة",
   "successfully_operation": "تمت العملية بنجاح'",
   "operation_failed": "فشلت العملية: {message}",
+  "borrow": {
+    "title": "استعارة الكتاب",
+    "select_duration": "اختر مدة الاستعارة:",
+    "days_count": "{count} أيام",
+    "recommended": "موصى به",
+    "today": "اليوم",
+    "custom_option": {
+      "title": "تحديد يدوي",
+      "description": "اختر المدة التي تناسبك"
+    },
+    "enter_days": "حدد عدد الأيام (1 - {max}):",
+    "enter_number_hint": "أدخل رقم من 1 إلى {max}",
+    "details": {
+      "title": "تفاصيل الاستعارة:",
+      "start_date": "تاريخ البداية",
+      "return_date": "تاريخ الإرجاع",
+      "duration": "مدة الاستعارة"
+    },
+    "warnings": {
+      "important_info": "معلومات مهمة:",
+      "pickup": "يجب استلام الكتاب خلال {hours} ساعة من التأكيد",
+      "fine": "غرامة التأخير: {amount} ريال سعودي لكل يوم تأخير",
+      "auto_charge": "سيتم احتساب الغرامة تلقائياً في حالة التأخير"
+    },
+    "actions": {
+      "confirm": "تأكيد الاستعارة"
+    }
+  },
   "book_state": {
     "borrowable": "متاح للاستعارة",
     "borrowed": "مستعار",
@@ -140,6 +168,34 @@ static const Map<String,dynamic> _en = {
   "create_first_list": "Start by creating a new list to organize your favorite books",
   "successfully_operation": "Operation done successfully",
   "operation_failed": "Operation failed: {message}",
+  "borrow": {
+    "title": "Borrow Book",
+    "select_duration": "Choose borrowing period:",
+    "days_count": "{count} days",
+    "recommended": "Recommended",
+    "today": "Today",
+    "custom_option": {
+      "title": "Custom Duration",
+      "description": "Choose your preferred period"
+    },
+    "enter_days": "Specify number of days (1 - {max}):",
+    "enter_number_hint": "Enter a number from 1 to {max}",
+    "details": {
+      "title": "Borrowing Details:",
+      "start_date": "Start Date",
+      "return_date": "Return Date",
+      "duration": "Borrowing Period"
+    },
+    "warnings": {
+      "important_info": "Important Information:",
+      "pickup": "Book must be picked up within {hours} hours of confirmation",
+      "fine": "Late fee: {amount} SAR per day overdue",
+      "auto_charge": "Fees will be automatically charged for late returns"
+    },
+    "actions": {
+      "confirm": "Confirm Borrowing"
+    }
+  },
   "book_state": {
     "borrowable": "Borrowable",
     "borrowed": "Borrowable",

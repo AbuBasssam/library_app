@@ -50,12 +50,37 @@
   "create_first_list":"Start by creating a new list to organize your favorite books",
   "successfully_operation":"Operation done successfully",
   "operation_failed":"Operation failed: {message}",
+  
+  "borrow": {
+    "title": "Borrow Book",
+    "select_duration": "Choose borrowing period:",
+    "days_count": "{count} days",
+    "recommended": "Recommended",
+    "today": "Today",
+    "custom_option": {
+      "title": "Custom Duration",
+      "description": "Choose your preferred period"
+    },
+    "enter_days": "Specify number of days (1 - {max}):",
+    "enter_number_hint": "Enter a number from 1 to {max}",
+    "details": {
+      "title": "Borrowing Details:",
+      "start_date": "Start Date",
+      "return_date": "Return Date",
+      "duration": "Borrowing Period"
+    },
+    "warnings": {
+      "important_info": "Important Information:",
+      "pickup": "Book must be picked up within {hours} hours of confirmation",
+      "fine": "Late fee: {amount} SAR per day overdue",
+      "auto_charge": "Fees will be automatically charged for late returns"
+    },
+    "actions": {
+      "confirm": "Confirm Borrowing"
+    }
+  },
 
-
-
-
-
-  "book_state":{
+  "book_state": {
     "borrowable":"Borrowable",
     "borrowed":"Borrowable",
     "reservable":"Reservable",
@@ -63,6 +88,7 @@
     "unavailable":"Unavailable",
     "overdue":"Overdue"
   },
+  
   "time_ago": {
       "now": "Now",
       
