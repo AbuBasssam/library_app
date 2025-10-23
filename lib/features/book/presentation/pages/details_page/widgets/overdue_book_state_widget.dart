@@ -72,7 +72,11 @@ class OverdueBookStateWidget extends StatelessWidget {
                   Expanded(
                     child: _buildDetailCard(
                       label: LocaleKeys.current_fine.tr(),
-                      value: _txtFee(context),
+                      value: _txtFee(context, lateFee),
+                      vlueStyle: AppStyles.font14Red600Bold.copyWith(
+                        fontSize: 16.sp,
+                        fontFamily: 'Tajawal',
+                      ),
                       backgroundColor: AppColors.red100,
                       valueSize: 20,
                     ),
@@ -96,15 +100,22 @@ class OverdueBookStateWidget extends StatelessWidget {
     );
   }
 
-  String _txtFee(BuildContext context) {
-    return context.locale.languageCode == 'en'
-        ? '${lateFee.toStringAsFixed(2)} SAR'
-        : '${lateFee.toStringAsFixed(2)} ر.س';
+  String _txtFee(BuildContext context, double lateFee) {
+    final localeCode = context.locale.languageCode;
+
+    final format = NumberFormat.currency(
+      locale: localeCode == 'en' ? 'en_SA' : 'ar_SA',
+      symbol: localeCode == 'en' ? 'SAR' : '﷼',
+      decimalDigits: 2,
+    );
+
+    return format.format(lateFee);
   }
 
   Widget _buildDetailCard({
     required String label,
     required String value,
+    TextStyle? vlueStyle,
     required Color backgroundColor,
     double valueSize = 16,
   }) {
@@ -122,11 +133,12 @@ class OverdueBookStateWidget extends StatelessWidget {
           verticalSpace(4),
           Text(
             value,
-            style: TextStyle(
-              fontSize: valueSize,
-              fontWeight: FontWeight.bold,
-              color: AppColors.red600,
-            ),
+            style: vlueStyle ??
+                TextStyle(
+                  fontSize: valueSize.sp,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.red600,
+                ),
           ),
         ],
       ),

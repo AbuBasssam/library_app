@@ -36,7 +36,7 @@ class RatedWidget extends StatelessWidget {
             Icon(
               Icons.check_circle,
               size: 16.w,
-              color: Color(0xFF16A34A),
+              color: AppColors.green600,
             ),
             horizontalSpace(8),
             Text(

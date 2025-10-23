@@ -75,7 +75,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
         width: 361.w,
         padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 11.h),
         decoration: BoxDecoration(
-          color: const Color(0xFFF9FAFB),
+          color: AppColors.softWhiteGray,
           borderRadius: BorderRadius.circular(99.r),
           border: Border.all(color: const Color(0xFFE4E7EC), width: 1.w),
         ),

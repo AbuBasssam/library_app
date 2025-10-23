@@ -108,4 +108,8 @@ class AppStyles {
     fontWeight: FontWeightHelper.bold,
     color: AppColors.yellow900,
   );
+  static TextStyle font15Bold = TextStyle(
+    fontSize: 15.sp,
+    fontWeight: FontWeightHelper.bold,
+  );
 }

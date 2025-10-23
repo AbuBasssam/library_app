@@ -27,7 +27,7 @@ class _ExpandableDescriptionState extends State<ExpandableDescription> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
       decoration: BoxDecoration(
-        color: const Color(0xFFF9FAFB),
+        color: AppColors.softWhiteGray,
         borderRadius: BorderRadius.circular(12.r),
       ),
       child: Column(

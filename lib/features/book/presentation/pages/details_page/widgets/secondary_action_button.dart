@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:library_app/core/theme/app_colors.dart';
 
 /// Secondary action button (Outlined style)
 class SecondaryActionButton extends StatelessWidget {
@@ -14,7 +15,7 @@ class SecondaryActionButton extends StatelessWidget {
     required this.onPressed,
     required this.icon,
     required this.label,
-    this.color = const Color(0xFF2563EB),
+    this.color = AppColors.blue600,
     this.padding,
   });
 
