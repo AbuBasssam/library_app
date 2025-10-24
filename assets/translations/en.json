@@ -80,6 +80,35 @@
     }
   },
 
+  "extend": {
+    "title": "Extend Borrow",
+    "current_borrow_info": "Current Borrow Information",
+    "borrow_date": "Borrow Date",
+    "current_due_date": "Current Due Date",
+    "days_remaining": "{count} days remaining",
+    "select_duration": "Choose extension period:",
+    "days_option": "{count} days",
+    "recommended": "Recommended",
+    "custom_option_title": "Custom Duration",
+    "custom_option_description": "Choose your preferred period",
+    "details_title": "Extension Details:",
+    "extension_by": "Extension By",
+    "days_count": "+{count} days",
+    "new_due_date": "New Due Date",
+    "total_days": "Total Days",
+    "total_days_value": "{current} of {max} days",
+    "important_info": "Important Information:",
+    "max_extensions": "Maximum extensions: {count} times",
+    "max_days_per_extension": "Maximum per extension: {days} days",
+    "max_total_days": "Maximum total: {days} days",
+    "cancel": "Cancel",
+    "confirm": "Confirm Extension",
+    "invalid_days": "Cannot extend more than {max} days",
+    "success_message": "Borrow extended successfully! New due date: {date}",
+    "error_max_reached": "You have reached the maximum number of extensions",
+    "error_total_exceeded": "Extension would exceed maximum borrowing period"
+  },
+  
   "book_state": {
     "borrowable":"Borrowable",
     "borrowed":"Borrowable",
