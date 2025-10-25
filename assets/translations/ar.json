@@ -101,7 +101,6 @@
     "max_extensions": "الحد الأقصى للتمديدات: {count} مرات",
     "max_days_per_extension": "الحد الأقصى لكل تمديد: {days} يوم",
     "max_total_days": "الحد الأقصى الإجمالي: {days} يوم",
-    "cancel": "إلغاء",
     "confirm": "تأكيد التمديد",
     "invalid_days": "لا يمكن التمديد بأكثر من {max} يوم",
     "success_message": "تم تمديد الاستعارة بنجاح! الموعد الجديد: {date}",

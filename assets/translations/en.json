@@ -101,7 +101,6 @@
     "max_extensions": "Maximum extensions: {count} times",
     "max_days_per_extension": "Maximum per extension: {days} days",
     "max_total_days": "Maximum total: {days} days",
-    "cancel": "Cancel",
     "confirm": "Confirm Extension",
     "invalid_days": "Cannot extend more than {max} days",
     "success_message": "Borrow extended successfully! New due date: {date}",

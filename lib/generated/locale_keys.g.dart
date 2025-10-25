@@ -96,7 +96,6 @@ abstract class  LocaleKeys {
   static const extend_max_extensions = 'extend.max_extensions';
   static const extend_max_days_per_extension = 'extend.max_days_per_extension';
   static const extend_max_total_days = 'extend.max_total_days';
-  static const extend_cancel = 'extend.cancel';
   static const extend_confirm = 'extend.confirm';
   static const extend_invalid_days = 'extend.invalid_days';
   static const extend_success_message = 'extend.success_message';
