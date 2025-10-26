@@ -14,12 +14,12 @@ class TitleAndCrreateButttonRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool hasBookLists =
-        context.read<SavedListBottomSheetCubit>().state is Empty;
+        context.read<SavedListBottomSheetCubit>().state is! Empty;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Expanded(child: _txtTitle()),
-        if (!hasBookLists) CreateListChip()
+        if (hasBookLists) CreateListChip()
       ],
     );
   }

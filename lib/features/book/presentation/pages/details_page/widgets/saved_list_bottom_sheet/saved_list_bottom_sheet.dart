@@ -68,7 +68,7 @@ class _SavedListBottomSheetState extends State<SavedListBottomSheet>
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SavedListBottomSheetHeader(),
+                  SavedListBottomSheetHeader(),
                   SavedListBottomSheetContent(state: state),
                   SavedListBottomSheetFooter(
                     state: state,
