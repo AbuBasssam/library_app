@@ -26,7 +26,7 @@ class DetailRow extends StatelessWidget {
           AnimatedDefaultTextStyle(
             duration: const Duration(milliseconds: 300),
             style: AppStyles.font24Black87Bold.copyWith(
-              fontSize: 14.sp,
+              fontSize: 13.sp,
               fontWeight: FontWeightHelper.semiBold,
               color: valueColor ?? Colors.black87,
             ),
