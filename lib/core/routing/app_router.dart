@@ -1,4 +1,9 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:library_app/core/di/dependency_injection.dart';
+import 'package:library_app/features/book/domain/abstracts/book_repository.dart';
+import 'package:library_app/features/book/presentation/bloc/book_details_cubit/book_details_cubit.dart';
+import 'package:library_app/features/book/presentation/pages/details_page/widgets/book_details_page.dart';
 import 'package:library_app/main_screen.dart';
 import 'package:library_app/test_screen.dart';
 
@@ -24,8 +29,10 @@ class AppRouter {
       GoRoute(
         path: '/',
         builder: (context, state) {
-          return const MainScreen();
-          /*return BlocProvider(
+          return BlocProvider(
+            create: (context) => BookDetailsCubit(getIt<IBookRepository>()),
+            child: const BookDetailsPage(bookId: 1),
+          ); /*return BlocProvider(
             create: (context) {
               return HomeDataCubit(getIt<GetHomeDataUseCase>());
             },
