@@ -8,9 +8,11 @@ import 'package:library_app/features/book/domain/entities/en_book_state.dart';
 import 'package:library_app/features/book/presentation/bloc/book_details_cubit/book_details_cubit.dart';
 import 'package:library_app/features/book/presentation/bloc/saved_list_bottom_sheet_cubit/saved_list_bottom_sheet_cubit.dart';
 import 'package:library_app/features/book/presentation/models/borrow_bottom_sheet_info.dart';
+import 'package:library_app/features/book/presentation/models/extending_config.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/borrow_bottom_sheet/borrow_bottom_sheet.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/borrowable_book_state_widget.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/borrowed_book_state_widget.dart';
+import 'package:library_app/features/book/presentation/pages/details_page/widgets/extend_borrow_bottom_sheet/extend_borrow_bottom_sheet.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/saved_list_bottom_sheet/saved_list_bottom_sheet.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/overdue_book_state_widget.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/reservable_book_state_widget.dart';
@@ -27,7 +29,6 @@ class BookStateWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     switch (bookStatus.state) {
-      //enBookState.overdue
       case enBookState.borrowable:
         return BorrowableBookStateWidget(
           onBorrowPressed: () => showBorrowBottomSheet(context),
@@ -35,11 +36,8 @@ class BookStateWidget extends StatelessWidget {
         );
       case enBookState.borrowed:
         return BorrowedBookStateWidget(
-          returnDate: returnDateCalculator(bookStatus.dueDate!.toLocal()),
-          onExtendPressed: () {
-            showBorrowBottomSheet(context);
-            // Handle extend action
-          },
+          returnDate: returnDateCalculator(bookStatus.dueDate!),
+          onExtendPressed: () => showExtendBorrowBottomSheet(context),
           onWishlistPressed: () => showSavedToListBottomSheet(context),
         );
       case enBookState.reservable:
@@ -131,6 +129,41 @@ class BookStateWidget extends StatelessWidget {
     //     child: BorrowBottomSheet(onConfirm: (days) {}),
     //   ),
     // );
+  }
+
+  void showExtendBorrowBottomSheet(BuildContext context) {
+    final config = ExtendingConfig(
+      borrowId: 1,
+      canExtend: true,
+      borrowDate: DateTime.now().add(Duration(days: -15)),
+      dueDate: DateTime.now().add(Duration(days: 3)),
+      maxBorrowingDays: 44,
+      maxExtensionCount: 2,
+      maxExtensionDays: 7,
+    );
+    final bookData = context.read<BookDetailsCubit>().saveBookToListData();
+    final bookInfo = BorrowBottomSheetInfo(
+      bookTitle: bookData!.title,
+      bookAuthor: bookData.author,
+    );
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      shape: _topRoundedShape24(),
+      builder: (sheetContext) => ExtendBorrowBottomSheet(
+        bookInfo: bookInfo,
+        config: config,
+        onConfirm: (value) {
+          //TODO: handle Extend Borrow operation
+        },
+      ),
+    );
+  }
+
+  RoundedRectangleBorder _topRoundedShape24() {
+    return RoundedRectangleBorder(
+      borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
+    );
   }
 
   DateTime returnDateCalculator(DateTime utcDueDate) {
