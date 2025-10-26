@@ -1,8 +1,8 @@
-class BorrowOption {
+class PredefinedOption {
   final int days;
   final bool isRecommended;
 
-  const BorrowOption({
+  const PredefinedOption({
     required this.days,
     this.isRecommended = false,
   });

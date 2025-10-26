@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:library_app/core/helpers/spacing.dart';
 import 'package:library_app/core/theme/app_colors.dart';
-import 'package:library_app/features/book/presentation/models/borrow_option.dart';
+import 'package:library_app/core/theme/app_styles.dart';
+import 'package:library_app/core/widgets/card_title_row.dart';
+import 'package:library_app/features/book/presentation/models/predefined_option.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/borrow_bottom_sheet/predefined_option_card/predefined_option_card.dart';
 import 'package:library_app/generated/locale_keys.g.dart';
 
-/// Displays predefined borrow duration options (10, 18, 30 days)
+/// Displays predefined duration options (10, 18, 30 days)
 class PredefinedOptionsSection extends StatelessWidget {
-  final List<BorrowOption> options;
+  final List<PredefinedOption> options;
   final int? selectedDays;
   final ValueChanged<int> onOptionSelected;
 
@@ -25,22 +27,11 @@ class PredefinedOptionsSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Row(
-          children: [
-            Icon(
-              Icons.schedule,
-              size: 20.w,
-              color: AppColors.blue600,
-            ),
-            horizontalSpace(8),
-            Text(
-              LocaleKeys.borrow_select_duration.tr(),
-              style: TextStyle(
-                fontSize: 16.sp,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
+        CardTitleRow(
+          icon: Icons.schedule,
+          value: LocaleKeys.borrow_select_duration.tr(),
+          iconColor: AppColors.blue600,
+          valueStyle: AppStyles.font15Bold.copyWith(fontSize: 16.sp),
         ),
         verticalSpace(16),
         ...options.asMap().entries.map(

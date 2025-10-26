@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:library_app/core/helpers/spacing.dart';
 import 'package:library_app/features/book/domain/entities/book_status.dart';
 import 'package:library_app/features/book/presentation/models/borrow_bottom_sheet_info.dart';
-import 'package:library_app/features/book/presentation/models/borrow_option.dart';
+import 'package:library_app/features/book/presentation/models/predefined_option.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/borrow_bottom_sheet/borrow_action_buttons.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/borrow_bottom_sheet/borrow_bottom_sheet_header.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/borrow_bottom_sheet/borrowing_details_card/borrowing_details_card.dart';
@@ -36,23 +36,23 @@ class _BorrowBottomSheetState extends State<BorrowBottomSheet>
   late AnimationController _sheetAnimationController;
   late Animation<double> _sheetAnimation;
 
-  late final List<BorrowOption> _predefinedOptions;
+  late final List<PredefinedOption> _predefinedOptions;
 
   @override
   void initState() {
     super.initState();
     _predefinedOptions = [
       // Minimum option
-      BorrowOption(days: (widget.config.maxBorrowingDuration! / 3).ceil()),
+      PredefinedOption(days: (widget.config.maxBorrowingDuration! / 3).ceil()),
 
       // Recommeded option
-      BorrowOption(
+      PredefinedOption(
         days: widget.config.recommededBorrowingDuration!,
         isRecommended: true,
       ),
 
       //maximum option
-      BorrowOption(days: widget.config.maxBorrowingDuration!),
+      PredefinedOption(days: widget.config.maxBorrowingDuration!),
     ];
 
     _sheetAnimationController = AnimationController(
