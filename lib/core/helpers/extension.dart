@@ -181,3 +181,22 @@ extension ColorExtensions on Color {
     return withAlpha((255 * opacity).round());
   }
 }
+
+extension DateTimeFormatting on DateTime {
+  /// Format date for Arabic locale
+  String toArabicDate() {
+    // Using intl package
+    return DateFormat('EEEE، d MMMM yyyy', 'ar_SA').format(this);
+  }
+
+  /// Format date for English locale
+  String toEnglishDate() {
+    return DateFormat('EEEE, MMMM d, yyyy', 'en_US').format(this);
+  }
+
+  /// Format date based on current locale
+  String toLocalizedDate(BuildContext context) {
+    final locale = context.locale.languageCode;
+    return locale == 'ar' ? toArabicDate() : toEnglishDate();
+  }
+}
