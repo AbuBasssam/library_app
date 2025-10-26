@@ -1,7 +1,14 @@
 {
   "statusCode": 200,
   "meta": {
-    "dueDate": "2025-10-08T00:00:00"
+    "borrowId":1,
+    "borrowDate": "2025-10-01T00:00:00",
+    "dueDate": "2025-10-08T00:00:00",
+    "maxExtensionCount": 2,
+    "maxExtensionDays": 7,
+    "maxBorrowingDays": 44,
+    "canExtend": true,
+    "disableReason": null
   },
   "succeeded": true,
   "message": "نجاح",
