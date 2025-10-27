@@ -2,7 +2,7 @@
   "statusCode": 200,
   "meta": {
     "maxBorrowingDuration": 30,
-    "recommededBorrowingDuration": 18,
+    "recommendedBorrowingDuration": 18,
     "pickupRequiredHours": 24,
     "finePerDay": 5
   },
