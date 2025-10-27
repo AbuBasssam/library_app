@@ -3,12 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:library_app/core/theme/app_styles.dart';
 import 'package:library_app/core/theme/font_weight_helper.dart';
 
-class DetailRow extends StatelessWidget {
+class DetailCardRow extends StatelessWidget {
   final String label;
   final String value;
   final Color? valueColor;
 
-  const DetailRow({
+  const DetailCardRow({
     super.key,
     required this.label,
     required this.value,

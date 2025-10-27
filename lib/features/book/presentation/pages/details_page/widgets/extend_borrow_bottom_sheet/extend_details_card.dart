@@ -6,7 +6,7 @@ import 'package:library_app/core/theme/app_colors.dart';
 import 'package:library_app/core/widgets/animated_gradient_card.dart';
 import 'package:library_app/core/widgets/card_title_row.dart';
 import 'package:library_app/features/book/presentation/models/extending_config.dart';
-import 'package:library_app/features/book/presentation/pages/details_page/widgets/borrow_bottom_sheet/borrowing_details_card/detail_row.dart';
+import 'package:library_app/features/book/presentation/pages/details_page/widgets/borrow_bottom_sheet/borrowing_details_card/detail_card_row.dart';
 import 'package:library_app/generated/locale_keys.g.dart';
 
 class ExtendDetailsCard extends StatelessWidget {
@@ -33,17 +33,17 @@ class ExtendDetailsCard extends StatelessWidget {
             iconColor: AppColors.blue600,
           ),
           verticalSpace(12),
-          DetailRow(
+          DetailCardRow(
             label: LocaleKeys.extend_current_due_date.tr(),
             value: config.dueDate.toLocalizedDate(context),
           ),
-          DetailRow(
+          DetailCardRow(
             label: LocaleKeys.extend_extension_by.tr(),
             value: _txtExtendDaysCount(),
             valueColor: extendDays != null ? AppColors.blue600 : Colors.grey,
           ),
           if (extendDays != null) ...[
-            DetailRow(
+            DetailCardRow(
               label: LocaleKeys.extend_new_due_date.tr(),
               value: _newDueDate(context),
               valueColor: AppColors.green600,
@@ -55,7 +55,7 @@ class ExtendDetailsCard extends StatelessWidget {
 
             //Spacing
             verticalSpace(8),
-            DetailRow(
+            DetailCardRow(
               label: LocaleKeys.extend_total_days.tr(),
               value: _txtExtendTotalDays(),
               valueColor: AppColors.blue800,

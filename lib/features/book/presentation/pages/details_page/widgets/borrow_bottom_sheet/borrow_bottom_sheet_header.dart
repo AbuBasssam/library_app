@@ -5,6 +5,7 @@ import 'package:library_app/core/helpers/spacing.dart';
 import 'package:library_app/core/theme/app_colors.dart';
 import 'package:library_app/core/theme/app_styles.dart';
 import 'package:library_app/core/theme/font_weight_helper.dart';
+import 'package:library_app/core/widgets/icon_with_title.dart';
 import 'package:library_app/features/book/presentation/models/borrow_bottom_sheet_info.dart';
 import 'package:library_app/generated/locale_keys.g.dart';
 
@@ -30,9 +31,13 @@ class BorrowBottomSheetHeader extends StatelessWidget {
       child: Center(
         child: Column(
           children: [
-            _icoBook(),
-            verticalSpace(16),
-            _txtTitle(),
+            IconWithTitle(
+              icon: Icons.menu_book,
+              title: LocaleKeys.borrow_title.tr(),
+              backgroundcolor: AppColors.blue50,
+              iconColor: AppColors.blue600,
+              titleStyle: AppStyles.font15Bold.copyWith(fontSize: 20.sp),
+            ),
             verticalSpace(8),
             _txtBookTitle(),
             verticalSpace(4),
@@ -63,28 +68,6 @@ class BorrowBottomSheetHeader extends StatelessWidget {
       textAlign: TextAlign.center,
       maxLines: 2,
       overflow: TextOverflow.ellipsis,
-    );
-  }
-
-  Container _icoBook() {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
-      decoration: BoxDecoration(
-        color: AppColors.blue50,
-        shape: BoxShape.circle,
-      ),
-      child: Icon(
-        Icons.menu_book,
-        size: 32.w,
-        color: AppColors.blue600,
-      ),
-    );
-  }
-
-  Text _txtTitle() {
-    return Text(
-      LocaleKeys.borrow_title.tr(),
-      style: AppStyles.font15Bold.copyWith(fontSize: 20.sp),
     );
   }
 }

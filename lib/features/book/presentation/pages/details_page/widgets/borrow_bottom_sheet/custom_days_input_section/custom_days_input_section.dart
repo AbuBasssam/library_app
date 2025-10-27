@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:library_app/core/helpers/spacing.dart';
 import 'package:library_app/core/theme/app_colors.dart';
 import 'package:library_app/core/theme/app_styles.dart';
+import 'package:library_app/core/widgets/card_title_row.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/borrow_bottom_sheet/custom_days_input_section/progress_bar.dart';
 import 'package:library_app/generated/locale_keys.g.dart';
 
@@ -110,7 +111,16 @@ class _CustomDaysInputSectionState extends State<CustomDaysInputSection>
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _titleRow(),
+            CardTitleRow(
+              icon: Icons.edit_outlined,
+              value: _txtEnterDaysCount(),
+              iconColor: AppColors.blue800,
+              iconSize: 18,
+              spaceing: 6,
+              valueStyle: AppStyles.font14SemiBold.copyWith(
+                color: AppColors.blue800,
+              ),
+            ),
             verticalSpace(12),
             TextField(
               controller: _controller,
@@ -145,19 +155,9 @@ class _CustomDaysInputSectionState extends State<CustomDaysInputSection>
     );
   }
 
-  Row _titleRow() {
-    final title = LocaleKeys.borrow_enter_days.tr(
+  String _txtEnterDaysCount() {
+    return LocaleKeys.borrow_enter_days.tr(
       namedArgs: {'max': widget.maxDays.toString()},
-    );
-    final titleStyle = AppStyles.font14SemiBold.copyWith(
-      color: AppColors.blue800,
-    );
-    return Row(
-      children: [
-        _icoEdit(),
-        horizontalSpace(6),
-        Text(title, style: titleStyle),
-      ],
     );
   }
 
@@ -179,14 +179,6 @@ class _CustomDaysInputSectionState extends State<CustomDaysInputSection>
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(8.r),
       borderSide: const BorderSide(color: AppColors.blue200),
-    );
-  }
-
-  Icon _icoEdit() {
-    return Icon(
-      Icons.edit_outlined,
-      size: 18.w,
-      color: AppColors.blue800,
     );
   }
 }
