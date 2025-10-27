@@ -3,8 +3,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:library_app/core/di/dependency_injection.dart';
 import 'package:library_app/features/book/domain/abstracts/book_repository.dart';
-import 'package:library_app/features/book/domain/entities/book_status.dart';
-import 'package:library_app/features/book/domain/entities/en_book_state.dart';
+import 'package:library_app/features/book/domain/abstracts/book_status.dart';
+import 'package:library_app/features/book/domain/entities/borrowable_book_status.dart';
+import 'package:library_app/features/book/domain/entities/borrowed_book_status.dart';
+import 'package:library_app/features/book/domain/entities/overdue_book_status.dart';
+import 'package:library_app/features/book/domain/entities/reservable_book_status.dart';
+import 'package:library_app/features/book/domain/entities/reserved_book_status.dart';
+import 'package:library_app/features/book/domain/entities/unavailable_book_status.dart';
 import 'package:library_app/features/book/presentation/bloc/book_details_cubit/book_details_cubit.dart';
 import 'package:library_app/features/book/presentation/bloc/saved_list_bottom_sheet_cubit/saved_list_bottom_sheet_cubit.dart';
 import 'package:library_app/features/book/presentation/models/borrow_bottom_sheet_info.dart';
@@ -13,10 +18,10 @@ import 'package:library_app/features/book/presentation/pages/details_page/widget
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/borrowable_book_state_widget.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/borrowed_book_state_widget.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/extend_borrow_bottom_sheet/extend_borrow_bottom_sheet.dart';
-import 'package:library_app/features/book/presentation/pages/details_page/widgets/saved_list_bottom_sheet/saved_list_bottom_sheet.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/overdue_book_state_widget.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/reservable_book_state_widget.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/reserved_book_state_widget.dart';
+import 'package:library_app/features/book/presentation/pages/details_page/widgets/saved_list_bottom_sheet/saved_list_bottom_sheet.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/unavailable_state_widget.dart';
 
 class BookStateWidget extends StatelessWidget {
@@ -28,49 +33,58 @@ class BookStateWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    switch (bookStatus.state) {
-      case enBookState.borrowable:
+    switch (bookStatus) {
+      case BorrowableBookStatus data:
         return BorrowableBookStateWidget(
-          onBorrowPressed: () => showBorrowBottomSheet(context),
+          onBorrowPressed: () => showBorrowBottomSheet(context, data),
           onWishlistPressed: () => showSavedToListBottomSheet(context),
         );
-      case enBookState.borrowed:
+      case BorrowedBookStatus data:
         return BorrowedBookStateWidget(
-          returnDate: returnDateCalculator(bookStatus.dueDate!),
+          returnDate: returnDateCalculator(data.dueDate),
           onExtendPressed: () => showExtendBorrowBottomSheet(context),
           onWishlistPressed: () => showSavedToListBottomSheet(context),
         );
-      case enBookState.reservable:
+
+      case ReservableBookStatus data:
         return ReservableBookStateWidget(
-          estimatedDays: 5,
-          waitingListCount: 3,
+          // estimatedDays:data.estimatedDays, //5,
+          // waitingListCount:data.waitingListCount, // 3,
+          stateData: data,
           onReservePressed: () {
             // Handle reserve action
           },
           onWishlistPressed: () => showSavedToListBottomSheet(context),
         );
-      case enBookState.reserved:
+      case ReservedBookStatus data:
         return ReservedBookStateWidget(
-          remainingTime: Duration(hours: 4, minutes: 30),
+          //remainingTime: Duration(hours: 4, minutes: 30),
+          stateData: data,
           onCancelReservation: () {
             // Handle cancel reservation action
           },
           onWishlistPressed: () => showSavedToListBottomSheet(context),
         );
-      case enBookState.unavailable:
+
+      case OverdueBookStatus data:
+        return OverdueBookStateWidget(
+          // dueDate: DateTime.now().subtract(Duration(days: 3)),
+          // lateFee: 15.75,
+          stateData: data,
+          onWishlistPressed: () => showSavedToListBottomSheet(context),
+        );
+      case UnavailableBookStatus _:
         return UnavailableStateWidget(
           onNotifyPressed: () {
             // Handle notify action
           },
           onWishlistPressed: () => showSavedToListBottomSheet(context),
         );
-      case enBookState.overdue:
-        return OverdueBookStateWidget(
-          dueDate: DateTime.now().subtract(Duration(days: 3)),
-          lateFee: 15.75,
-          onWishlistPressed: () => showSavedToListBottomSheet(context),
-        );
     }
+    return BorrowableBookStateWidget(
+      onBorrowPressed: () => showExtendBorrowBottomSheet(context),
+      onWishlistPressed: () => showSavedToListBottomSheet(context),
+    );
   }
 
   void showSavedToListBottomSheet(BuildContext context) {
@@ -92,7 +106,7 @@ class BookStateWidget extends StatelessWidget {
     );
   }
 
-  void showBorrowBottomSheet(BuildContext context) {
+  void showBorrowBottomSheet(BuildContext context, BorrowableBookStatus data) {
     final bookData = context.read<BookDetailsCubit>().saveBookToListData();
     showModalBottomSheet(
       context: context,
@@ -107,13 +121,13 @@ class BookStateWidget extends StatelessWidget {
             bookTitle: bookData!.title,
             bookAuthor: bookData.author,
           ),
-          config: BookStatus(
-            maxBorrowingDuration: 30,
-            recommededBorrowingDuration: 18,
-            finePerDay: 5.0,
-            pickupRequiredHours: 24,
-            state: enBookState.borrowable,
-          ),
+          config: data,
+          //   maxBorrowingDuration: 30,
+          //   recommededBorrowingDuration: 18,
+          //   finePerDay: 5.0,
+          //   pickupRequiredHours: 24,
+          //   state: enBookState.borrowable,
+          // ),
           onConfirm: (days) {
             // Handle confirmation
             print('Confirmed borrowing for $days days');

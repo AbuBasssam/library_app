@@ -4,20 +4,22 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:library_app/core/helpers/spacing.dart';
 import 'package:library_app/core/theme/app_colors.dart';
 import 'package:library_app/core/theme/app_styles.dart';
+import 'package:library_app/features/book/domain/entities/overdue_book_status.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/book_state_card.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/wishlist_button.dart';
 import 'package:library_app/generated/locale_keys.g.dart';
 
 class OverdueBookStateWidget extends StatelessWidget {
-  final DateTime dueDate;
-  final double lateFee;
+  // final DateTime dueDate;
+  // final double lateFee;
+  final OverdueBookStatus stateData;
   final VoidCallback onWishlistPressed;
 
-  const OverdueBookStateWidget(
-      {super.key,
-      required this.dueDate,
-      required this.lateFee,
-      required this.onWishlistPressed});
+  const OverdueBookStateWidget({
+    super.key,
+    required this.stateData,
+    required this.onWishlistPressed,
+  });
 
   String _formatDate(DateTime date) {
     return '${date.day}/${date.month}/${date.year}';
@@ -64,7 +66,7 @@ class OverdueBookStateWidget extends StatelessWidget {
                   Expanded(
                     child: _buildDetailCard(
                       label: LocaleKeys.due_date.tr(),
-                      value: _formatDate(dueDate),
+                      value: _formatDate(stateData.dueDate),
                       backgroundColor: Colors.white,
                     ),
                   ),
@@ -72,7 +74,7 @@ class OverdueBookStateWidget extends StatelessWidget {
                   Expanded(
                     child: _buildDetailCard(
                       label: LocaleKeys.current_fine.tr(),
-                      value: _txtFee(context, lateFee),
+                      value: _txtFee(context, stateData.lateFee),
                       vlueStyle: AppStyles.font14Red600Bold.copyWith(
                         fontSize: 16.sp,
                         fontFamily: 'Tajawal',

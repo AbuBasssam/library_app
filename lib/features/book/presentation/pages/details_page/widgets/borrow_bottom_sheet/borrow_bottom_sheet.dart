@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:library_app/core/helpers/spacing.dart';
-import 'package:library_app/features/book/domain/entities/book_status.dart';
+import 'package:library_app/features/book/domain/entities/borrowable_book_status.dart';
 import 'package:library_app/features/book/presentation/models/borrow_bottom_sheet_info.dart';
 import 'package:library_app/features/book/presentation/models/predefined_option.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/borrow_bottom_sheet/borrow_action_buttons.dart';
@@ -15,7 +15,7 @@ import 'package:library_app/features/book/presentation/pages/details_page/widget
 
 class BorrowBottomSheet extends StatefulWidget {
   final BorrowBottomSheetInfo bookInfo;
-  final BookStatus config;
+  final BorrowableBookStatus config;
   final ValueChanged<int> onConfirm;
 
   const BorrowBottomSheet({
@@ -43,16 +43,16 @@ class _BorrowBottomSheetState extends State<BorrowBottomSheet>
     super.initState();
     _predefinedOptions = [
       // Minimum option
-      PredefinedOption(days: (widget.config.maxBorrowingDuration! / 3).ceil()),
+      PredefinedOption(days: (widget.config.maxBorrowingDuration / 3).round()),
 
       // Recommeded option
       PredefinedOption(
-        days: widget.config.recommededBorrowingDuration!,
+        days: widget.config.recommendedBorrowingDuration,
         isRecommended: true,
       ),
 
       //maximum option
-      PredefinedOption(days: widget.config.maxBorrowingDuration!),
+      PredefinedOption(days: widget.config.maxBorrowingDuration),
     ];
 
     _sheetAnimationController = AnimationController(
@@ -142,8 +142,8 @@ class _BorrowBottomSheetState extends State<BorrowBottomSheet>
                       BorrowingDetailsCard(days: _selectedDays),
                       verticalSpace(16),
                       BorrowingWarningsCard(
-                        pickupRequiredHours: widget.config.pickupRequiredHours!,
-                        finePerDay: widget.config.finePerDay!,
+                        pickupRequiredHours: widget.config.pickupRequiredHours,
+                        finePerDay: widget.config.finePerDay,
                       ),
                       verticalSpace(24),
                       BorrowActionButtons(
@@ -167,7 +167,7 @@ class _BorrowBottomSheetState extends State<BorrowBottomSheet>
             children: [
               verticalSpace(8),
               CustomDaysInputSection(
-                maxDays: widget.config.maxBorrowingDuration!,
+                maxDays: widget.config.maxBorrowingDuration,
                 onDaysChanged: _handleCustomDaysChanged,
               ),
             ],

@@ -5,12 +5,17 @@ import 'package:library_app/core/helpers/api/api_response.dart';
 import 'package:library_app/core/helpers/app_strings.dart';
 import 'package:library_app/core/helpers/local_operation_result.dart';
 import 'package:library_app/features/book/data/models/book_details.dart';
-import 'package:library_app/features/book/data/models/book_meta.dart';
 import 'package:library_app/features/book/domain/abstracts/book_repository.dart';
 import 'package:library_app/features/book/domain/entities/book_entity.dart';
 import 'package:library_app/features/book/domain/entities/book_recommendations.dart';
-import 'package:library_app/features/book/domain/entities/book_status.dart';
+import 'package:library_app/features/book/domain/abstracts/book_status.dart';
+import 'package:library_app/features/book/domain/entities/borrowable_book_status.dart';
+import 'package:library_app/features/book/domain/entities/borrowed_book_status.dart';
 import 'package:library_app/features/book/domain/entities/en_book_state.dart';
+import 'package:library_app/features/book/domain/entities/overdue_book_status.dart';
+import 'package:library_app/features/book/domain/entities/reservable_book_status.dart';
+import 'package:library_app/features/book/domain/entities/reserved_book_status.dart';
+import 'package:library_app/features/book/domain/entities/unavailable_book_status.dart';
 import 'package:library_app/features/book/domain/entities/user_book_preference.dart';
 import 'package:library_app/features/book/presentation/bloc/book_details_cubit/book_details_state.dart';
 import 'package:library_app/features/book/presentation/mappers/book_details_mapper.dart';
@@ -31,12 +36,10 @@ class BookDetailsCubit extends Cubit<BookDetailsState> {
       AppStrings.borrowedBookDetails,
     );
     final jsonMap = jsonDecode(jsonString);
-    final responseMeta = jsonMap['meta'];
     final responseData = jsonMap['data'];
     final bookModel = BookDetailsModel.fromJson(responseData);
-    final bookMetaModel = BookMeta.fromJson(responseMeta);
     final bookDetails = bookModel.toEntity();
-    final bookStauts = _mapToBookStauts(bookMetaModel, bookModel.bookState);
+    final bookStauts = _mapToBookStauts(jsonMap['meta'], bookModel.bookState);
 
     LocalOperationResult isSavedResult = await _repo.isSavedBook(bookId);
 
@@ -93,19 +96,7 @@ class BookDetailsCubit extends Cubit<BookDetailsState> {
         final bookModel = response.data;
         final bookDetails = bookModel.toEntity();
         final meta = (apiResponse.meta as Map<String, dynamic>);
-        final metaData = BookMeta(
-          maxBorrowingDuration: meta['maxBorrowingDuration'],
-          recommededBorrowingDuration: meta['recommededBorrowingDuration'],
-          finePerDay: meta['finePerDay'],
-          dueDate: meta['dueDate'],
-          estimatedFine: meta['estimatedFine'],
-          estimatedAvailableDate: meta['estimatedAvailableDate'],
-          peopleAhead: meta['peopleAhead'],
-          pickupTimeRemainder: meta['maxBorrowingDuration'],
-        );
-
-        final bookStauts =
-            _mapToBookStauts(metaData, apiResponse.data.bookState);
+        final bookStauts = _mapToBookStauts(meta, apiResponse.data.bookState);
 
         LocalOperationResult isSavedResult = await _repo.isSavedBook(bookId);
         bool isSaved = isSavedResult.isSuccess;
@@ -174,18 +165,15 @@ class BookDetailsCubit extends Cubit<BookDetailsState> {
     );
   }
 
-  BookStatus _mapToBookStauts(BookMeta bookMeta, enBookState bookStatue) {
-    return BookStatus(
-      state: bookStatue,
-      maxBorrowingDuration: bookMeta.maxBorrowingDuration,
-      recommededBorrowingDuration: bookMeta.recommededBorrowingDuration,
-      pickupRequiredHours: bookMeta.pickupRequiredHours,
-      finePerDay: bookMeta.finePerDay,
-      dueDate: bookMeta.dueDate,
-      estimatedFine: bookMeta.estimatedFine,
-      estimatedAvailableDate: bookMeta.estimatedAvailableDate,
-      peopleAhead: bookMeta.peopleAhead,
-      pickupTimeRemainder: bookMeta.pickupTimeRemainder,
-    );
+  BookStatus _mapToBookStauts(
+      Map<String, dynamic> bookMeta, enBookState bookStatue) {
+    return switch (bookStatue) {
+      enBookState.borrowable => BorrowableBookStatus.fromJson(bookMeta),
+      enBookState.borrowed => BorrowedBookStatus.fromJson(bookMeta),
+      enBookState.reservable => ReservableBookStatus.fromJson(bookMeta),
+      enBookState.reserved => ReservedBookStatus.fromJson(bookMeta),
+      enBookState.overdue => OverdueBookStatus.fromJson(bookMeta),
+      enBookState.unavailable => UnavailableBookStatus(),
+    };
   }
 }

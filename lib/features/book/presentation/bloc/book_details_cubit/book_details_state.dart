@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:library_app/features/book/domain/entities/book_entity.dart';
 import 'package:library_app/features/book/domain/entities/book_recommendations.dart';
-import 'package:library_app/features/book/domain/entities/book_status.dart';
+import 'package:library_app/features/book/domain/abstracts/book_status.dart';
 import 'package:library_app/features/book/domain/entities/user_book_preference.dart';
 
 part 'book_details_state.freezed.dart';

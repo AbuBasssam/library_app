@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:library_app/core/helpers/spacing.dart';
 import 'package:library_app/core/theme/app_colors.dart';
 import 'package:library_app/core/theme/app_styles.dart';
+import 'package:library_app/features/book/domain/entities/reserved_book_status.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/action_buttons_row.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/book_state_card.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/primary_action_button.dart';
@@ -10,13 +11,14 @@ import 'package:library_app/features/book/presentation/pages/details_page/widget
 import 'package:library_app/generated/locale_keys.g.dart';
 
 class ReservedBookStateWidget extends StatelessWidget {
-  final Duration remainingTime;
+  //final Duration remainingTime;
+  final ReservedBookStatus stateData;
   final VoidCallback onCancelReservation;
   final VoidCallback onWishlistPressed;
 
   const ReservedBookStateWidget({
     super.key,
-    required this.remainingTime,
+    required this.stateData,
     required this.onCancelReservation,
     required this.onWishlistPressed,
   });
@@ -46,11 +48,12 @@ class ReservedBookStateWidget extends StatelessWidget {
               Text(
                 LocaleKeys.time_remaining.tr(
                   namedArgs: {
-                    'hours': remainingTime.inHours.toString(),
-                    'minutes': remainingTime.inMinutes.remainder(60).toString(),
+                    'hours': stateData.remainingTime.inHours.toString(),
+                    'minutes': stateData.remainingTime.inMinutes
+                        .remainder(60)
+                        .toString(),
                   },
                 ),
-                //_formatDuration(remainingTime),
                 style: AppStyles.font18Yellow900Bold,
               ),
             ],

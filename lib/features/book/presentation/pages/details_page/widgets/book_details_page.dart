@@ -6,6 +6,14 @@ import 'package:go_router/go_router.dart';
 import 'package:library_app/core/helpers/error_state_dialog.dart';
 import 'package:library_app/core/helpers/spacing.dart';
 import 'package:library_app/core/theme/app_colors.dart';
+import 'package:library_app/features/book/domain/abstracts/book_status.dart';
+import 'package:library_app/features/book/domain/entities/borrowable_book_status.dart';
+import 'package:library_app/features/book/domain/entities/borrowed_book_status.dart';
+import 'package:library_app/features/book/domain/entities/en_book_state.dart';
+import 'package:library_app/features/book/domain/entities/overdue_book_status.dart';
+import 'package:library_app/features/book/domain/entities/reservable_book_status.dart';
+import 'package:library_app/features/book/domain/entities/reserved_book_status.dart';
+import 'package:library_app/features/book/domain/entities/unavailable_book_status.dart';
 import 'package:library_app/features/book/presentation/bloc/book_details_cubit/book_details_cubit.dart';
 import 'package:library_app/features/book/presentation/bloc/book_details_cubit/book_details_state.dart';
 import 'package:library_app/features/book/presentation/en_book_card_type.dart';
@@ -58,7 +66,7 @@ class _BookDetailsPageState extends State<BookDetailsPage> {
                           alignment: AlignmentDirectional.centerStart,
                           child: Padding(
                             padding: EdgeInsets.only(top: 16.h),
-                            child: BookStatusBadge(state: status.state),
+                            child: BookStatusBadge(state: bookState(status)),
                           ),
                         ),
                       ),
@@ -117,5 +125,24 @@ class _BookDetailsPageState extends State<BookDetailsPage> {
       title: Center(child: Text(LocaleKeys.book_details_title.tr())),
       toolbarHeight: 35.h,
     );
+  }
+
+  enBookState bookState(BookStatus status) {
+    switch (status) {
+      case BorrowableBookStatus _:
+        return enBookState.borrowable;
+      case BorrowedBookStatus _:
+        return enBookState.borrowed;
+      case ReservableBookStatus _:
+        return enBookState.reservable;
+      case ReservedBookStatus _:
+        return enBookState.reserved;
+      case OverdueBookStatus _:
+        return enBookState.overdue;
+      case UnavailableBookStatus _:
+        return enBookState.unavailable;
+      default:
+        return enBookState.borrowable;
+    }
   }
 }
