@@ -1,6 +1,4 @@
-import 'package:library_app/features/book/domain/entities/en_book_state.dart';
-
-class BookStatus {
+/*class BookStatus {
   final int? maxBorrowingDuration;
   final int? recommededBorrowingDuration;
   final int? pickupRequiredHours;
@@ -36,4 +34,5 @@ class BookStatus {
     required this.state,
     this.searchDate,
   });
-}
+}*/
+abstract class BookStatus {}
