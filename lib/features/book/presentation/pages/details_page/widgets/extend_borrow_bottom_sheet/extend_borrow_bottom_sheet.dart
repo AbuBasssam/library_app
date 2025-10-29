@@ -1,17 +1,21 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:library_app/core/helpers/spacing.dart';
+import 'package:library_app/core/theme/app_colors.dart';
 import 'package:library_app/features/book/presentation/models/borrow_bottom_sheet_info.dart';
 import 'package:library_app/features/book/presentation/models/predefined_option.dart';
 import 'package:library_app/features/book/presentation/models/extending_config.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/borrow_bottom_sheet/custom_days_input_section/custom_days_input_section.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/borrow_bottom_sheet/custom_option_card.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/borrow_bottom_sheet/predefined_options_section.dart';
+import 'package:library_app/features/book/presentation/pages/details_page/widgets/bottom_sheet_action_buttons.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/extend_borrow_bottom_sheet/extend_borrow_bottom_sheet_header.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/extend_borrow_bottom_sheet/extend_current_borrow_card/extend_current_borrow_card.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/extend_borrow_bottom_sheet/extend_details_card.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/extend_borrow_bottom_sheet/extend_warnings_card/extend_warnings_card.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/saved_list_bottom_sheet/header/drag_handle.dart';
+import 'package:library_app/generated/locale_keys.g.dart';
 
 class ExtendBorrowBottomSheet extends StatefulWidget {
   final ExtendingConfig config;
@@ -121,7 +125,7 @@ class _ExtendBorrowBottomSheetState extends State<ExtendBorrowBottomSheet>
                         duration: const Duration(milliseconds: 400),
                         curve: Curves.easeInOut,
                         child: _isCustomInputVisible
-                            ? _CustomDaysInputSection()
+                            ? _customDaysInputSection()
                             : const SizedBox.shrink(),
                       ),
                       verticalSpace(24),
@@ -130,7 +134,14 @@ class _ExtendBorrowBottomSheetState extends State<ExtendBorrowBottomSheet>
                         extendDays: _selectedDays,
                       ),
                       verticalSpace(16),
-                      ExtendWarningsCard(config: widget.config)
+                      ExtendWarningsCard(config: widget.config),
+                      verticalSpace(24),
+                      BottomSheetActionButtons(
+                        primaryValue: LocaleKeys.extend_confirm.tr(),
+                        primaryColor: AppColors.green600,
+                        primaryAction:
+                            _selectedDays != null ? _confirmExtend : null,
+                      ),
                     ],
                   ),
                 ),
@@ -142,7 +153,7 @@ class _ExtendBorrowBottomSheetState extends State<ExtendBorrowBottomSheet>
     );
   }
 
-  Column _CustomDaysInputSection() {
+  Column _customDaysInputSection() {
     return Column(
       children: [
         verticalSpace(8),
@@ -163,5 +174,26 @@ class _ExtendBorrowBottomSheetState extends State<ExtendBorrowBottomSheet>
       final isRecommended = days == recommendedDays;
       return PredefinedOption(days: days, isRecommended: isRecommended);
     }).toList();
+  }
+
+  void _confirmExtend() {
+    if (!widget.config.isValidExtendDays(_selectedDays!)) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            LocaleKeys.extend_invalid_days.tr(
+              namedArgs: {
+                'max': widget.config.maxAllowedExtendDays.toString(),
+              },
+            ),
+          ),
+          backgroundColor: AppColors.red600,
+        ),
+      );
+      return;
+    }
+
+    widget.onConfirm(_selectedDays!);
+    Navigator.pop(context);
   }
 }
