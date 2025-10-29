@@ -8,11 +8,21 @@ part of 'reserved_book_status.dart';
 
 ReservedBookStatus _$ReservedBookStatusFromJson(Map<String, dynamic> json) =>
     ReservedBookStatus(
-      remainingTime:
-          Duration(microseconds: (json['remainingTime'] as num).toInt()),
+      json['estimatedAvailableDate'] == null
+          ? null
+          : DateTime.parse(json['estimatedAvailableDate'] as String),
+      ReservedBookStatus._parseDuration(json['pickupTimeRemainder'] as String?),
+      reservationId: (json['reservationId'] as num).toInt(),
+      isReady: json['isReady'] as bool,
+      waitingListCount: (json['peopleAhead'] as num).toInt(),
     );
 
 Map<String, dynamic> _$ReservedBookStatusToJson(ReservedBookStatus instance) =>
     <String, dynamic>{
-      'remainingTime': instance.remainingTime.inMicroseconds,
+      'reservationId': instance.reservationId,
+      'isReady': instance.isReady,
+      'estimatedAvailableDate':
+          instance.estimatedAvailableDate?.toIso8601String(),
+      'pickupTimeRemainder': instance.remainingTime?.inMicroseconds,
+      'peopleAhead': instance.waitingListCount,
     };
