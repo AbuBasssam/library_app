@@ -6,6 +6,8 @@ import 'package:library_app/core/theme/font_weight_helper.dart';
 class NoticeRow extends StatelessWidget {
   final EdgeInsets? padding;
   final String value;
+  final String? highlightText;
+
   final Color? valueColor;
   final bool isBold;
 
@@ -15,6 +17,7 @@ class NoticeRow extends StatelessWidget {
     this.isBold = false,
     this.valueColor,
     this.padding,
+    this.highlightText,
   });
 
   @override
@@ -31,16 +34,48 @@ class NoticeRow extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: Text(
-              value,
-              style: AppStyles.font14Gray700Regular.copyWith(
-                color: valueColor,
-                fontSize: 13.sp,
-                fontWeight:
-                    isBold ? FontWeightHelper.bold : FontWeightHelper.regular,
-              ),
+            child: highlightText != null
+                ? buildHighlightedText()
+                : Text(
+                    value,
+                    style: AppStyles.font14Gray700Regular.copyWith(
+                      color: valueColor,
+                      fontSize: 13.sp,
+                      fontWeight: isBold
+                          ? FontWeightHelper.bold
+                          : FontWeightHelper.regular,
+                    ),
+                  ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildHighlightedText() {
+    final parts = value.split(highlightText!);
+
+    if (parts.length == 1) {
+      return Text(
+        value,
+        style: AppStyles.font14GreyRegular
+            .copyWith(fontSize: 13.sp, color: valueColor),
+      );
+    }
+
+    return Text.rich(
+      TextSpan(
+        style: AppStyles.font14GreyRegular
+            .copyWith(fontSize: 13.sp, color: valueColor),
+        children: [
+          TextSpan(text: parts[0]),
+          TextSpan(
+            text: highlightText,
+            style: AppStyles.font15Bold.copyWith(
+              fontSize: 14.sp,
             ),
           ),
+          if (parts.length > 1) TextSpan(text: parts[1]),
         ],
       ),
     );
