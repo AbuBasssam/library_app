@@ -37,3 +37,13 @@ void showCreateListDialog(BuildContext context) {
     ),
   );
 }
+
+int estimatedDaysCalculator(DateTime utcEstimatedAvailableDate) {
+  final DateTime localeEstimatedAvailableDate =
+      utcEstimatedAvailableDate.toLocal();
+  final DateTime now = DateTime.now();
+  final Duration difference = now.difference(localeEstimatedAvailableDate);
+
+  // Return the number of days
+  return difference.inDays;
+}
