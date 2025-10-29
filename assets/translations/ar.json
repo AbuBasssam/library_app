@@ -108,6 +108,36 @@
     "error_total_exceeded": "سيتجاوز التمديد الحد الأقصى للاستعارة"
   },
 
+  "reserve": {
+    "title": "حجز الكتاب",
+    "queue_status": "حالة قائمة الانتظار",
+    "ready_now": "🎉 الكتاب جاهز للاستلام الآن!",
+    "pickup_deadline": "موعد انتهاء الاستلام",
+    "pickup_window": "لديك {hours} ساعة لاستلام الكتاب",
+    "people_ahead": "الأشخاص قبلك",
+    "people_count": "{count} أشخاص",
+    "estimated_wait": "الانتظار المقدر",
+    "days_count": "~{count} يوم",
+    "estimated_date": "التوفر المقدر",
+    "queue_position": "موقعك في القائمة",
+    "position_number": "#{position}",
+    "your_reservations": "حجوزاتك",
+    "active_reservations": "الحجوزات النشطة",
+    "slots_count": "{current} من {max}",
+    "last_slot": "آخر خانة متاحة!",
+    "important_info": "معلومات مهمة:",
+    "policy_pickup_window": "يجب استلام الكتاب خلال {hours} ساعة من الإشعار",
+    "policy_max_reservations": "الحد الأقصى للحجوزات النشطة: {count} كتب",
+    "policy_cancellation": "يمكنك إلغاء الحجز في أي وقت قبل الاستلام",
+    "policy_urgent_pickup": "احرص على الاستلام خلال المهلة المحددة لتجنب إلغاء الحجز",
+    "confirm": "تأكيد الحجز",
+    "success_message": "تم حجز الكتاب بنجاح!",
+    "success_ready_message": "الكتاب جاهز للاستلام! لديك {hours} ساعة",
+    "error_max_reached": "لقد وصلت للحد الأقصى من الحجوزات ({count})",
+    "error_already_reserved": "لقد قمت بحجز هذا الكتاب مسبقاً",
+    "error_not_available": "الكتاب غير متاح للحجز حالياً"
+  },
+
   "book_state":{
     "borrowable":"متاح للاستعارة",
     "borrowed":"مستعار",
