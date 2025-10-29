@@ -1,7 +1,11 @@
 {
   "statusCode": 200,
   "meta": {
-    "pickupTimeRemainder": "47:00:01"
+    "reservationId":1,
+    "isReady":false,
+    "pickupTimeRemainder": null,
+    "estimatedAvailableDate": "2025-10-18T06:05:55.6738871Z",
+    "peopleAhead":5
   },
   "succeeded": true,
   "message": "نجاح",
