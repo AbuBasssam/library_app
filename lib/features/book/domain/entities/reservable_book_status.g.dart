@@ -9,6 +9,8 @@ part of 'reservable_book_status.dart';
 ReservableBookStatus _$ReservableBookStatusFromJson(
         Map<String, dynamic> json) =>
     ReservableBookStatus(
+      pickupWindowHours: (json['pickupExpiryHours'] as num).toInt(),
+      maxActiveReservations: (json['maxActiveReservations'] as num).toInt(),
       waitingListCount: (json['peopleAhead'] as num).toInt(),
       estimatedAvailableDate:
           DateTime.parse(json['estimatedAvailableDate'] as String),
@@ -17,7 +19,9 @@ ReservableBookStatus _$ReservableBookStatusFromJson(
 Map<String, dynamic> _$ReservableBookStatusToJson(
         ReservableBookStatus instance) =>
     <String, dynamic>{
-      'peopleAhead': instance.waitingListCount,
       'estimatedAvailableDate':
           instance.estimatedAvailableDate.toIso8601String(),
+      'maxActiveReservations': instance.maxActiveReservations,
+      'pickupExpiryHours': instance.pickupWindowHours,
+      'peopleAhead': instance.waitingListCount,
     };
