@@ -34,11 +34,11 @@ class ExtendCurrentBorrowCard extends StatelessWidget {
           verticalSpace(12),
           DetailCardRow(
             label: LocaleKeys.extend_borrow_date.tr(),
-            value: config.borrowDate.toLocalizedDate(context),
+            value: config.borrowDate.toLocal().toLocalizedDate(context),
           ),
           DetailCardRow(
             label: LocaleKeys.extend_current_due_date.tr(),
-            value: config.dueDate.toLocalizedDate(context),
+            value: config.dueDate.toLocal().toLocalizedDate(context),
           ),
           if (config.shouldShowDaysRemaining) ...[
             verticalSpace(8),
