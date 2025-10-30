@@ -102,14 +102,16 @@ class OverdueBookStateWidget extends StatelessWidget {
 
   String _txtFee(BuildContext context, double lateFee) {
     final localeCode = context.locale.languageCode;
-
-    final format = NumberFormat.currency(
-      locale: localeCode == 'en' ? 'en_SA' : 'ar_SA',
-      symbol: localeCode == 'en' ? 'SAR' : '﷼',
-      decimalDigits: 2,
-    );
-
-    return format.format(lateFee);
+    if (localeCode == 'en') {
+      return '${lateFee.toStringAsFixed(2)} SAR';
+    } else {
+      final format = NumberFormat.currency(
+        locale: 'ar_SA',
+        symbol: '﷼',
+        decimalDigits: 2,
+      );
+      return format.format(lateFee);
+    }
   }
 
   Widget _buildDetailCard({
