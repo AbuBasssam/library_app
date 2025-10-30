@@ -10,8 +10,6 @@ import 'package:library_app/features/book/presentation/pages/details_page/widget
 import 'package:library_app/generated/locale_keys.g.dart';
 
 class OverdueBookStateWidget extends StatelessWidget {
-  // final DateTime dueDate;
-  // final double lateFee;
   final OverdueBookStatus stateData;
   final VoidCallback onWishlistPressed;
 
