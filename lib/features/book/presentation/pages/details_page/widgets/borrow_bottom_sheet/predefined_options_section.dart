@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:library_app/core/helpers/spacing.dart';
@@ -7,16 +6,19 @@ import 'package:library_app/core/theme/app_styles.dart';
 import 'package:library_app/core/widgets/card_title_row.dart';
 import 'package:library_app/features/book/presentation/models/predefined_option.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/borrow_bottom_sheet/predefined_option_card/predefined_option_card.dart';
-import 'package:library_app/generated/locale_keys.g.dart';
 
 /// Displays predefined duration options (10, 18, 30 days)
 class PredefinedOptionsSection extends StatelessWidget {
+  final String sectionTitle;
+  final IconData sectionIcon;
   final List<PredefinedOption> options;
   final int? selectedDays;
   final ValueChanged<int> onOptionSelected;
 
   const PredefinedOptionsSection({
     super.key,
+    required this.sectionTitle,
+    required this.sectionIcon,
     required this.options,
     required this.selectedDays,
     required this.onOptionSelected,
@@ -28,8 +30,8 @@ class PredefinedOptionsSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         CardTitleRow(
-          icon: Icons.schedule,
-          value: LocaleKeys.borrow_select_duration.tr(),
+          icon: sectionIcon,
+          value: sectionTitle,
           iconColor: AppColors.blue600,
           valueStyle: AppStyles.font15Bold.copyWith(fontSize: 16.sp),
         ),
