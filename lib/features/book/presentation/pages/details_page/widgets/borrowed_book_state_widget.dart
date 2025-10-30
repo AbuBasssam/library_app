@@ -7,13 +7,11 @@ import 'package:library_app/features/book/presentation/pages/details_page/widget
 import 'package:library_app/generated/locale_keys.g.dart';
 
 class BorrowedBookStateWidget extends StatelessWidget {
-  final DateTime returnDate;
   final VoidCallback onExtendPressed;
   final VoidCallback onWishlistPressed;
 
   const BorrowedBookStateWidget({
     super.key,
-    required this.returnDate,
     required this.onExtendPressed,
     required this.onWishlistPressed,
   });
