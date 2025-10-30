@@ -7,6 +7,8 @@ part 'reservable_book_status.g.dart';
 class ReservableBookStatus extends BookStatus {
   final DateTime estimatedAvailableDate;
   final int maxActiveReservations;
+  final bool canReserve;
+  final String? disableReason;
 
   @JsonKey(name: 'pickupExpiryHours')
   final int pickupWindowHours;
@@ -16,7 +18,9 @@ class ReservableBookStatus extends BookStatus {
 
   int get estimatedDays => estimatedDaysCalculator(estimatedAvailableDate);
 
-  ReservableBookStatus({
+  ReservableBookStatus(
+    this.disableReason, {
+    required this.canReserve,
     required this.pickupWindowHours,
     required this.maxActiveReservations,
     required this.waitingListCount,
