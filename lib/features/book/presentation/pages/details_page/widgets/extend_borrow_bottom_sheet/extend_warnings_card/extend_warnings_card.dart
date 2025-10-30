@@ -6,11 +6,11 @@ import 'package:library_app/core/theme/app_styles.dart';
 import 'package:library_app/core/widgets/animated_details_card.dart';
 import 'package:library_app/core/widgets/card_title_row.dart';
 import 'package:library_app/core/widgets/notice_row.dart';
-import 'package:library_app/features/book/presentation/models/extending_config.dart';
+import 'package:library_app/features/book/domain/entities/borrowed_book_status.dart';
 import 'package:library_app/generated/locale_keys.g.dart';
 
 class ExtendWarningsCard extends StatelessWidget {
-  final ExtendingConfig config;
+  final BorrowedBookStatus config;
 
   const ExtendWarningsCard({
     super.key,

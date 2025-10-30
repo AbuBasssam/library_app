@@ -1,11 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:library_app/core/helpers/snack_bar_messages.dart';
 import 'package:library_app/core/helpers/spacing.dart';
 import 'package:library_app/core/theme/app_colors.dart';
+import 'package:library_app/features/book/domain/entities/borrowed_book_status.dart';
 import 'package:library_app/features/book/presentation/models/borrow_bottom_sheet_info.dart';
 import 'package:library_app/features/book/presentation/models/predefined_option.dart';
-import 'package:library_app/features/book/presentation/models/extending_config.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/borrow_bottom_sheet/custom_days_input_section/custom_days_input_section.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/borrow_bottom_sheet/custom_option_card.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/borrow_bottom_sheet/predefined_options_section.dart';
@@ -18,7 +19,7 @@ import 'package:library_app/features/book/presentation/pages/details_page/widget
 import 'package:library_app/generated/locale_keys.g.dart';
 
 class ExtendBorrowBottomSheet extends StatefulWidget {
-  final ExtendingConfig config;
+  final BorrowedBookStatus config;
   final BorrowBottomSheetInfo bookInfo;
   final ValueChanged<int> onConfirm;
 
@@ -112,6 +113,8 @@ class _ExtendBorrowBottomSheetState extends State<ExtendBorrowBottomSheet>
                       ExtendCurrentBorrowCard(config: widget.config),
                       verticalSpace(24),
                       PredefinedOptionsSection(
+                        sectionIcon: Icons.update,
+                        sectionTitle: LocaleKeys.extend_select_duration.tr(),
                         options: toBorrowOptionsList(widget.config),
                         selectedDays: _getSelectedDays(),
                         onOptionSelected: _handlePredefinedOptionSelected,
@@ -166,7 +169,8 @@ class _ExtendBorrowBottomSheetState extends State<ExtendBorrowBottomSheet>
   }
 
   int? _getSelectedDays() => _isCustomInputVisible ? null : _selectedDays;
-  List<PredefinedOption> toBorrowOptionsList(ExtendingConfig extendingCnofig) {
+  List<PredefinedOption> toBorrowOptionsList(
+      BorrowedBookStatus extendingCnofig) {
     final options = extendingCnofig.predefinedExtendOptions;
     final recommendedDays = extendingCnofig.recommendedExtendDays;
     return options.asMap().entries.map((entry) {
@@ -178,16 +182,12 @@ class _ExtendBorrowBottomSheetState extends State<ExtendBorrowBottomSheet>
 
   void _confirmExtend() {
     if (!widget.config.isValidExtendDays(_selectedDays!)) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            LocaleKeys.extend_invalid_days.tr(
-              namedArgs: {
-                'max': widget.config.maxAllowedExtendDays.toString(),
-              },
-            ),
-          ),
-          backgroundColor: AppColors.red600,
+      SnackBarMessages().showErrorSnackBar(
+        context: context,
+        message: LocaleKeys.extend_invalid_days.tr(
+          namedArgs: {
+            'max': widget.config.maxAllowedExtendDays.toString(),
+          },
         ),
       );
       return;

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:library_app/core/helpers/spacing.dart';
@@ -12,6 +13,7 @@ import 'package:library_app/features/book/presentation/pages/details_page/widget
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/borrow_bottom_sheet/custom_option_card.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/borrow_bottom_sheet/predefined_options_section.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/saved_list_bottom_sheet/header/drag_handle.dart';
+import 'package:library_app/generated/locale_keys.g.dart';
 
 class BorrowBottomSheet extends StatefulWidget {
   final BorrowBottomSheetInfo bookInfo;
@@ -123,6 +125,8 @@ class _BorrowBottomSheetState extends State<BorrowBottomSheet>
                       BorrowBottomSheetHeader(info: widget.bookInfo),
                       verticalSpace(24),
                       PredefinedOptionsSection(
+                        sectionIcon: Icons.schedule,
+                        sectionTitle: LocaleKeys.borrow_select_duration.tr(),
                         options: _predefinedOptions,
                         selectedDays:
                             _isCustomInputVisible ? null : _selectedDays,
