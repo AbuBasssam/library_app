@@ -15,7 +15,7 @@ class BorrowableBookStatus extends BookStatus {
     required this.pickupRequiredHours,
     required this.finePerDay,
   });
-  Map<String, dynamic> tojson() => _$BorrowableBookStatusToJson(this);
+  Map<String, dynamic> toJson() => _$BorrowableBookStatusToJson(this);
 
   factory BorrowableBookStatus.fromJson(Map<String, dynamic> json) =>
       _$BorrowableBookStatusFromJson(json);
