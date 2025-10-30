@@ -5,6 +5,7 @@ part 'overdue_book_status.g.dart';
 @JsonSerializable()
 class OverdueBookStatus extends BookStatus {
   final DateTime dueDate;
+  @JsonKey(name: 'estimatedFine')
   final double lateFee;
 
   OverdueBookStatus({required this.dueDate, required this.lateFee});
