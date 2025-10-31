@@ -5,17 +5,22 @@ import 'package:library_app/core/helpers/spacing.dart';
 import 'package:library_app/core/theme/app_colors.dart';
 import 'package:library_app/core/theme/app_styles.dart';
 import 'package:library_app/features/book/domain/entities/overdue_book_status.dart';
+import 'package:library_app/features/book/presentation/pages/details_page/widgets/action_buttons_row.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/book_state_card.dart';
+import 'package:library_app/features/book/presentation/pages/details_page/widgets/overdue_details_card.dart';
+import 'package:library_app/features/book/presentation/pages/details_page/widgets/primary_action_button.dart';
 import 'package:library_app/features/book/presentation/pages/details_page/widgets/wishlist_button.dart';
 import 'package:library_app/generated/locale_keys.g.dart';
 
 class OverdueBookStateWidget extends StatelessWidget {
   final OverdueBookStatus stateData;
+  final VoidCallback onFeePayed;
   final VoidCallback onWishlistPressed;
 
   const OverdueBookStateWidget({
     super.key,
     required this.stateData,
+    required this.onFeePayed,
     required this.onWishlistPressed,
   });
 
@@ -62,7 +67,7 @@ class OverdueBookStateWidget extends StatelessWidget {
               Row(
                 children: [
                   Expanded(
-                    child: _buildDetailCard(
+                    child: OverdueDetailsCard(
                       label: LocaleKeys.due_date.tr(),
                       value: _formatDate(stateData.dueDate),
                       backgroundColor: Colors.white,
@@ -70,7 +75,7 @@ class OverdueBookStateWidget extends StatelessWidget {
                   ),
                   horizontalSpace(12),
                   Expanded(
-                    child: _buildDetailCard(
+                    child: OverdueDetailsCard(
                       label: LocaleKeys.current_fine.tr(),
                       value: _txtFee(context, stateData.lateFee),
                       vlueStyle: AppStyles.font14Red600Bold.copyWith(
@@ -87,14 +92,16 @@ class OverdueBookStateWidget extends StatelessWidget {
           ),
         ),
         verticalSpace(12),
-
-        // Wishlist Button
-        SizedBox(
-          width: double.infinity,
-          child: WishlistButton(
-            onPressed: onWishlistPressed,
-            isExpanded: false,
+        // Action Buttons
+        ActionButtonsRow(
+          primaryButton: PrimaryActionButton(
+            onPressed: onFeePayed,
+            icon: Icons.payment_rounded,
+            label: LocaleKeys.pay_fine.tr(),
+            backgroundColor: AppColors.green600,
           ),
+          secondaryButton: WishlistButton(onPressed: onWishlistPressed),
+          spacing: 8,
         ),
       ],
     );
@@ -112,38 +119,5 @@ class OverdueBookStateWidget extends StatelessWidget {
       );
       return format.format(lateFee);
     }
-  }
-
-  Widget _buildDetailCard({
-    required String label,
-    required String value,
-    TextStyle? vlueStyle,
-    required Color backgroundColor,
-    double valueSize = 16,
-  }) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
-      decoration: BoxDecoration(
-        color: backgroundColor,
-        border: Border.all(color: AppColors.red300),
-        borderRadius: BorderRadius.circular(8.r),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(label, style: AppStyles.font12Gray600Regular),
-          verticalSpace(4),
-          Text(
-            value,
-            style: vlueStyle ??
-                TextStyle(
-                  fontSize: valueSize.sp,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.red600,
-                ),
-          ),
-        ],
-      ),
-    );
   }
 }
