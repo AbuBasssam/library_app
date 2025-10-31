@@ -51,7 +51,9 @@
   "create_first_list":"ابدأ بإنشاء قائمة جديدة لتنظيم كتبك المفضلة",
   "successfully_operation":"تمت العملية بنجاح'",
   "operation_failed":"فشلت العملية: {message}",
-  
+  "pay_fine": "سداد الغرامة",
+  "important_info": "معلومات مهمة:",
+
   "borrow": {
     "title": "استعارة الكتاب",
     "select_duration": "اختر مدة الاستعارة:",
@@ -71,7 +73,6 @@
       "duration": "مدة الاستعارة"
     },
     "warnings": {
-      "important_info": "معلومات مهمة:",
       "pickup": "يجب استلام الكتاب خلال {hours} ساعة من التأكيد",
       "fine": "غرامة التأخير: {amount} ريال سعودي لكل يوم تأخير",
       "auto_charge": "سيتم احتساب الغرامة تلقائياً في حالة التأخير"
@@ -97,7 +98,6 @@
     "new_due_date": "موعد الإرجاع الجديد",
     "total_days": "إجمالي الأيام",
     "total_days_value": "{current} من {max} يوم",
-    "important_info": "معلومات مهمة:",
     "max_extensions": "الحد الأقصى للتمديدات: {count} مرات",
     "max_days_per_extension": "الحد الأقصى لكل تمديد: {days} يوم",
     "max_total_days": "الحد الأقصى الإجمالي: {days} يوم",
@@ -111,9 +111,6 @@
   "reserve": {
     "title": "حجز الكتاب",
     "queue_status": "حالة قائمة الانتظار",
-    "ready_now": "🎉 الكتاب جاهز للاستلام الآن!",
-    "pickup_deadline": "موعد انتهاء الاستلام",
-    "pickup_window": "لديك {hours} ساعة لاستلام الكتاب",
     "people_ahead": "الأشخاص قبلك",
     "people_count": "{count} أشخاص",
     "estimated_wait": "الانتظار المقدر",
@@ -121,22 +118,12 @@
     "estimated_date": "التوفر المقدر",
     "queue_position": "موقعك في القائمة",
     "position_number": "#{position}",
-    "your_reservations": "حجوزاتك",
-    "active_reservations": "الحجوزات النشطة",
-    "slots_count": "{current} من {max}",
-    "last_slot": "آخر خانة متاحة!",
-    "important_info": "معلومات مهمة:",
     "policy_pickup_window": "يجب استلام الكتاب خلال {hours} ساعة من الإشعار",
     "policy_max_reservations": "الحد الأقصى للحجوزات النشطة: {count} كتب",
     "policy_cancellation": "يمكنك إلغاء الحجز في أي وقت قبل الاستلام",
-    "policy_urgent_pickup": "احرص على الاستلام خلال المهلة المحددة لتجنب إلغاء الحجز",
     "confirm": "تأكيد الحجز",
-    "success_message": "تم حجز الكتاب بنجاح!",
-    "success_ready_message": "الكتاب جاهز للاستلام! لديك {hours} ساعة",
-    "error_max_reached": "لقد وصلت للحد الأقصى من الحجوزات ({count})",
-    "error_already_reserved": "لقد قمت بحجز هذا الكتاب مسبقاً",
-    "error_not_available": "الكتاب غير متاح للحجز حالياً"
-  },
+    "success_message": "تم حجز الكتاب بنجاح!"
+    },
 
   "book_state":{
     "borrowable":"متاح للاستعارة",

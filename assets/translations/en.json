@@ -50,7 +50,10 @@
   "create_first_list":"Start by creating a new list to organize your favorite books",
   "successfully_operation":"Operation done successfully",
   "operation_failed":"Operation failed: {message}",
-  
+  "pay_fine": "Pay Late Fee",
+  "important_info": "Important Information:",
+
+
   "borrow": {
     "title": "Borrow Book",
     "select_duration": "Choose borrowing period:",
@@ -70,7 +73,6 @@
       "duration": "Borrowing Period"
     },
     "warnings": {
-      "important_info": "Important Information:",
       "pickup": "Book must be picked up within {hours} hours of confirmation",
       "fine": "Late fee: {amount} SAR per day overdue",
       "auto_charge": "Fees will be automatically charged for late returns"
@@ -97,7 +99,6 @@
     "new_due_date": "New Due Date",
     "total_days": "Total Days",
     "total_days_value": "{current} of {max} days",
-    "important_info": "Important Information:",
     "max_extensions": "Maximum extensions: {count} times",
     "max_days_per_extension": "Maximum per extension: {days} days",
     "max_total_days": "Maximum total: {days} days",
@@ -111,9 +112,6 @@
   "reserve": {
     "title": "Reserve Book",
     "queue_status": "Queue Status",
-    "ready_now": "🎉 Book is ready for pickup now!",
-    "pickup_deadline": "Pickup Deadline",
-    "pickup_window": "You have {hours} hours to pick up the book",
     "people_ahead": "People Ahead",
     "people_count": "{count} people",
     "estimated_wait": "Estimated Wait",
@@ -121,21 +119,11 @@
     "estimated_date": "Estimated Availability",
     "queue_position": "Your Position",
     "position_number": "#{position}",
-    "your_reservations": "Your Reservations",
-    "active_reservations": "Active Reservations",
-    "slots_count": "{current} of {max}",
-    "last_slot": "Last available slot!",
-    "important_info": "Important Information:",
     "policy_pickup_window": "Book must be picked up within {hours} hours of notification",
     "policy_max_reservations": "Maximum active reservations: {count} books",
     "policy_cancellation": "You can cancel your reservation anytime before pickup",
-    "policy_urgent_pickup": "Make sure to pickup within the deadline to avoid cancellation",
     "confirm": "Confirm Reservation",
-    "success_message": "Book reserved successfully!",
-    "success_ready_message": "Book is ready for pickup! You have {hours} hours",
-    "error_max_reached": "You have reached the maximum number of reservations ({count})",
-    "error_already_reserved": "You have already reserved this book",
-    "error_not_available": "Book is not available for reservation"
+    "success_message": "Book reserved successfully!"
   },
 
   "book_state": {

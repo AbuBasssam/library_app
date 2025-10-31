@@ -53,6 +53,8 @@ abstract class  LocaleKeys {
   static const create_first_list = 'create_first_list';
   static const successfully_operation = 'successfully_operation';
   static const operation_failed = 'operation_failed';
+  static const pay_fine = 'pay_fine';
+  static const important_info = 'important_info';
   static const borrow_title = 'borrow.title';
   static const borrow_select_duration = 'borrow.select_duration';
   static const borrow_days_count = 'borrow.days_count';
@@ -68,7 +70,6 @@ abstract class  LocaleKeys {
   static const borrow_details_return_date = 'borrow.details.return_date';
   static const borrow_details_duration = 'borrow.details.duration';
   static const borrow_details = 'borrow.details';
-  static const borrow_warnings_important_info = 'borrow.warnings.important_info';
   static const borrow_warnings_pickup = 'borrow.warnings.pickup';
   static const borrow_warnings_fine = 'borrow.warnings.fine';
   static const borrow_warnings_auto_charge = 'borrow.warnings.auto_charge';
@@ -92,7 +93,6 @@ abstract class  LocaleKeys {
   static const extend_new_due_date = 'extend.new_due_date';
   static const extend_total_days = 'extend.total_days';
   static const extend_total_days_value = 'extend.total_days_value';
-  static const extend_important_info = 'extend.important_info';
   static const extend_max_extensions = 'extend.max_extensions';
   static const extend_max_days_per_extension = 'extend.max_days_per_extension';
   static const extend_max_total_days = 'extend.max_total_days';
@@ -104,9 +104,6 @@ abstract class  LocaleKeys {
   static const extend = 'extend';
   static const reserve_title = 'reserve.title';
   static const reserve_queue_status = 'reserve.queue_status';
-  static const reserve_ready_now = 'reserve.ready_now';
-  static const reserve_pickup_deadline = 'reserve.pickup_deadline';
-  static const reserve_pickup_window = 'reserve.pickup_window';
   static const reserve_people_ahead = 'reserve.people_ahead';
   static const reserve_people_count = 'reserve.people_count';
   static const reserve_estimated_wait = 'reserve.estimated_wait';
@@ -114,21 +111,11 @@ abstract class  LocaleKeys {
   static const reserve_estimated_date = 'reserve.estimated_date';
   static const reserve_queue_position = 'reserve.queue_position';
   static const reserve_position_number = 'reserve.position_number';
-  static const reserve_your_reservations = 'reserve.your_reservations';
-  static const reserve_active_reservations = 'reserve.active_reservations';
-  static const reserve_slots_count = 'reserve.slots_count';
-  static const reserve_last_slot = 'reserve.last_slot';
-  static const reserve_important_info = 'reserve.important_info';
   static const reserve_policy_pickup_window = 'reserve.policy_pickup_window';
   static const reserve_policy_max_reservations = 'reserve.policy_max_reservations';
   static const reserve_policy_cancellation = 'reserve.policy_cancellation';
-  static const reserve_policy_urgent_pickup = 'reserve.policy_urgent_pickup';
   static const reserve_confirm = 'reserve.confirm';
   static const reserve_success_message = 'reserve.success_message';
-  static const reserve_success_ready_message = 'reserve.success_ready_message';
-  static const reserve_error_max_reached = 'reserve.error_max_reached';
-  static const reserve_error_already_reserved = 'reserve.error_already_reserved';
-  static const reserve_error_not_available = 'reserve.error_not_available';
   static const reserve = 'reserve';
   static const book_state_borrowable = 'book_state.borrowable';
   static const book_state_borrowed = 'book_state.borrowed';

@@ -65,6 +65,8 @@ class CodegenLoader extends AssetLoader{
   "create_first_list": "ابدأ بإنشاء قائمة جديدة لتنظيم كتبك المفضلة",
   "successfully_operation": "تمت العملية بنجاح'",
   "operation_failed": "فشلت العملية: {message}",
+  "pay_fine": "سداد الغرامة",
+  "important_info": "معلومات مهمة:",
   "borrow": {
     "title": "استعارة الكتاب",
     "select_duration": "اختر مدة الاستعارة:",
@@ -84,7 +86,6 @@ class CodegenLoader extends AssetLoader{
       "duration": "مدة الاستعارة"
     },
     "warnings": {
-      "important_info": "معلومات مهمة:",
       "pickup": "يجب استلام الكتاب خلال {hours} ساعة من التأكيد",
       "fine": "غرامة التأخير: {amount} ريال سعودي لكل يوم تأخير",
       "auto_charge": "سيتم احتساب الغرامة تلقائياً في حالة التأخير"
@@ -110,7 +111,6 @@ class CodegenLoader extends AssetLoader{
     "new_due_date": "موعد الإرجاع الجديد",
     "total_days": "إجمالي الأيام",
     "total_days_value": "{current} من {max} يوم",
-    "important_info": "معلومات مهمة:",
     "max_extensions": "الحد الأقصى للتمديدات: {count} مرات",
     "max_days_per_extension": "الحد الأقصى لكل تمديد: {days} يوم",
     "max_total_days": "الحد الأقصى الإجمالي: {days} يوم",
@@ -123,9 +123,6 @@ class CodegenLoader extends AssetLoader{
   "reserve": {
     "title": "حجز الكتاب",
     "queue_status": "حالة قائمة الانتظار",
-    "ready_now": "🎉 الكتاب جاهز للاستلام الآن!",
-    "pickup_deadline": "موعد انتهاء الاستلام",
-    "pickup_window": "لديك {hours} ساعة لاستلام الكتاب",
     "people_ahead": "الأشخاص قبلك",
     "people_count": "{count} أشخاص",
     "estimated_wait": "الانتظار المقدر",
@@ -133,21 +130,11 @@ class CodegenLoader extends AssetLoader{
     "estimated_date": "التوفر المقدر",
     "queue_position": "موقعك في القائمة",
     "position_number": "#{position}",
-    "your_reservations": "حجوزاتك",
-    "active_reservations": "الحجوزات النشطة",
-    "slots_count": "{current} من {max}",
-    "last_slot": "آخر خانة متاحة!",
-    "important_info": "معلومات مهمة:",
     "policy_pickup_window": "يجب استلام الكتاب خلال {hours} ساعة من الإشعار",
     "policy_max_reservations": "الحد الأقصى للحجوزات النشطة: {count} كتب",
     "policy_cancellation": "يمكنك إلغاء الحجز في أي وقت قبل الاستلام",
-    "policy_urgent_pickup": "احرص على الاستلام خلال المهلة المحددة لتجنب إلغاء الحجز",
     "confirm": "تأكيد الحجز",
-    "success_message": "تم حجز الكتاب بنجاح!",
-    "success_ready_message": "الكتاب جاهز للاستلام! لديك {hours} ساعة",
-    "error_max_reached": "لقد وصلت للحد الأقصى من الحجوزات ({count})",
-    "error_already_reserved": "لقد قمت بحجز هذا الكتاب مسبقاً",
-    "error_not_available": "الكتاب غير متاح للحجز حالياً"
+    "success_message": "تم حجز الكتاب بنجاح!"
   },
   "book_state": {
     "borrowable": "متاح للاستعارة",
@@ -224,6 +211,8 @@ static const Map<String,dynamic> _en = {
   "create_first_list": "Start by creating a new list to organize your favorite books",
   "successfully_operation": "Operation done successfully",
   "operation_failed": "Operation failed: {message}",
+  "pay_fine": "Pay Late Fee",
+  "important_info": "Important Information:",
   "borrow": {
     "title": "Borrow Book",
     "select_duration": "Choose borrowing period:",
@@ -243,7 +232,6 @@ static const Map<String,dynamic> _en = {
       "duration": "Borrowing Period"
     },
     "warnings": {
-      "important_info": "Important Information:",
       "pickup": "Book must be picked up within {hours} hours of confirmation",
       "fine": "Late fee: {amount} SAR per day overdue",
       "auto_charge": "Fees will be automatically charged for late returns"
@@ -269,7 +257,6 @@ static const Map<String,dynamic> _en = {
     "new_due_date": "New Due Date",
     "total_days": "Total Days",
     "total_days_value": "{current} of {max} days",
-    "important_info": "Important Information:",
     "max_extensions": "Maximum extensions: {count} times",
     "max_days_per_extension": "Maximum per extension: {days} days",
     "max_total_days": "Maximum total: {days} days",
@@ -282,9 +269,6 @@ static const Map<String,dynamic> _en = {
   "reserve": {
     "title": "Reserve Book",
     "queue_status": "Queue Status",
-    "ready_now": "🎉 Book is ready for pickup now!",
-    "pickup_deadline": "Pickup Deadline",
-    "pickup_window": "You have {hours} hours to pick up the book",
     "people_ahead": "People Ahead",
     "people_count": "{count} people",
     "estimated_wait": "Estimated Wait",
@@ -292,21 +276,11 @@ static const Map<String,dynamic> _en = {
     "estimated_date": "Estimated Availability",
     "queue_position": "Your Position",
     "position_number": "#{position}",
-    "your_reservations": "Your Reservations",
-    "active_reservations": "Active Reservations",
-    "slots_count": "{current} of {max}",
-    "last_slot": "Last available slot!",
-    "important_info": "Important Information:",
     "policy_pickup_window": "Book must be picked up within {hours} hours of notification",
     "policy_max_reservations": "Maximum active reservations: {count} books",
     "policy_cancellation": "You can cancel your reservation anytime before pickup",
-    "policy_urgent_pickup": "Make sure to pickup within the deadline to avoid cancellation",
     "confirm": "Confirm Reservation",
-    "success_message": "Book reserved successfully!",
-    "success_ready_message": "Book is ready for pickup! You have {hours} hours",
-    "error_max_reached": "You have reached the maximum number of reservations ({count})",
-    "error_already_reserved": "You have already reserved this book",
-    "error_not_available": "Book is not available for reservation"
+    "success_message": "Book reserved successfully!"
   },
   "book_state": {
     "borrowable": "Borrowable",
