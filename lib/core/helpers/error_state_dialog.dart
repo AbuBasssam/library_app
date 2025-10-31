@@ -16,7 +16,9 @@ class ErrorStateDialog extends StatelessWidget {
       actions: [
         TextButton(
           onPressed: () => GoRouter.of(context).pop(),
-          child: Text('Got it', style: AppStyles.font14RichBlackRegular),
+          child: Text('Got it',
+              style: AppStyles.font14RichBlackRegular
+                  .copyWith(color: Colors.redAccent)),
         ),
       ],
     );
