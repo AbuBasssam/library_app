@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:library_app/core/helpers/api/api_response.dart';
 import 'package:library_app/core/helpers/app_strings.dart';
 import 'package:library_app/core/helpers/local_operation_result.dart';
 import 'package:library_app/features/book/data/models/book_details.dart';
@@ -87,7 +86,7 @@ class BookDetailsCubit extends Cubit<BookDetailsState> {
     );
   }
 
-  Future<void> _remoteVersion(int bookId) async {
+  /*Future<void> _remoteVersion(int bookId) async {
     final response = await _repo.getBookDetails(bookId);
 
     response.when(
@@ -153,6 +152,7 @@ class BookDetailsCubit extends Cubit<BookDetailsState> {
     );
   }
 
+  */
   BookListData? saveBookToListData() {
     if (state is! Success) return null;
 
@@ -166,13 +166,13 @@ class BookDetailsCubit extends Cubit<BookDetailsState> {
   }
 
   BookStatus _mapToBookStauts(
-      Map<String, dynamic> bookMeta, enBookState bookStatue) {
+      Map<String, dynamic>? bookMeta, enBookState bookStatue) {
     return switch (bookStatue) {
-      enBookState.borrowable => BorrowableBookStatus.fromJson(bookMeta),
-      enBookState.borrowed => BorrowedBookStatus.fromJson(bookMeta),
-      enBookState.reservable => ReservableBookStatus.fromJson(bookMeta),
-      enBookState.reserved => ReservedBookStatus.fromJson(bookMeta),
-      enBookState.overdue => OverdueBookStatus.fromJson(bookMeta),
+      enBookState.borrowable => BorrowableBookStatus.fromJson(bookMeta!),
+      enBookState.borrowed => BorrowedBookStatus.fromJson(bookMeta!),
+      enBookState.reservable => ReservableBookStatus.fromJson(bookMeta!),
+      enBookState.reserved => ReservedBookStatus.fromJson(bookMeta!),
+      enBookState.overdue => OverdueBookStatus.fromJson(bookMeta!),
       enBookState.unavailable => UnavailableBookStatus(),
     };
   }
