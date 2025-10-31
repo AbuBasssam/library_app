@@ -1,6 +1,9 @@
 {
   "statusCode": 200,
   "meta": {
+
+    "canReserve": true,
+    "disableReason": null,
     "estimatedAvailableDate": "2025-10-18T06:05:55.6738871Z",
     "peopleAhead": 1,
     "maxActiveReservations": 3,
