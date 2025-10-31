@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:library_app/core/helpers/extension.dart';
 import 'package:library_app/core/helpers/spacing.dart';
 import 'package:library_app/core/theme/app_colors.dart';
 import 'package:library_app/core/theme/app_styles.dart';
@@ -49,10 +50,7 @@ class ReservedWaitingStatusCard extends StatelessWidget {
               ),
               verticalSpace(4),
               Text(
-                '📅 ${LocaleKeys.reserve_estimated_date.tr()} : ${DateFormat.yMEd(context.locale.languageCode).format(
-                      DateTime.now()
-                          .add(Duration(days: stateData.estimatedDays)),
-                    ).toString()}',
+                '📅 ${LocaleKeys.reserve_estimated_date.tr()} : ${DateTime.now().add(Duration(days: stateData.estimatedDays)).toLocalizedDate(context)}',
                 style: AppStyles.font14RichBlackRegular.copyWith(
                   color: AppColors.orange600,
                 ),
