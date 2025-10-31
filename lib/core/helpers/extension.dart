@@ -186,12 +186,13 @@ extension DateTimeFormatting on DateTime {
   /// Format date for Arabic locale
   String toArabicDate() {
     // Using intl package
-    return DateFormat('EEEE، d MMMM yyyy', 'ar_SA').format(this);
+
+    return DateFormat('EEE, dd/MM/yyyy', 'ar_SA').format(this);
   }
 
   /// Format date for English locale
   String toEnglishDate() {
-    return DateFormat('EEEE, MMMM d, yyyy', 'en_US').format(this);
+    return DateFormat('EEE, dd/MM/yyyy', 'en_US').format(this);
   }
 
   /// Format date based on current locale
