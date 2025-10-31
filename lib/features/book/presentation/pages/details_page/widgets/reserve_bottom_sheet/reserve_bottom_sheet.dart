@@ -15,12 +15,13 @@ import 'package:library_app/generated/locale_keys.g.dart';
 class ReserveBottomSheet extends StatefulWidget {
   final BorrowBottomSheetInfo bookInfo;
   final ReservableBookStatus config;
+  final VoidCallback onReserve;
 
-  const ReserveBottomSheet({
-    super.key,
-    required this.bookInfo,
-    required this.config,
-  });
+  const ReserveBottomSheet(
+      {super.key,
+      required this.bookInfo,
+      required this.config,
+      required this.onReserve});
 
   @override
   State<ReserveBottomSheet> createState() => _ReserveBottomSheetState();
@@ -90,9 +91,9 @@ class _ReserveBottomSheetState extends State<ReserveBottomSheet>
                       ReservePoliciesCard(config: widget.config),
                       verticalSpace(24),
                       BottomSheetActionButtons(
-                        primaryValue: LocaleKeys.extend_confirm.tr(),
+                        primaryValue: LocaleKeys.reserve_confirm.tr(),
                         primaryColor: AppColors.orange600,
-                        primaryAction: confirmReserve,
+                        primaryAction: widget.onReserve,
                       ),
                     ],
                   ),
@@ -103,10 +104,5 @@ class _ReserveBottomSheetState extends State<ReserveBottomSheet>
         ),
       ),
     );
-  }
-
-  void confirmReserve() {
-    //TODO: Handle Reserve Confirm Action
-    Navigator.pop(context);
   }
 }
