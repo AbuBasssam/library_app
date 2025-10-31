@@ -29,7 +29,7 @@ class BorrowingWarningsCard extends StatelessWidget {
         children: [
           CardTitleRow(
             icon: Icons.warning_amber,
-            value: LocaleKeys.borrow_warnings_important_info.tr(),
+            value: LocaleKeys.important_info.tr(),
             iconColor: AppColors.red800,
             valueStyle: AppStyles.font15Bold.copyWith(color: AppColors.red800),
           ),
@@ -37,12 +37,14 @@ class BorrowingWarningsCard extends StatelessWidget {
           NoticeRow(
             value: _txtPickupRequiredHours(),
             valueColor: AppColors.red800,
-            isBold: true,
+            //isBold: true,
+            highlightText: pickupRequiredHours.toString(),
           ),
           NoticeRow(
             value: _txtLateDailyFee(),
             valueColor: AppColors.red800,
-            isBold: true,
+            highlightText: finePerDay.toStringAsFixed(0),
+            //  isBold: true,
           ),
           NoticeRow(
             value: LocaleKeys.borrow_warnings_auto_charge.tr(),

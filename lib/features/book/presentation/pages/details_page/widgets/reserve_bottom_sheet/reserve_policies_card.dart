@@ -27,7 +27,7 @@ class ReservePoliciesCard extends StatelessWidget {
         children: [
           CardTitleRow(
             icon: Icons.info_outline,
-            value: LocaleKeys.reserve_important_info.tr(),
+            value: LocaleKeys.important_info.tr(),
             iconColor: AppColors.orange600,
             valueStyle: AppStyles.font15Bold.copyWith(
               color: AppColors.orange800,

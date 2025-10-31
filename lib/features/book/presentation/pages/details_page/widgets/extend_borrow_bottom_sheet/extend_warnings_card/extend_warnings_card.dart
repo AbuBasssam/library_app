@@ -27,7 +27,7 @@ class ExtendWarningsCard extends StatelessWidget {
         children: [
           CardTitleRow(
             icon: Icons.info,
-            value: LocaleKeys.extend_important_info.tr(),
+            value: LocaleKeys.important_info.tr(),
             iconColor: AppColors.orange800,
             valueStyle: AppStyles.font15Bold.copyWith(
               color: AppColors.orange800,
@@ -37,14 +37,17 @@ class ExtendWarningsCard extends StatelessWidget {
           NoticeRow(
             valueColor: AppColors.orange800,
             value: _txtMaxExtensionCounts(),
+            highlightText: config.maxExtensionCount.toString(),
           ),
           NoticeRow(
             valueColor: AppColors.orange800,
             value: _txtMaxExtensionDaysCount(),
+            highlightText: config.maxAllowedExtendDays.toString(),
           ),
           NoticeRow(
             valueColor: AppColors.orange800,
             value: _txtMaxBorrowingDaysCount(),
+            highlightText: config.maxBorrowingDays.toString(),
             isBold: true,
           ),
         ],
