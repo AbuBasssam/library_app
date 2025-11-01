@@ -1,11 +1,11 @@
 import 'en_book_card_type.dart';
-import 'strategies/author_books_card_strategy.dart';
-import 'strategies/book_card_strategy.dart';
-import 'strategies/details_card_strategy.dart';
-import 'strategies/home_card_strategy.dart';
-import 'strategies/most_searched_card_strategy.dart';
-import 'strategies/recent_search_card_strategy.dart';
-import 'strategies/similar_book_card_strategy.dart';
+import 'strategies/book_card/author_books_card_strategy.dart';
+import '../domain/abstracts/book_card_strategy.dart';
+import 'strategies/book_card/details_card_strategy.dart';
+import 'strategies/book_card/home_card_strategy.dart';
+import 'strategies/book_card/most_searched_card_strategy.dart';
+import 'strategies/book_card/recent_search_card_strategy.dart';
+import 'strategies/book_card/similar_book_card_strategy.dart';
 
 class BookCardBuilder {
   BookCardBuilder._();

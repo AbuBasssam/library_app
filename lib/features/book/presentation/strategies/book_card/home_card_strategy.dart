@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../presentation/widgets/home_view_book_card.dart';
-import '../../domain/entities/book_entity.dart';
-import '../view models/home_view_info.dart';
+import '../../widgets/home_view_book_card.dart';
+import '../../../domain/entities/book_entity.dart';
+import '../../view models/home_view_info.dart';
 import '/core/helpers/extension.dart';
-import 'book_card_strategy.dart';
+import '../../../domain/abstracts/book_card_strategy.dart';
 
 class HomeCardStrategy extends BookCardStrategy<HomeViewInfo> {
   @override

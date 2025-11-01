@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '/core/helpers/extension.dart';
 import '/features/book/domain/entities/book_entity.dart';
-import '/features/book/presentation/strategies/book_card_strategy.dart';
+import '../../../domain/abstracts/book_card_strategy.dart';
 import '/features/book/presentation/view%20models/detail_view_info.dart';
 import '/features/book/presentation/widgets/details_view_book_card.dart';
 
